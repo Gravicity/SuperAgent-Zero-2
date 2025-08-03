@@ -85,36 +85,91 @@ handle_claude_md() {
         print_warning "Existing CLAUDE.md found"
         echo ""
         echo "Options:"
-        echo "1) Backup existing and create SuperAgent Zero CLAUDE.md"
-        echo "2) Append SuperAgent Zero config to existing CLAUDE.md"
-        echo "3) Skip CLAUDE.md setup (manual configuration required)"
+        echo "1) Move existing CLAUDE.md to .superagent/memory/project.md and create SuperAgent Zero CLAUDE.md"
+        echo "2) Backup existing CLAUDE.md and create SuperAgent Zero CLAUDE.md"
+        echo "3) Append SuperAgent Zero config to existing CLAUDE.md"
+        echo "4) Skip CLAUDE.md setup (manual configuration required)"
         echo ""
         
         while true; do
-            read -p "Choose option (1/2/3): " choice
+            read -p "Choose option (1/2/3/4): " choice
             case $choice in
                 1)
-                    backup_and_create_claude_md
+                    move_to_project_md_and_create_claude_md
                     break
                     ;;
                 2)
-                    append_to_claude_md
+                    backup_and_create_claude_md
                     break
                     ;;
                 3)
+                    append_to_claude_md
+                    break
+                    ;;
+                4)
                     print_warning "Skipping CLAUDE.md setup - SuperAgent Zero may not activate automatically"
                     echo "To enable SuperAgent Zero, add the identity configuration to your existing CLAUDE.md"
                     echo "See: ~/.superagent-zero-2/docs/claude-md-template.md"
                     break
                     ;;
                 *)
-                    echo "Please enter 1, 2, or 3"
+                    echo "Please enter 1, 2, 3, or 4"
                     ;;
             esac
         done
     else
         create_claude_md
     fi
+}
+
+# Move existing CLAUDE.md to project.md and create new SuperAgent Zero CLAUDE.md
+move_to_project_md_and_create_claude_md() {
+    # Ensure memory directory exists
+    mkdir -p .superagent/memory
+    
+    # Create project.md header and move existing content
+    cat > .superagent/memory/project.md << PROJECT_HEADER
+# Project Configuration & Evolution
+
+## Original Project Instructions
+The following are the original project instructions that were in CLAUDE.md before SuperAgent Zero setup:
+
+---
+
+PROJECT_HEADER
+    
+    # Append the existing CLAUDE.md content
+    cat CLAUDE.md >> .superagent/memory/project.md
+    
+    cat >> .superagent/memory/project.md << PROJECT_FOOTER
+
+---
+
+## SuperAgent Zero Project Profile
+- Setup Date: $(date -u +"%Y-%m-%dT%H:%M:%SZ")
+- Project Type: To be determined through discovery
+- Technology Stack: To be analyzed
+- Primary Goals: To be discovered through user interaction
+
+## Agent Deployment History
+- Initial Agents: To be installed based on project type
+- Successful Patterns: To be documented
+- User Preferences: To be learned over time
+
+## Project Evolution Log
+This section will be maintained by the memory-manager agent to track:
+- Key decisions and rationale
+- Architecture evolution
+- User feedback and preferences
+- Successful agent combinations
+- Project milestones and insights
+
+Last Updated: $(date -u +"%Y-%m-%dT%H:%M:%SZ")
+PROJECT_FOOTER
+
+    print_status "Moved existing CLAUDE.md to .superagent/memory/project.md"
+    create_claude_md
+    print_status "Created new SuperAgent Zero CLAUDE.md"
 }
 
 # Backup existing and create new CLAUDE.md
@@ -228,6 +283,7 @@ When Claude Code loads this project, you MUST immediately:
 ## Memory System Integration
 Your memory system provides context across sessions:
 - Check .superagent/memory/ files maintained by memory-manager agent
+- Review project configuration: @.superagent/memory/project.md
 - Import key insights: @.superagent/memory/insights.md
 - Review current context: @.superagent/memory/context.md
 - Track agent evolution: @.superagent/memory/evolution.md
@@ -355,6 +411,34 @@ CLAUDE_EOF
 # Initialize memory system
 init_memory() {
     local project_type="$1"
+    
+    # Only create project.md if it doesn't exist (might have been created by move function)
+    if [ ! -f ".superagent/memory/project.md" ]; then
+        cat > .superagent/memory/project.md << PROJECT_EOF
+# Project Configuration & Evolution
+
+## SuperAgent Zero Project Profile
+- Setup Date: $(date -u +"%Y-%m-%dT%H:%M:%SZ")
+- Project Type: $project_type
+- Technology Stack: To be analyzed
+- Primary Goals: To be discovered through user interaction
+
+## Agent Deployment History
+- Initial Agents: To be installed based on project type
+- Successful Patterns: To be documented
+- User Preferences: To be learned over time
+
+## Project Evolution Log
+This section will be maintained by the memory-manager agent to track:
+- Key decisions and rationale
+- Architecture evolution
+- User feedback and preferences
+- Successful agent combinations
+- Project milestones and insights
+
+Last Updated: $(date -u +"%Y-%m-%dT%H:%M:%SZ")
+PROJECT_EOF
+    fi
     
     cat > .superagent/memory/context.md << MEMORY_EOF
 # Session Context - SuperAgent Zero
