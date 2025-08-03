@@ -607,6 +607,90 @@ SUPERAGENT_EOF
     cat > .superagent/memory/workflows.md << WORKFLOWS_EOF
 # Agent Workflow Management
 
+## Agent Installation Protocol
+
+### CRITICAL: Context Restart Required
+**Task tool only recognizes agents available at startup. After installing new agents, you MUST restart Claude Code context.**
+
+### Project-Type Agent Combinations
+
+**Web Application**:
+\`\`\`bash
+cp ~/.superagent-zero-2/agents/engineering/frontend-developer.md .claude/agents/
+cp ~/.superagent-zero-2/agents/engineering/backend-architect.md .claude/agents/
+cp ~/.superagent-zero-2/agents/engineering/test-writer-fixer.md .claude/agents/
+cp ~/.superagent-zero-2/agents/design/ui-designer.md .claude/agents/
+\`\`\`
+
+**Mobile App**:
+\`\`\`bash
+cp ~/.superagent-zero-2/agents/engineering/mobile-app-builder.md .claude/agents/
+cp ~/.superagent-zero-2/agents/design/ui-designer.md .claude/agents/
+cp ~/.superagent-zero-2/agents/marketing/app-store-optimizer.md .claude/agents/
+cp ~/.superagent-zero-2/agents/engineering/test-writer-fixer.md .claude/agents/
+\`\`\`
+
+**AI/ML Project**:
+\`\`\`bash
+cp ~/.superagent-zero-2/agents/engineering/ai-engineer.md .claude/agents/
+cp ~/.superagent-zero-2/agents/engineering/backend-architect.md .claude/agents/
+cp ~/.superagent-zero-2/agents/testing/performance-benchmarker.md .claude/agents/
+cp ~/.superagent-zero-2/agents/engineering/test-writer-fixer.md .claude/agents/
+\`\`\`
+
+**API Service**:
+\`\`\`bash
+cp ~/.superagent-zero-2/agents/engineering/backend-architect.md .claude/agents/
+cp ~/.superagent-zero-2/agents/testing/api-tester.md .claude/agents/
+cp ~/.superagent-zero-2/agents/engineering/devops-automator.md .claude/agents/
+cp ~/.superagent-zero-2/agents/testing/performance-benchmarker.md .claude/agents/
+\`\`\`
+
+**Data Analytics**:
+\`\`\`bash
+cp ~/.superagent-zero-2/agents/engineering/ai-engineer.md .claude/agents/
+cp ~/.superagent-zero-2/agents/studio-operations/analytics-reporter.md .claude/agents/
+cp ~/.superagent-zero-2/agents/testing/performance-benchmarker.md .claude/agents/
+cp ~/.superagent-zero-2/agents/engineering/test-writer-fixer.md .claude/agents/
+\`\`\`
+
+**DevOps/Infrastructure**:
+\`\`\`bash
+cp ~/.superagent-zero-2/agents/engineering/devops-automator.md .claude/agents/
+cp ~/.superagent-zero-2/agents/studio-operations/infrastructure-maintainer.md .claude/agents/
+cp ~/.superagent-zero-2/agents/testing/performance-benchmarker.md .claude/agents/
+cp ~/.superagent-zero-2/agents/engineering/test-writer-fixer.md .claude/agents/
+\`\`\`
+
+**Marketing/Growth**:
+\`\`\`bash
+cp ~/.superagent-zero-2/agents/marketing/growth-hacker.md .claude/agents/
+cp ~/.superagent-zero-2/agents/marketing/content-creator.md .claude/agents/
+cp ~/.superagent-zero-2/agents/marketing/app-store-optimizer.md .claude/agents/
+cp ~/.superagent-zero-2/agents/studio-operations/analytics-reporter.md .claude/agents/
+\`\`\`
+
+**E-commerce**:
+\`\`\`bash
+cp ~/.superagent-zero-2/agents/engineering/frontend-developer.md .claude/agents/
+cp ~/.superagent-zero-2/agents/engineering/backend-architect.md .claude/agents/
+cp ~/.superagent-zero-2/agents/design/ui-designer.md .claude/agents/
+cp ~/.superagent-zero-2/agents/studio-operations/finance-tracker.md .claude/agents/
+\`\`\`
+
+### Installation Workflow
+1. **Analyze project type** (use project-analyzer if needed)
+2. **Install related agents together** (use commands above or setup.sh --add-agents)
+3. **Exit Claude Code** (Ctrl+C or close terminal)
+4. **Restart Claude Code** from project directory: \`claude\`
+5. **Verify agents available**: "What agents do I have?"
+
+### Quick Installation
+\`\`\`bash
+# Use guided installation
+~/.superagent-zero-2/setup.sh --add-agents
+\`\`\`
+
 ## Workflow Templates
 
 ### New Feature Development
@@ -686,6 +770,73 @@ Last Updated: $(date -u +"%Y-%m-%dT%H:%M:%SZ")
 WORKFLOWS_EOF
 }
 
+# Project-type agent recommendations
+get_project_recommendations() {
+    local project_type="$1"
+    
+    case "$project_type" in
+        "web-app")
+            echo "frontend-developer backend-architect test-writer-fixer ui-designer"
+            ;;
+        "mobile-app")
+            echo "mobile-app-builder ui-designer app-store-optimizer test-writer-fixer"
+            ;;
+        "ai-ml")
+            echo "ai-engineer backend-architect performance-benchmarker test-writer-fixer"
+            ;;
+        "api-service")
+            echo "backend-architect api-tester devops-automator performance-benchmarker"
+            ;;
+        "data-analytics")
+            echo "ai-engineer analytics-reporter performance-benchmarker test-writer-fixer"
+            ;;
+        "devops")
+            echo "devops-automator infrastructure-maintainer performance-benchmarker test-writer-fixer"
+            ;;
+        "marketing")
+            echo "growth-hacker content-creator app-store-optimizer analytics-reporter"
+            ;;
+        "ecommerce")
+            echo "frontend-developer backend-architect ui-designer finance-tracker"
+            ;;
+        *)
+            echo "frontend-developer backend-architect test-writer-fixer ui-designer"
+            ;;
+    esac
+}
+
+# Show project-type specific recommendations
+show_recommendations() {
+    printf "%s\n" "${BLUE}💡 Project-Type Recommendations:${NC}"
+    echo ""
+    echo "Choose a project type for optimized agent selection:"
+    echo "1) Web Application (frontend-developer, backend-architect, test-writer-fixer, ui-designer)"
+    echo "2) Mobile App (mobile-app-builder, ui-designer, app-store-optimizer, test-writer-fixer)"
+    echo "3) AI/ML Project (ai-engineer, backend-architect, performance-benchmarker, test-writer-fixer)"
+    echo "4) API Service (backend-architect, api-tester, devops-automator, performance-benchmarker)"
+    echo "5) Data Analytics (ai-engineer, analytics-reporter, performance-benchmarker, test-writer-fixer)"
+    echo "6) DevOps/Infrastructure (devops-automator, infrastructure-maintainer, performance-benchmarker, test-writer-fixer)"
+    echo "7) Marketing/Growth (growth-hacker, content-creator, app-store-optimizer, analytics-reporter)"
+    echo "8) E-commerce (frontend-developer, backend-architect, ui-designer, finance-tracker)"
+    echo "9) Custom selection"
+    echo ""
+    
+    read -p "Select project type (1-9): " project_choice
+    
+    case $project_choice in
+        1) get_project_recommendations "web-app" ;;
+        2) get_project_recommendations "mobile-app" ;;
+        3) get_project_recommendations "ai-ml" ;;
+        4) get_project_recommendations "api-service" ;;
+        5) get_project_recommendations "data-analytics" ;;
+        6) get_project_recommendations "devops" ;;
+        7) get_project_recommendations "marketing" ;;
+        8) get_project_recommendations "ecommerce" ;;
+        9) echo "custom" ;;
+        *) echo "" ;;
+    esac
+}
+
 # Add agents menu
 add_agents() {
     print_header
@@ -697,32 +848,60 @@ add_agents() {
     ls -1 .claude/agents/ 2>/dev/null | sed 's/\.md$//' | sed 's/^/  - /'
     echo ""
     
-    # Show available agents
-    echo "Available agents:"
-    echo ""
+    # Show recommendations first
+    recommended_agents=$(show_recommendations)
     
-    # List categories
-    for category in "$INSTALL_DIR"/agents/*/; do
-        if [ -d "$category" ]; then
-            cat_name=$(basename "$category")
-            if [ "$cat_name" != "starter" ]; then
-                echo "[$cat_name]"
-                for agent in "$category"*.md; do
-                    if [ -f "$agent" ]; then
-                        agent_name=$(basename "$agent" .md)
-                        echo "  - $agent_name"
-                    fi
-                done
-                echo ""
+    if [ "$recommended_agents" = "custom" ]; then
+        # Show available agents for custom selection
+        echo "Available agents:"
+        echo ""
+        
+        # List categories
+        for category in "$INSTALL_DIR"/agents/*/; do
+            if [ -d "$category" ]; then
+                cat_name=$(basename "$category")
+                if [ "$cat_name" != "starter" ]; then
+                    echo "[$cat_name]"
+                    for agent in "$category"*.md; do
+                        if [ -f "$agent" ]; then
+                            agent_name=$(basename "$agent" .md)
+                            echo "  - $agent_name"
+                        fi
+                    done
+                    echo ""
+                fi
             fi
+        done
+        
+        echo "Enter agent names to install (comma-separated), or 'exit' to cancel:"
+        read -r agent_selection
+        
+        if [ "$agent_selection" = "exit" ]; then
+            return
         fi
-    done
+    elif [ -n "$recommended_agents" ]; then
+        agent_selection="$recommended_agents"
+        printf "%s\n" "${GREEN}Installing recommended agents: $agent_selection${NC}"
+        echo ""
+    else
+        return
+    fi
     
-    echo "Enter agent names to install (comma-separated), or 'exit' to cancel:"
-    read -r agent_selection
-    
-    if [ "$agent_selection" != "exit" ]; then
+    # Install selected agents
+    if [ -n "$agent_selection" ]; then
+        printf "%s\n" "${YELLOW}⚠️  IMPORTANT: Context Restart Required${NC}"
+        printf "%s\n" "${YELLOW}After installation, you must restart Claude Code context to use new agents.${NC}"
+        printf "%s\n" "${YELLOW}Reason: Task tool only recognizes agents available at startup.${NC}"
+        echo ""
+        
+        read -p "Continue with installation? (y/n): " confirm
+        if [ "$confirm" != "y" ] && [ "$confirm" != "Y" ]; then
+            return
+        fi
+        
         IFS=',' read -ra AGENTS <<< "$agent_selection"
+        installed_count=0
+        
         for agent in "${AGENTS[@]}"; do
             agent=$(echo "$agent" | xargs) # trim whitespace
             # Find and copy agent
@@ -732,6 +911,7 @@ add_agents() {
                     cp "$category$agent.md" ".claude/agents/"
                     print_success "Installed $agent"
                     found=true
+                    installed_count=$((installed_count + 1))
                     break
                 fi
             done
@@ -739,6 +919,18 @@ add_agents() {
                 print_error "Agent '$agent' not found"
             fi
         done
+        
+        if [ $installed_count -gt 0 ]; then
+            echo ""
+            printf "%s\n" "${GREEN}✅ Successfully installed $installed_count agents${NC}"
+            echo ""
+            printf "%s\n" "${YELLOW}🔄 NEXT STEPS:${NC}"
+            printf "%s\n" "1. ${BLUE}Exit Claude Code${NC} (Ctrl+C or close terminal)"
+            printf "%s\n" "2. ${BLUE}Restart Claude Code${NC} from this directory: ${BLUE}claude${NC}"
+            printf "%s\n" "3. ${BLUE}Verify agents${NC} are available with: 'What agents do I have?'"
+            echo ""
+            printf "%s\n" "${GREEN}💡 TIP: Install related agents together to minimize restarts!${NC}"
+        fi
     fi
 }
 

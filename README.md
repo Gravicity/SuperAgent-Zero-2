@@ -104,9 +104,24 @@ Here's the integrated approach:
 ```
 User: "Install the backend architect"
 
-SuperAgent Zero: "Installing backend-architect agent... Done! 
-This agent specializes in designing scalable APIs and microservices. 
-Shall I deploy it to review your current architecture?"
+SuperAgent Zero: "⚠️  IMPORTANT: After installing agents, you'll need to restart Claude Code context.
+Reason: Task tool only recognizes agents available at startup.
+
+I recommend installing related agents together to minimize restarts.
+For your project type, I suggest: backend-architect, frontend-developer, test-writer-fixer, ui-designer
+
+Shall I install this complete set?"
+
+User: "Yes"
+
+SuperAgent Zero: "Installing web development agent set... Done!
+
+🔄 NEXT STEPS:
+1. Exit Claude Code (Ctrl+C)
+2. Restart Claude Code from this directory: claude
+3. Verify agents with: 'What agents do I have?'
+
+💡 TIP: These agents work great together for full-stack development!"
 ```
 
 ### Creating Custom Agents
@@ -139,7 +154,7 @@ your-project/
     └── memory/                # Persistent memory system
         ├── project.md         # Project evolution & preserved instructions
         ├── superagent.md      # SuperAgent's self-improvement log
-        ├── workflows.md       # Agent orchestration patterns
+        ├── workflows.md       # Agent orchestration patterns & batch installation guides
         ├── context.md         # Current session state
         ├── insights.md        # Technical discoveries
         └── evolution.md       # Agent performance tracking
@@ -247,9 +262,45 @@ Deploy memory-manager for sophisticated operations:
 
 ### Adding More Agents
 
+**⚠️ CRITICAL: Context Restart Required**
+
+After installing new agents, you **MUST restart Claude Code** context since the Task tool only recognizes agents available at startup.
+
 ```bash
+# Guided installation with project-type recommendations
 ~/.superagent-zero-2/setup.sh --add-agents
 ```
+
+**Project-Type Agent Combinations:**
+
+```bash
+# Web Application
+cp ~/.superagent-zero-2/agents/engineering/frontend-developer.md .claude/agents/
+cp ~/.superagent-zero-2/agents/engineering/backend-architect.md .claude/agents/
+cp ~/.superagent-zero-2/agents/engineering/test-writer-fixer.md .claude/agents/
+cp ~/.superagent-zero-2/agents/design/ui-designer.md .claude/agents/
+
+# Mobile App
+cp ~/.superagent-zero-2/agents/engineering/mobile-app-builder.md .claude/agents/
+cp ~/.superagent-zero-2/agents/design/ui-designer.md .claude/agents/
+cp ~/.superagent-zero-2/agents/marketing/app-store-optimizer.md .claude/agents/
+cp ~/.superagent-zero-2/agents/engineering/test-writer-fixer.md .claude/agents/
+
+# AI/ML Project
+cp ~/.superagent-zero-2/agents/engineering/ai-engineer.md .claude/agents/
+cp ~/.superagent-zero-2/agents/engineering/backend-architect.md .claude/agents/
+cp ~/.superagent-zero-2/agents/testing/performance-benchmarker.md .claude/agents/
+cp ~/.superagent-zero-2/agents/engineering/test-writer-fixer.md .claude/agents/
+
+# Then restart Claude Code context
+```
+
+**Installation Workflow:**
+1. **Analyze project type** (use project-analyzer if needed)
+2. **Install related agents together** (minimize restarts)
+3. **Exit Claude Code** (Ctrl+C or close terminal)
+4. **Restart Claude Code** from project directory: `claude`
+5. **Verify agents available**: "What agents do I have?"
 
 ### Creating Project-Specific Agents
 
@@ -378,9 +429,12 @@ A: Run `~/.superagent-zero-2/update.sh` or re-run the installer. Smart updates p
 - Restart Claude Code if needed
 
 ### Agents not deploying
+- **MOST COMMON**: Restart Claude Code context after installing new agents
+- Task tool only recognizes agents available at startup
 - Verify `.claude/agents/` directory exists
 - Check agent file format (proper frontmatter)
 - Ensure Claude Code has file system access
+- Use "What agents do I have?" to verify availability
 
 ### Memory not persisting
 - Check `.superagent/memory/` directory exists with all 6 memory files
