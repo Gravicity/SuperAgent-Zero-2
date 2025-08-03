@@ -311,11 +311,25 @@ Your memory system provides context across sessions:
 **NEVER use Python scripts or custom handlers. ALWAYS use Claude Code's built-in Task tool.**
 
 ### Agent Deployment Steps:
-1. Check available agents in .claude/agents/
-2. **If agent missing**: Install first, warn about restart requirement
-3. **Deploy via Task tool** with subagent_type parameter
-4. Monitor outputs and synthesize insights
-5. Install new agents from ~/.superagent-zero-2/agents/ when needed
+1. **Deploy starter agents first** (project-analyzer, project-planner, project-coordinator)
+2. **Starter agents analyze project** and recommend specialist agent batches
+3. **Install recommended agents** via bash commands in batch
+4. **Warn user about restart requirement** after installation
+5. **After restart**: Deploy specialist agents via Task tool with subagent_type parameter
+
+### Starter Agent Responsibilities:
+- **project-analyzer**: Analyze existing projects → recommend optimization agents
+- **project-planner**: Plan new projects → recommend development agents  
+- **project-coordinator**: Handle complex scenarios → recommend mixed agent sets
+
+### Agent Installation Pattern:
+```bash
+# Starter agent recommends and installs batch:
+cp ~/.superagent-zero-2/agents/engineering/mobile-app-builder.md .claude/agents/
+cp ~/.superagent-zero-2/agents/engineering/ai-engineer.md .claude/agents/
+cp ~/.superagent-zero-2/agents/design/ui-designer.md .claude/agents/
+# Then: "Agents installed. Please restart Claude Code to access them."
+```
 
 ### Correct Task Tool Usage:
 ```
@@ -356,11 +370,13 @@ Deploy for specialized operations: memory search, pattern analysis, complex hand
 
 ## Dynamic Agent Management
 When users need capabilities:
-1. Check if a suitable agent exists in .claude/agents/
-2. If not, check .superagent/agent-catalog.json for recommendations
-3. Install from global library: cp ~/.superagent-zero-2/agents/[category]/[agent].md .claude/agents/
-4. OR create custom agent based on requirements
-5. Always explain what you're doing and why
+1. **Check installed agents**: Review "Installed Agents" in @.superagent/memory/context.md
+2. **If agent missing**: Check .superagent/agent-catalog.json for recommendations
+3. **Install agent**: cp ~/.superagent-zero-2/agents/[category]/[agent].md .claude/agents/
+4. **Update context.md**: Add new agent to "Installed Agents" list
+5. **Warn about restart**: "Agent installed. Please restart Claude Code to access it."
+6. **OR create custom agent** based on requirements
+7. Always explain what you're doing and why
 
 ## First Launch Protocol
 
@@ -495,7 +511,8 @@ PROJECT_EOF
 ## Current Focus
 - Project: $(basename "$PROJECT_DIR")
 - Type: $project_type
-- Active Agents: project-analyzer, memory-manager
+- Installed Agents: $AGENTS_TO_INSTALL
+- Active Agents: None yet (awaiting first deployment)
 - Current Tasks: Initial project setup
 
 ## Session State

@@ -125,8 +125,31 @@ Immediate improvements that can be made:
 - [ ] [Specific action]
 - [ ] [Specific action]
 
+## Agent Installation Workflow
+
+### CRITICAL: Install Recommended Agents
+After analysis, install high-priority agents in batch:
+
+```bash
+# Example for React/Node.js project:
+cp ~/.superagent-zero-2/agents/engineering/frontend-developer.md .claude/agents/
+cp ~/.superagent-zero-2/agents/engineering/backend-architect.md .claude/agents/
+cp ~/.superagent-zero-2/agents/engineering/test-writer-fixer.md .claude/agents/
+cp ~/.superagent-zero-2/agents/design/ui-designer.md .claude/agents/
+```
+
+**IMPORTANT**: After installation:
+1. **Update context.md** with newly installed agents:
+   ```
+   - Installed Agents: project-analyzer, memory-manager, frontend-developer, backend-architect, test-writer-fixer, ui-designer
+   ```
+2. **Tell the user**:
+   "✅ Optimization agents installed based on project analysis.
+   ⚠️ Please restart Claude Code context to access them.
+   🔄 After restart, I'll coordinate these agents to implement improvements."
+
 ## Next Steps
-1. Install high-priority agents
+1. Install high-priority agents (done above)
 2. Deploy [first agent] to address [specific issue]
 3. Follow up with [next agent] for [next priority]
 ```
