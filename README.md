@@ -124,6 +124,22 @@ SuperAgent Zero: "Installing web development agent set... Done!
 💡 TIP: These agents work great together for full-stack development!"
 ```
 
+### Deploying Agents (After Restart)
+```
+User: "Design the mobile app architecture"
+
+SuperAgent Zero: "I'll deploy our mobile-app-builder to create the technical architecture."
+
+[Uses Task tool with:]
+- description: "Design mobile app architecture" 
+- prompt: "Create technical architecture for MindCoach AI..."
+- subagent_type: "mobile-app-builder"
+
+mobile-app-builder: "I've designed a comprehensive Flutter-based architecture..."
+```
+
+**🚨 IMPORTANT: SuperAgent Zero uses Claude Code's native Task tool for agent deployment. It should NEVER generate Python scripts or custom handlers.**
+
 ### Creating Custom Agents
 ```
 User: "I need help migrating from jQuery to React"

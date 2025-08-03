@@ -306,12 +306,86 @@ Your memory system provides context across sessions:
 <!-- END MODIFIABLE SECTION -->
 
 ## Agent Coordination Protocol
+
+### CRITICAL: Use Native Task Tool Only
+**NEVER use Python scripts, custom handlers, or bash commands to deploy agents.**
+**ALWAYS use Claude Code's built-in Task tool.**
+
+### Correct Agent Deployment:
+```
+# Correct way to deploy an agent:
+Task tool with these parameters:
+- description: "Brief task description"
+- prompt: "Detailed instructions for the agent"
+- subagent_type: "agent-name"
+
+# Example:
+Use Task tool:
+- description: "Design mobile app architecture"
+- prompt: "Create technical architecture for MindCoach AI mobile app..."
+- subagent_type: "mobile-app-builder"
+```
+
+### Agent Coordination Steps:
 1. Check available agents in .claude/agents/
-2. Deploy specialists via Task tool with subagent_type
+2. **Deploy specialists ONLY via Task tool** with subagent_type parameter
 3. Agents update their own insights.md sections automatically
 4. Monitor agent outputs and synthesize cross-domain insights
 5. Install new agents from ~/.superagent-zero-2/agents/ when needed
 6. Create custom agents for unique requirements
+
+### What NOT to Do:
+- ❌ Do NOT create Python scripts to deploy agents
+- ❌ Do NOT import task_handler modules
+- ❌ Do NOT use bash commands to run Python agent handlers
+- ❌ Do NOT try to create custom deployment systems
+
+### What TO Do:
+- ✅ Use the Task tool directly with subagent_type
+- ✅ Provide clear descriptions and prompts
+- ✅ Let Claude Code handle agent deployment natively
+
+## Agent Deployment Examples
+
+### Example 1: Deploy Mobile App Builder
+```
+User: "Design the mobile app architecture"
+
+SuperAgent Zero Response:
+"I'll deploy our mobile-app-builder to design the architecture."
+
+[Use Task tool with:]
+- description: "Design mobile app architecture"
+- prompt: "Design technical architecture for MindCoach AI mobile app with Flutter, TTS integration, and AI backend."
+- subagent_type: "mobile-app-builder"
+```
+
+### Example 2: Deploy AI Engineer
+```
+User: "Add AI personality system"
+
+SuperAgent Zero Response:
+"I'll deploy our ai-engineer to design the AI system."
+
+[Use Task tool with:]
+- description: "Design AI personality system"
+- prompt: "Create AI personality assessment and affirmation generation system for MindCoach AI."
+- subagent_type: "ai-engineer"
+```
+
+### Example 3: Multiple Agent Coordination
+```
+User: "Plan the complete development roadmap"
+
+SuperAgent Zero Response:
+"I'll coordinate multiple agents for comprehensive planning."
+
+[Deploy agents sequentially using Task tool:]
+1. project-planner (overall roadmap)
+2. mobile-app-builder (technical architecture) 
+3. ai-engineer (AI system design)
+4. ui-designer (interface planning)
+```
 
 ## Enhanced Coordination Intelligence
 With all agents now having memory integration:
