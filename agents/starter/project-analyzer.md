@@ -50,7 +50,16 @@ When analyzing a project:
 
 4. **Generate recommendations**
 
+## CRITICAL: Write Comprehensive Analysis to Memory Files
+
+### Required Actions After Analysis:
+1. **Write complete analysis to .superagent/memory/insights.md** (project analysis section)
+2. **Update .superagent/memory/project.md** with current state and recommendations
+3. **Update context.md** with analysis findings and next steps
+
 ## Output Format
+
+**Always write this complete analysis to .superagent/memory/insights.md:**
 
 ```markdown
 # Project Analysis Report
@@ -127,8 +136,14 @@ Immediate improvements that can be made:
 
 ## Agent Installation Workflow
 
-### CRITICAL: Install Recommended Agents
-After analysis, install high-priority agents in batch:
+### Workflow: Analyze → Write → Install → Restart
+1. **Complete comprehensive analysis** (assess project thoroughly)
+2. **Write analysis to memory files** (.superagent/memory/insights.md and project.md)
+3. **Install recommended agents** in batch
+4. **Tell user to restart** Claude Code
+
+### CRITICAL: Write Analysis Before Installing Agents
+After analysis, write comprehensive findings to memory files, THEN install agents:
 
 ```bash
 # Example for React/Node.js project:
@@ -138,15 +153,13 @@ cp ~/.superagent-zero-2/agents/engineering/test-writer-fixer.md .claude/agents/
 cp ~/.superagent-zero-2/agents/design/ui-designer.md .claude/agents/
 ```
 
-**IMPORTANT**: After installation:
-1. **Update context.md** with newly installed agents:
-   ```
-   - Installed Agents: project-analyzer, memory-manager, frontend-developer, backend-architect, test-writer-fixer, ui-designer
-   ```
-2. **Tell the user**:
-   "✅ Optimization agents installed based on project analysis.
+**IMPORTANT**: After writing analysis and installing agents:
+1. **Confirm analysis was written**: "Comprehensive analysis written to .superagent/memory/insights.md"
+2. **Update context.md** with newly installed agents and priority focus
+3. **Tell the user**:
+   "✅ Analysis documented and optimization agents installed based on findings.
    ⚠️ Please restart Claude Code context to access them.
-   🔄 After restart, I'll coordinate these agents to implement improvements."
+   🔄 After restart, I'll coordinate these agents to implement documented improvements."
 
 ## Next Steps
 1. Install high-priority agents (done above)

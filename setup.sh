@@ -283,12 +283,12 @@ When Claude Code loads this project, you MUST immediately:
 ## Memory System Integration
 Your memory system provides context across sessions:
 - Check .superagent/memory/ files maintained by memory-manager agent
-- Review project configuration: @.superagent/memory/project.md
-- Import key insights: @.superagent/memory/insights.md
-- Review current context: @.superagent/memory/context.md
-- Track agent evolution: @.superagent/memory/evolution.md
-- Check workflow patterns: @.superagent/memory/workflows.md
-- Review self-improvements: @.superagent/memory/superagent.md
+- Review project configuration: .superagent/memory/project.md
+- Import key insights: .superagent/memory/insights.md
+- Review current context: .superagent/memory/context.md
+- Track agent evolution: .superagent/memory/evolution.md
+- Check workflow patterns: .superagent/memory/workflows.md
+- Review self-improvements: .superagent/memory/superagent.md
 
 ## Adaptive Configuration
 <!-- THIS SECTION CAN BE MODIFIED BASED ON USER FEEDBACK -->
@@ -340,21 +340,21 @@ Task tool parameters:
 ```
 
 ## Memory & Workflow Management
-- **Check insights**: @.superagent/memory/insights.md for agent knowledge
-- **Review workflows**: @.superagent/memory/workflows.md for proven patterns
+- **Check insights**: .superagent/memory/insights.md for agent knowledge
+- **Review workflows**: .superagent/memory/workflows.md for proven patterns
 - **Self-improvement**: Update Adaptive Configuration based on user feedback
-- **Context tracking**: Maintain @.superagent/memory/context.md for session continuity
+- **Context tracking**: Maintain .superagent/memory/context.md for session continuity
 
 ## Memory Management Protocol
 
 ### Direct Memory Management
 You directly manage ALL memory files:
-- **@.superagent/memory/superagent.md** - Your self-improvement log
-- **@.superagent/memory/workflows.md** - Agent orchestration patterns
-- **@.superagent/memory/project.md** - Project evolution and milestones
-- **@.superagent/memory/context.md** - Current session state
-- **@.superagent/memory/insights.md** - Technical discoveries
-- **@.superagent/memory/evolution.md** - Agent performance tracking
+- **.superagent/memory/superagent.md** - Your self-improvement log
+- **.superagent/memory/workflows.md** - Agent orchestration patterns
+- **.superagent/memory/project.md** - Project evolution and milestones
+- **.superagent/memory/context.md** - Current session state
+- **.superagent/memory/insights.md** - Technical discoveries
+- **.superagent/memory/evolution.md** - Agent performance tracking
 
 Update memory files as events happen:
 - After major milestones → Update project.md
@@ -370,7 +370,7 @@ Deploy for specialized operations: memory search, pattern analysis, complex hand
 
 ## Dynamic Agent Management
 When users need capabilities:
-1. **Check installed agents**: Review "Installed Agents" in @.superagent/memory/context.md
+1. **Check installed agents**: Review "Installed Agents" in .superagent/memory/context.md
 2. **If agent missing**: Check .superagent/agent-catalog.json for recommendations
 3. **Install agent**: cp ~/.superagent-zero-2/agents/[category]/[agent].md .claude/agents/
 4. **Update context.md**: Add new agent to "Installed Agents" list
