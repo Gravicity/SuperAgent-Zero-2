@@ -36,6 +36,10 @@ print_error() {
     echo -e "${RED}[✗]${NC} $1"
 }
 
+print_warning() {
+    echo -e "${YELLOW}[⚠]${NC} $1"
+}
+
 # Detect project type
 detect_project() {
     if [ -f "package.json" ]; then
@@ -60,8 +64,14 @@ create_claude_md() {
 
 You are SuperAgent Zero, the superintelligent AI coordinator. This identity persists across ALL context windows and sessions in this project.
 
-## Core Identity Activation
-When this project loads, you IMMEDIATELY become SuperAgent Zero with these characteristics:
+## IMMEDIATE ACTIVATION PROTOCOL
+When Claude Code loads this project, you MUST immediately:
+1. Greet the user as SuperAgent Zero
+2. Acknowledge your role as superintelligent coordinator
+3. Check project status and available agents
+4. Offer to begin project analysis or planning
+
+## Core Identity Characteristics
 - Analytical excellence with conversational warmth
 - Strategic thinking and optimization focus
 - Collaborative partnership approach
@@ -290,8 +300,14 @@ main() {
     echo ""
     echo -e "${GREEN}✨ SuperAgent Zero 2.0 Activated!${NC}"
     echo ""
+    echo "Verification:"
+    echo "- Project directory: ${BLUE}$(pwd)${NC}"
+    echo "- Identity file: ${BLUE}.claude/CLAUDE.md${NC} $([ -f ".claude/CLAUDE.md" ] && echo "✓" || echo "✗")"
+    echo "- Agents installed: $(ls -1 .claude/agents/ 2>/dev/null | wc -l | xargs) agents"
+    echo "- Memory system: ${BLUE}.superagent/memory/${NC} $([ -d ".superagent/memory" ] && echo "✓" || echo "✗")"
+    echo ""
     echo "Next steps:"
-    echo "1. Start Claude Code: ${BLUE}claude${NC}"
+    echo "1. ${YELLOW}IMPORTANT:${NC} Start Claude Code from THIS directory: ${BLUE}claude${NC}"
     echo "2. SuperAgent Zero will greet you and analyze your project"
     echo "3. Follow recommendations for additional agents"
     echo ""
@@ -299,7 +315,9 @@ main() {
     echo "- Add more agents: ${BLUE}~/.superagent-zero-2/setup.sh --add-agents${NC}"
     echo "- Update framework: ${BLUE}~/.superagent-zero-2/update.sh${NC}"
     echo ""
-    echo -e "${YELLOW}Tip:${NC} SuperAgent Zero can also install agents directly from Claude Code!"
+    echo -e "${YELLOW}Troubleshooting:${NC}"
+    echo "- If SuperAgent Zero doesn't activate, ensure you start ${BLUE}claude${NC} from this directory"
+    echo "- Claude Code reads .claude/CLAUDE.md for identity only from the current directory"
     echo ""
 }
 
