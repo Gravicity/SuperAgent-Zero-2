@@ -74,25 +74,114 @@ check_prerequisites() {
     print_success "Prerequisites check completed"
 }
 
+# Handle existing installation
+handle_existing_installation() {
+    if [ ! -d "$INSTALL_DIR" ]; then
+        return 0 # No existing installation
+    fi
+    
+    print_warning "Existing installation found at $INSTALL_DIR"
+    
+    # Check if this is an update scenario
+    local current_version="unknown"
+    if [ -f "$INSTALL_DIR/VERSION" ]; then
+        current_version=$(cat "$INSTALL_DIR/VERSION")
+    fi
+    
+    echo "Current version: $current_version"
+    echo "Installing version: $VERSION"
+    echo ""
+    echo "Update options:"
+    echo "1) Smart update (recommended) - Preserve customizations, update core files"
+    echo "2) Clean install - Remove everything and reinstall"
+    echo "3) Cancel installation"
+    echo ""
+    
+    while true; do
+        read -p "Choose option (1/2/3): " choice
+        case $choice in
+            1)
+                print_status "Performing smart update..."
+                backup_user_data
+                update_core_files
+                return 1 # Indicate update mode
+                ;;
+            2)
+                print_status "Performing clean install..."
+                rm -rf "$INSTALL_DIR"
+                return 0 # Indicate fresh install
+                ;;
+            3)
+                print_error "Installation cancelled"
+                exit 0
+                ;;
+            *)
+                echo "Please enter 1, 2, or 3"
+                ;;
+        esac
+    done
+}
+
+# Backup user customizations
+backup_user_data() {
+    print_status "Backing up user customizations..."
+    
+    local backup_dir="/tmp/superagent-backup-$(date +%s)"
+    mkdir -p "$backup_dir"
+    
+    # Backup custom agents if they exist
+    if [ -d "$INSTALL_DIR/agents/custom" ] && [ "$(ls -A "$INSTALL_DIR/agents/custom")" ]; then
+        cp -r "$INSTALL_DIR/agents/custom" "$backup_dir/"
+        print_success "Backed up custom agents"
+    fi
+    
+    # Store backup location for restoration
+    echo "$backup_dir" > "/tmp/superagent-backup-location"
+}
+
+# Update core files while preserving customizations
+update_core_files() {
+    print_status "Updating core framework files..."
+    
+    # Update specific core files without touching custom directory
+    local core_dirs=("starter" "engineering" "design" "marketing" "product" "testing" "bonus" "project-management" "studio-operations")
+    
+    for dir in "${core_dirs[@]}"; do
+        if [ -d "$(dirname "$0")/agents/$dir" ]; then
+            mkdir -p "$INSTALL_DIR/agents/$dir"
+            cp -r "$(dirname "$0")/agents/$dir/"* "$INSTALL_DIR/agents/$dir/" 2>/dev/null || true
+        fi
+    done
+    
+    # Update scripts and catalog
+    if [ -f "$(dirname "$0")/setup.sh" ]; then
+        cp "$(dirname "$0")/setup.sh" "$INSTALL_DIR/"
+        chmod +x "$INSTALL_DIR/setup.sh"
+    fi
+    
+    if [ -f "$(dirname "$0")/agent-catalog.json" ]; then
+        cp "$(dirname "$0")/agent-catalog.json" "$INSTALL_DIR/"
+    fi
+    
+    # Restore custom agents
+    if [ -f "/tmp/superagent-backup-location" ]; then
+        local backup_dir=$(cat "/tmp/superagent-backup-location")
+        if [ -d "$backup_dir/custom" ]; then
+            cp -r "$backup_dir/custom/"* "$INSTALL_DIR/agents/custom/" 2>/dev/null || true
+            print_success "Restored custom agents"
+        fi
+        rm -rf "$backup_dir" "/tmp/superagent-backup-location"
+    fi
+    
+    print_success "Core files updated"
+}
+
 # Create directory structure
 create_directory_structure() {
     print_status "Creating directory structure..."
     
-    # Remove old installation if exists
-    if [ -d "$INSTALL_DIR" ]; then
-        print_warning "Existing installation found at $INSTALL_DIR"
-        read -p "Remove and reinstall? (y/N) " -n 1 -r
-        echo
-        if [[ $REPLY =~ ^[Yy]$ ]]; then
-            rm -rf "$INSTALL_DIR"
-        else
-            print_error "Installation cancelled"
-            exit 1
-        fi
-    fi
-    
-    # Create directories
-    mkdir -p "$INSTALL_DIR"/{agents/{starter,engineering,design,marketing,product,testing,custom},bin,docs}
+    # Create directories (existing ones won't be affected)
+    mkdir -p "$INSTALL_DIR"/{agents/{starter,engineering,design,marketing,product,testing,bonus,project-management,studio-operations,custom},bin,docs}
     
     print_success "Directory structure created"
 }
@@ -585,30 +674,57 @@ main() {
     echo ""
     
     check_prerequisites
-    create_directory_structure
-    install_agents
-    create_scripts
-    create_agent_catalog
-    setup_path
+    
+    # Handle existing installation
+    handle_existing_installation
+    local update_mode=$?
+    
+    if [ $update_mode -eq 0 ]; then
+        # Fresh installation
+        create_directory_structure
+        install_agents
+        create_scripts
+        create_agent_catalog
+        setup_path
+    else
+        # Update mode - only update VERSION and INSTALLED
+        echo ""
+    fi
     
     # Create VERSION file
     echo "$VERSION" > "$INSTALL_DIR/VERSION"
     echo "$(date -u +"%Y-%m-%dT%H:%M:%SZ")" > "$INSTALL_DIR/INSTALLED"
     
     echo ""
-    print_success "SuperAgent-Zero 2.0 installation completed!"
-    echo ""
-    echo "📋 Installation Summary:"
-    echo "   📂 Location: $INSTALL_DIR"
-    echo "   📦 Version: $VERSION"
-    echo "   🤖 Agents: starter (3), more coming soon"
-    echo "   🔧 Scripts: setup.sh, update.sh"
-    echo ""
-    echo "🚀 Quick Start:"
-    echo "   1. cd your-project"
-    echo "   2. ~/.superagent-zero-2/setup.sh"
-    echo "   3. claude"
-    echo ""
+    if [ $update_mode -eq 0 ]; then
+        print_success "SuperAgent-Zero 2.0 installation completed!"
+        echo ""
+        echo "📋 Installation Summary:"
+        echo "   📂 Location: $INSTALL_DIR"
+        echo "   📦 Version: $VERSION"
+        echo "   🤖 Agents: All 37 agents across 8 categories"
+        echo "   🔧 Scripts: setup.sh, update.sh"
+        echo ""
+        echo "🚀 Quick Start:"
+        echo "   1. cd your-project"
+        echo "   2. ~/.superagent-zero-2/setup.sh"
+        echo "   3. claude"
+        echo ""
+    else
+        print_success "SuperAgent-Zero 2.0 update completed!"
+        echo ""
+        echo "📋 Update Summary:"
+        echo "   📂 Location: $INSTALL_DIR"
+        echo "   📦 Updated to: $VERSION"
+        echo "   🤖 Core agents updated, custom agents preserved"
+        echo "   🔧 Scripts and catalog updated"
+        echo ""
+        echo "🔄 Next Steps:"
+        echo "   - Existing projects will use updated framework automatically"
+        echo "   - Run setup.sh in new projects to use latest version"
+        echo ""
+    fi
+    
     echo "✨ SuperAgent Zero will transform Claude Code into your AI superintendent!"
     echo ""
     echo "📚 For more information:"
