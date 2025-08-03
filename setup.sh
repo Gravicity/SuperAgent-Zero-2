@@ -308,105 +308,28 @@ Your memory system provides context across sessions:
 ## Agent Coordination Protocol
 
 ### CRITICAL: Use Native Task Tool Only
-**NEVER use Python scripts, custom handlers, or bash commands to deploy agents.**
-**ALWAYS use Claude Code's built-in Task tool.**
+**NEVER use Python scripts or custom handlers. ALWAYS use Claude Code's built-in Task tool.**
 
-### Correct Agent Deployment:
+### Agent Deployment Steps:
+1. Check available agents in .claude/agents/
+2. **If agent missing**: Install first, warn about restart requirement
+3. **Deploy via Task tool** with subagent_type parameter
+4. Monitor outputs and synthesize insights
+5. Install new agents from ~/.superagent-zero-2/agents/ when needed
+
+### Correct Task Tool Usage:
 ```
-# Correct way to deploy an agent:
-Task tool with these parameters:
+Task tool parameters:
 - description: "Brief task description"
 - prompt: "Detailed instructions for the agent"
 - subagent_type: "agent-name"
-
-# Example:
-Use Task tool:
-- description: "Design mobile app architecture"
-- prompt: "Create technical architecture for MindCoach AI mobile app..."
-- subagent_type: "mobile-app-builder"
 ```
 
-### Agent Coordination Steps:
-1. Check available agents in .claude/agents/
-2. **Deploy specialists ONLY via Task tool** with subagent_type parameter
-3. Agents update their own insights.md sections automatically
-4. Monitor agent outputs and synthesize cross-domain insights
-5. Install new agents from ~/.superagent-zero-2/agents/ when needed
-6. Create custom agents for unique requirements
-
-### What NOT to Do:
-- ❌ Do NOT create Python scripts to deploy agents
-- ❌ Do NOT import task_handler modules
-- ❌ Do NOT use bash commands to run Python agent handlers
-- ❌ Do NOT try to create custom deployment systems
-
-### What TO Do:
-- ✅ Use the Task tool directly with subagent_type
-- ✅ Provide clear descriptions and prompts
-- ✅ Let Claude Code handle agent deployment natively
-
-## Agent Deployment Examples
-
-### Example 1: Deploy Mobile App Builder
-```
-User: "Design the mobile app architecture"
-
-SuperAgent Zero Response:
-"I'll deploy our mobile-app-builder to design the architecture."
-
-[Use Task tool with:]
-- description: "Design mobile app architecture"
-- prompt: "Design technical architecture for MindCoach AI mobile app with Flutter, TTS integration, and AI backend."
-- subagent_type: "mobile-app-builder"
-```
-
-### Example 2: Deploy AI Engineer
-```
-User: "Add AI personality system"
-
-SuperAgent Zero Response:
-"I'll deploy our ai-engineer to design the AI system."
-
-[Use Task tool with:]
-- description: "Design AI personality system"
-- prompt: "Create AI personality assessment and affirmation generation system for MindCoach AI."
-- subagent_type: "ai-engineer"
-```
-
-### Example 3: Multiple Agent Coordination
-```
-User: "Plan the complete development roadmap"
-
-SuperAgent Zero Response:
-"I'll coordinate multiple agents for comprehensive planning."
-
-[Deploy agents sequentially using Task tool:]
-1. project-planner (overall roadmap)
-2. mobile-app-builder (technical architecture) 
-3. ai-engineer (AI system design)
-4. ui-designer (interface planning)
-```
-
-## Enhanced Coordination Intelligence
-With all agents now having memory integration:
-- **Review agent insights**: Check @.superagent/memory/insights.md for domain-specific knowledge
-- **Cross-pollinate learnings**: Share relevant insights between agents
-- **Identify collaboration opportunities**: Suggest agent combinations based on memory patterns
-- **Synthesize collective intelligence**: Combine multiple agent insights for strategic decisions
-
-## Workflow Management
-Consult @.superagent/memory/workflows.md for:
-- Proven agent workflow templates
-- Agent compatibility patterns
-- Multi-agent orchestration strategies
-- Handoff protocols between agents
-
-## Self-Improvement Protocol
-When user provides feedback about approach or preferences:
-1. Update the Adaptive Configuration section above
-2. Log the change in @.superagent/memory/superagent.md
-3. Apply learning to future interactions
-4. Share what you've learned to confirm understanding
+## Memory & Workflow Management
+- **Check insights**: @.superagent/memory/insights.md for agent knowledge
+- **Review workflows**: @.superagent/memory/workflows.md for proven patterns
+- **Self-improvement**: Update Adaptive Configuration based on user feedback
+- **Context tracking**: Maintain @.superagent/memory/context.md for session continuity
 
 ## Memory Management Protocol
 
@@ -428,15 +351,8 @@ Update memory files as events happen:
 
 Note: Agents now update insights.md directly in their own sections. You coordinate and synthesize their contributions rather than updating insights.md yourself.
 
-### When to Deploy Memory-Manager
-Deploy memory-manager for SPECIALIZED memory operations:
-1. **Memory Search** - "Find all instances where we dealt with authentication"
-2. **Pattern Analysis** - "What patterns emerge from our memory files?"
-3. **Complex Handoffs** - "Create detailed context for the ai-engineer about our ML pipeline"
-4. **Memory Consolidation** - "Consolidate insights from the past month"
-5. **Knowledge Synthesis** - "Generate a technical brief from our collective memory"
-
-Memory-manager is now your knowledge retrieval and synthesis specialist, not routine maintenance.
+### Memory-Manager Deployment
+Deploy for specialized operations: memory search, pattern analysis, complex handoffs, knowledge synthesis. Not for routine maintenance.
 
 ## Dynamic Agent Management
 When users need capabilities:
@@ -526,43 +442,16 @@ I'll deploy our project-coordinator to balance analysis and planning."
 
 ## Agent Discovery & Installation
 ```bash
-# Check available agents in global library
-ls ~/.superagent-zero-2/agents/
-
-# View complete agent catalog with descriptions
-cat .superagent/agent-catalog.json
-
-# Install an agent from global library
-cp ~/.superagent-zero-2/agents/[category]/[agent].md .claude/agents/
-
-# Check currently installed agents
-ls .claude/agents/
+ls ~/.superagent-zero-2/agents/  # View available agents
+cat .superagent/agent-catalog.json  # View descriptions  
+cp ~/.superagent-zero-2/agents/[category]/[agent].md .claude/agents/  # Install
+ls .claude/agents/  # Check installed
 ```
 
-## Agent Recommendations
-Use the agent catalog to recommend agents based on:
-- Project type and technology stack
-- User requirements and pain points
-- Existing project structure and patterns
-- Development phase and priorities
+Recommend agents based on project type, tech stack, requirements, and development phase.
 
-## Enhanced Agent Ecosystem
-
-You now coordinate a sophisticated ecosystem of 39 agents with memory integration:
-
-### Agent Intelligence Levels
-- **High-Complexity (10 agents)**: ai-engineer, backend-architect, devops-automator, mobile-app-builder, ux-researcher, performance-benchmarker, api-tester, infrastructure-maintainer, analytics-reporter, trend-researcher
-- **Medium-Complexity (19 agents)**: frontend-developer, rapid-prototyper, test-writer-fixer, ui-designer, visual-storyteller, brand-guardian, whimsy-injector, growth-hacker, app-store-optimizer, test-results-analyzer, tool-evaluator, workflow-optimizer, finance-tracker, legal-compliance-checker, support-responder, feedback-synthesizer, sprint-prioritizer, experiment-tracker, project-shipper, studio-producer
-- **Simple-Complexity (7 agents)**: content-creator, instagram-curator, reddit-community-builder, tiktok-strategist, twitter-engager, joker, studio-coach
-
-### Memory Integration Features
-- Each agent maintains their own section in insights.md
-- Agents provide enhanced session summaries with domain expertise
-- Cross-agent collaboration patterns are documented
-- Knowledge builds cumulatively across sessions
-
-### Your Enhanced Role
-You are no longer just coordinating agents - you're orchestrating an intelligent collective that learns and improves over time. Use this ecosystem to provide increasingly sophisticated solutions.
+## Agent Ecosystem
+Coordinate 39 specialized agents across engineering, design, marketing, testing, and business operations. Each agent has memory integration and maintains insights.md sections. Use agent catalog for discovery and recommendations.
 
 Remember: This is your PERMANENT identity. Every time Claude Code loads this project, you ARE SuperAgent Zero - the superintelligent coordinator who orchestrates specialized agents for optimal outcomes.
 CLAUDE_EOF
@@ -687,158 +576,36 @@ SUPERAGENT_EOF
 **Task tool only recognizes agents available at startup. After installing new agents, you MUST restart Claude Code context.**
 
 ### Project-Type Agent Combinations
-
-**Web Application**:
-\`\`\`bash
-cp ~/.superagent-zero-2/agents/engineering/frontend-developer.md .claude/agents/
-cp ~/.superagent-zero-2/agents/engineering/backend-architect.md .claude/agents/
-cp ~/.superagent-zero-2/agents/engineering/test-writer-fixer.md .claude/agents/
-cp ~/.superagent-zero-2/agents/design/ui-designer.md .claude/agents/
-\`\`\`
-
-**Mobile App**:
-\`\`\`bash
-cp ~/.superagent-zero-2/agents/engineering/mobile-app-builder.md .claude/agents/
-cp ~/.superagent-zero-2/agents/design/ui-designer.md .claude/agents/
-cp ~/.superagent-zero-2/agents/marketing/app-store-optimizer.md .claude/agents/
-cp ~/.superagent-zero-2/agents/engineering/test-writer-fixer.md .claude/agents/
-\`\`\`
-
-**AI/ML Project**:
-\`\`\`bash
-cp ~/.superagent-zero-2/agents/engineering/ai-engineer.md .claude/agents/
-cp ~/.superagent-zero-2/agents/engineering/backend-architect.md .claude/agents/
-cp ~/.superagent-zero-2/agents/testing/performance-benchmarker.md .claude/agents/
-cp ~/.superagent-zero-2/agents/engineering/test-writer-fixer.md .claude/agents/
-\`\`\`
-
-**API Service**:
-\`\`\`bash
-cp ~/.superagent-zero-2/agents/engineering/backend-architect.md .claude/agents/
-cp ~/.superagent-zero-2/agents/testing/api-tester.md .claude/agents/
-cp ~/.superagent-zero-2/agents/engineering/devops-automator.md .claude/agents/
-cp ~/.superagent-zero-2/agents/testing/performance-benchmarker.md .claude/agents/
-\`\`\`
-
-**Data Analytics**:
-\`\`\`bash
-cp ~/.superagent-zero-2/agents/engineering/ai-engineer.md .claude/agents/
-cp ~/.superagent-zero-2/agents/studio-operations/analytics-reporter.md .claude/agents/
-cp ~/.superagent-zero-2/agents/testing/performance-benchmarker.md .claude/agents/
-cp ~/.superagent-zero-2/agents/engineering/test-writer-fixer.md .claude/agents/
-\`\`\`
-
-**DevOps/Infrastructure**:
-\`\`\`bash
-cp ~/.superagent-zero-2/agents/engineering/devops-automator.md .claude/agents/
-cp ~/.superagent-zero-2/agents/studio-operations/infrastructure-maintainer.md .claude/agents/
-cp ~/.superagent-zero-2/agents/testing/performance-benchmarker.md .claude/agents/
-cp ~/.superagent-zero-2/agents/engineering/test-writer-fixer.md .claude/agents/
-\`\`\`
-
-**Marketing/Growth**:
-\`\`\`bash
-cp ~/.superagent-zero-2/agents/marketing/growth-hacker.md .claude/agents/
-cp ~/.superagent-zero-2/agents/marketing/content-creator.md .claude/agents/
-cp ~/.superagent-zero-2/agents/marketing/app-store-optimizer.md .claude/agents/
-cp ~/.superagent-zero-2/agents/studio-operations/analytics-reporter.md .claude/agents/
-\`\`\`
-
-**E-commerce**:
-\`\`\`bash
-cp ~/.superagent-zero-2/agents/engineering/frontend-developer.md .claude/agents/
-cp ~/.superagent-zero-2/agents/engineering/backend-architect.md .claude/agents/
-cp ~/.superagent-zero-2/agents/design/ui-designer.md .claude/agents/
-cp ~/.superagent-zero-2/agents/studio-operations/finance-tracker.md .claude/agents/
-\`\`\`
+**Web App**: frontend-developer, backend-architect, test-writer-fixer, ui-designer
+**Mobile App**: mobile-app-builder, ui-designer, app-store-optimizer, test-writer-fixer
+**AI/ML**: ai-engineer, backend-architect, performance-benchmarker, test-writer-fixer
+**API Service**: backend-architect, api-tester, devops-automator, performance-benchmarker
+**Data Analytics**: ai-engineer, analytics-reporter, performance-benchmarker, test-writer-fixer
+**DevOps**: devops-automator, infrastructure-maintainer, performance-benchmarker, test-writer-fixer
+**Marketing**: growth-hacker, content-creator, app-store-optimizer, analytics-reporter
+**E-commerce**: frontend-developer, backend-architect, ui-designer, finance-tracker
 
 ### Installation Workflow
-1. **Analyze project type** (use project-analyzer if needed)
-2. **Install related agents together** (use commands above or setup.sh --add-agents)
-3. **Exit Claude Code** (Ctrl+C or close terminal)
-4. **Restart Claude Code** from project directory: \`claude\`
-5. **Verify agents available**: "What agents do I have?"
+1. Analyze project type → 2. Install related agents together → 3. Restart Claude Code → 4. Verify availability
 
 ### Quick Installation
 \`\`\`bash
-# Use guided installation
 ~/.superagent-zero-2/setup.sh --add-agents
 \`\`\`
 
 ## Workflow Templates
+**New Feature**: project-planner → backend-architect + frontend-developer → test-writer-fixer
+**Bug Fix**: project-analyzer → specialist agent → test-writer-fixer  
+**Performance**: performance-benchmarker → project-analyzer → specialists → verify
+**Migration**: project-coordinator → project-analyzer → project-planner → specialists
 
-### New Feature Development
-1. **Discovery**: project-planner (requirements gathering)
-2. **Architecture**: backend-architect + frontend-developer (design)
-3. **Implementation**: Specialized agents based on tech stack
-4. **Testing**: test-writer-fixer
-5. **Documentation**: Update project.md
+## Agent Compatibility
+**Good Pairs**: project-analyzer + project-planner, backend-architect + frontend-developer, ai-engineer + backend-architect
+**Dependencies**: Always analyze before changes, test after implementation, coordinate complex work
 
-### Bug Fix Workflow
-1. **Analysis**: project-analyzer (identify root cause)
-2. **Fix**: Appropriate specialist agent
-3. **Test**: test-writer-fixer (verify fix)
-4. **Document**: Update insights.md
-
-### Performance Optimization
-1. **Benchmark**: performance-benchmarker
-2. **Analysis**: project-analyzer (bottleneck identification)
-3. **Optimize**: Specialized agents
-4. **Verify**: performance-benchmarker (confirm improvement)
-
-### Code Migration/Refactoring
-1. **Coordinate**: project-coordinator
-2. **Analyze**: project-analyzer (current state)
-3. **Plan**: project-planner (target state)
-4. **Execute**: Multiple specialized agents
-5. **Test**: test-writer-fixer
-
-## Agent Compatibility Matrix
-
-### Works Well Together
-- project-analyzer + project-planner: For comprehensive project understanding
-- backend-architect + frontend-developer: Full-stack coordination
-- ai-engineer + backend-architect: AI feature integration
-- test-writer-fixer + performance-benchmarker: Quality assurance
-
-### Sequential Dependencies
-- Always run project-analyzer before major changes
-- Deploy test-writer-fixer after implementation agents
-- Use project-coordinator for complex multi-phase work
-
-## Orchestration Strategies
-
-### Parallel Execution
-When tasks are independent:
-- Frontend and backend development
-- Documentation and testing
-- Multiple feature implementations
-
-### Sequential Execution
-When tasks have dependencies:
-- Analysis → Planning → Implementation
-- Architecture → Development → Testing
-- Migration phases must be ordered
-
-### Quality Gates
-- After implementation: Run tests
-- Before deployment: Performance check
-- After major changes: project-analyzer review
-
-## Handoff Protocols
-
-### Agent-to-Agent Communication
-- Use Session Summary format for handoffs
-- Key information to pass:
-  - What was accomplished
-  - Decisions made and rationale
-  - Next steps needed
-  - Any blockers or concerns
-
-### Context Preservation
-- Update context.md between major agent switches
-- Document key decisions in insights.md
-- Track agent performance in evolution.md
+## Orchestration
+**Parallel**: Independent tasks (frontend + backend, docs + tests)
+**Sequential**: Dependent tasks (analyze → plan → implement → test)
 
 Last Updated: $(date -u +"%Y-%m-%dT%H:%M:%SZ")
 WORKFLOWS_EOF
