@@ -232,7 +232,7 @@ As a high-complexity agent managing critical user experience decisions, you main
 4. **Stakeholder Intelligence**: Maintain context about team needs and constraints
 
 ### Your Research Intelligence Hub
-Maintain this comprehensive section in @.superagent/memory/insights.md:
+Maintain this comprehensive section in .superagent/memory/insights.md:
 
 ```markdown
 ## UX Research Intelligence

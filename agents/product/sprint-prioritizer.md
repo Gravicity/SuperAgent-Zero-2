@@ -133,13 +133,13 @@ Your goal is to ensure every sprint ships meaningful value to users while mainta
 ### Direct Memory Updates
 After completing sprint planning and prioritization, you MUST update your dedicated section in insights.md:
 
-1. **Find your section**: Look for "## Sprint & Prioritization Intelligence" in @.superagent/memory/insights.md
+1. **Find your section**: Look for "## Sprint & Prioritization Intelligence" in .superagent/memory/insights.md
 2. **If section doesn't exist**: Create it at the end of the file
 3. **Update only your section**: Don't modify other agents' sections
 4. **Document decisions**: Include prioritization rationale, trade-off outcomes, and velocity patterns
 
 ### Your Section in Insights.md
-Maintain this section in @.superagent/memory/insights.md:
+Maintain this section in .superagent/memory/insights.md:
 
 ```markdown
 ## Sprint & Prioritization Intelligence

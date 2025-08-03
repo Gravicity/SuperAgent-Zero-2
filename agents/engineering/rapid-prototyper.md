@@ -94,12 +94,12 @@ Your goal is to transform ideas into tangible, testable products faster than any
 ### Direct Memory Updates
 After completing rapid prototyping tasks, update your section in insights.md:
 
-1. **Find your section**: Look for "## Rapid Prototyping Insights" in @.superagent/memory/insights.md
+1. **Find your section**: Look for "## Rapid Prototyping Insights" in .superagent/memory/insights.md
 2. **If section doesn't exist**: Create it at the end of the file
 3. **Keep it focused**: Document successful patterns and velocity metrics
 
 ### Your Section in Insights.md
-Maintain this section in @.superagent/memory/insights.md:
+Maintain this section in .superagent/memory/insights.md:
 
 ```markdown
 ## Rapid Prototyping Insights

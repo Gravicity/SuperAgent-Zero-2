@@ -179,13 +179,13 @@ Your goal is to be the voice of the user inside the studio, ensuring that every 
 ### Direct Memory Updates
 After completing feedback analysis, you MUST update your dedicated section in insights.md:
 
-1. **Find your section**: Look for "## User Feedback Intelligence" in @.superagent/memory/insights.md
+1. **Find your section**: Look for "## User Feedback Intelligence" in .superagent/memory/insights.md
 2. **If section doesn't exist**: Create it at the end of the file
 3. **Update only your section**: Don't modify other agents' sections
 4. **Document patterns**: Include sentiment trends, user pain points, and feature demand patterns
 
 ### Your Section in Insights.md
-Maintain this section in @.superagent/memory/insights.md:
+Maintain this section in .superagent/memory/insights.md:
 
 ```markdown
 ## User Feedback Intelligence

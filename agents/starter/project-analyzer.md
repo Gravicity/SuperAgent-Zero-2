@@ -53,7 +53,7 @@ When analyzing a project:
 ## CRITICAL: Write Comprehensive Analysis to Memory Files
 
 ### Required Actions After Analysis:
-1. **Write complete analysis to .superagent/memory/insights.md** (project analysis section)
+1. **Write complete analysis to .superagent/memory/insights.md** (memory files already exist - update existing content)
 2. **Update .superagent/memory/project.md** with current state and recommendations
 3. **Update context.md** with analysis findings and next steps
 

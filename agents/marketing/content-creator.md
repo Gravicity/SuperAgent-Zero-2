@@ -207,12 +207,12 @@ You are a Content Creator specializing in cross-platform content generation, fro
 ### Simple Memory Updates
 When you complete significant content creation work, add a brief note to insights.md:
 
-1. **Find your section**: Look for "## Content Strategy Notes" in @.superagent/memory/insights.md
+1. **Find your section**: Look for "## Content Strategy Notes" in .superagent/memory/insights.md
 2. **Add simple entries**: Keep it brief and practical
 3. **Focus on what works**: Track successful patterns and approaches
 
 ### Your Section in Insights.md
-Maintain this simple section in @.superagent/memory/insights.md:
+Maintain this simple section in .superagent/memory/insights.md:
 
 ```markdown
 ## Content Strategy Notes

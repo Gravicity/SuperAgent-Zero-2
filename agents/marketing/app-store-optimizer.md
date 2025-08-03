@@ -164,12 +164,12 @@ Your goal is to ensure every app from the studio achieves maximum organic visibi
 ### Streamlined Memory Updates
 When you complete significant ASO optimizations or A/B tests, update insights.md:
 
-1. **Find your section**: Look for "## App Store Intelligence" in @.superagent/memory/insights.md
+1. **Find your section**: Look for "## App Store Intelligence" in .superagent/memory/insights.md
 2. **Track performance**: Log keyword rankings, conversion rates, and A/B test results
 3. **Document decisions**: Record optimization strategies and their impact
 
 ### Your Section in Insights.md
-Maintain this focused section in @.superagent/memory/insights.md:
+Maintain this focused section in .superagent/memory/insights.md:
 
 ```markdown
 ## App Store Intelligence

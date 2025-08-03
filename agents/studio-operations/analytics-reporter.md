@@ -211,13 +211,13 @@ As the analytics intelligence center for the studio, you maintain sophisticated 
 ### Direct Memory Updates
 After significant analytics work, update multiple memory sections:
 
-1. **Analytics Insights Section**: Find or create "## Analytics & Data Intelligence" in @.superagent/memory/insights.md
-2. **Technical Architecture**: Document in @.superagent/memory/technical-architecture.md under "Analytics Infrastructure"
-3. **Performance Data**: Update @.superagent/memory/performance-data.md with key metrics and trends
-4. **Strategic Insights**: Add findings to @.superagent/memory/strategic-insights.md
+1. **Analytics Insights Section**: Find or create "## Analytics & Data Intelligence" in .superagent/memory/insights.md
+2. **Technical Architecture**: Document in .superagent/memory/technical-architecture.md under "Analytics Infrastructure"
+3. **Performance Data**: Update .superagent/memory/performance-data.md with key metrics and trends
+4. **Strategic Insights**: Add findings to .superagent/memory/strategic-insights.md
 
 ### Your Primary Section in Insights.md
-Maintain this comprehensive section in @.superagent/memory/insights.md:
+Maintain this comprehensive section in .superagent/memory/insights.md:
 
 ```markdown
 ## Analytics & Data Intelligence
@@ -263,7 +263,7 @@ Last updated: [Date]
 ```
 
 ### Technical Architecture Documentation
-Update @.superagent/memory/technical-architecture.md with analytics infrastructure details:
+Update .superagent/memory/technical-architecture.md with analytics infrastructure details:
 
 ```markdown
 ## Analytics Infrastructure
@@ -290,7 +290,7 @@ Update @.superagent/memory/technical-architecture.md with analytics infrastructu
 ```
 
 ### Performance Data Tracking
-Update @.superagent/memory/performance-data.md with key metrics:
+Update .superagent/memory/performance-data.md with key metrics:
 
 ```markdown
 ## Analytics Performance Data

@@ -226,13 +226,13 @@ As the infrastructure backbone specialist, you maintain comprehensive memory sys
 ### Direct Memory Updates
 After significant infrastructure work, update multiple memory sections:
 
-1. **Infrastructure Insights Section**: Find or create "## Infrastructure & Performance" in @.superagent/memory/insights.md
-2. **Technical Architecture**: Document in @.superagent/memory/technical-architecture.md under "Infrastructure Systems"
-3. **Performance Data**: Update @.superagent/memory/performance-data.md with system metrics
-4. **Operational Procedures**: Update @.superagent/memory/workflows.md with maintenance and incident procedures
+1. **Infrastructure Insights Section**: Find or create "## Infrastructure & Performance" in .superagent/memory/insights.md
+2. **Technical Architecture**: Document in .superagent/memory/technical-architecture.md under "Infrastructure Systems"
+3. **Performance Data**: Update .superagent/memory/performance-data.md with system metrics
+4. **Operational Procedures**: Update .superagent/memory/workflows.md with maintenance and incident procedures
 
 ### Your Primary Section in Insights.md
-Maintain this comprehensive section in @.superagent/memory/insights.md:
+Maintain this comprehensive section in .superagent/memory/insights.md:
 
 ```markdown
 ## Infrastructure & Performance
@@ -289,7 +289,7 @@ Last updated: [Date]
 ```
 
 ### Technical Architecture Documentation
-Update @.superagent/memory/technical-architecture.md with detailed infrastructure specs:
+Update .superagent/memory/technical-architecture.md with detailed infrastructure specs:
 
 ```markdown
 ## Infrastructure Systems
@@ -316,7 +316,7 @@ Update @.superagent/memory/technical-architecture.md with detailed infrastructur
 ```
 
 ### Performance Data Tracking
-Update @.superagent/memory/performance-data.md with system metrics:
+Update .superagent/memory/performance-data.md with system metrics:
 
 ```markdown
 ## Infrastructure Performance Data
@@ -338,7 +338,7 @@ Update @.superagent/memory/performance-data.md with system metrics:
 ```
 
 ### Operational Procedures
-Update @.superagent/memory/workflows.md with infrastructure procedures:
+Update .superagent/memory/workflows.md with infrastructure procedures:
 
 ```markdown
 ## Infrastructure Procedures

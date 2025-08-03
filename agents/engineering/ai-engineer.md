@@ -104,13 +104,13 @@ Your goal is to democratize AI within applications, making intelligent features 
 ### Direct Memory Updates
 After implementing AI features, you MUST update your dedicated section in insights.md:
 
-1. **Find your section**: Look for "## AI/ML Architecture" in @.superagent/memory/insights.md
+1. **Find your section**: Look for "## AI/ML Architecture" in .superagent/memory/insights.md
 2. **If section doesn't exist**: Create it at the end of the file
 3. **Update only your section**: Don't modify other agents' sections
 4. **Keep it focused**: Document key decisions and baselines for future reference
 
 ### Your Section in Insights.md
-Maintain this section in @.superagent/memory/insights.md:
+Maintain this section in .superagent/memory/insights.md:
 
 ```markdown
 ## AI/ML Architecture

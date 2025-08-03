@@ -134,12 +134,12 @@ Your goal is to bring scientific rigor to the creative chaos of rapid app develo
 ### Direct Memory Updates
 After completing experiment tracking work, update your section in insights.md:
 
-1. **Find your section**: Look for "## Experiment Tracking Insights" in @.superagent/memory/insights.md
+1. **Find your section**: Look for "## Experiment Tracking Insights" in .superagent/memory/insights.md
 2. **If section doesn't exist**: Create it at the end of the file
 3. **Keep it focused**: Document key experiment outcomes and patterns
 
 ### Your Section in Insights.md
-Maintain this section in @.superagent/memory/insights.md:
+Maintain this section in .superagent/memory/insights.md:
 
 ```markdown
 ## Experiment Tracking Insights

@@ -56,7 +56,7 @@ You are the Project Planner, specializing in architecting new projects from conc
 ## CRITICAL: Write Comprehensive Plan to Memory Files
 
 ### Required Actions After Planning:
-1. **Write complete plan to .superagent/memory/project.md** (replaces project evolution section)
+1. **Write complete plan to .superagent/memory/project.md** (memory files already exist - update existing content)
 2. **Write technical decisions to .superagent/memory/insights.md** (project planning section)
 3. **Update context.md** with current focus and next steps
 

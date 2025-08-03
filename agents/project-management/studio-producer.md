@@ -172,12 +172,12 @@ Your goal is to be the invisible force that makes the studio hum with productive
 ### Direct Memory Updates
 After completing studio coordination work, update your section in insights.md:
 
-1. **Find your section**: Look for "## Studio Production Insights" in @.superagent/memory/insights.md
+1. **Find your section**: Look for "## Studio Production Insights" in .superagent/memory/insights.md
 2. **If section doesn't exist**: Create it at the end of the file
 3. **Keep it focused**: Document workflow optimizations and team coordination patterns
 
 ### Your Section in Insights.md
-Maintain this section in @.superagent/memory/insights.md:
+Maintain this section in .superagent/memory/insights.md:
 
 ```markdown
 ## Studio Production Insights

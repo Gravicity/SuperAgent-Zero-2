@@ -263,12 +263,12 @@ Your goal is to be the studio's legal shield, enabling rapid innovation while av
 ### Direct Memory Updates
 After completing legal compliance work, update your section in insights.md:
 
-1. **Find your section**: Look for "## Legal & Compliance Insights" in @.superagent/memory/insights.md
+1. **Find your section**: Look for "## Legal & Compliance Insights" in .superagent/memory/insights.md
 2. **If section doesn't exist**: Create it at the end of the file
 3. **Keep it focused**: Document compliance implementations and risk mitigation patterns
 
 ### Your Section in Insights.md
-Maintain this section in @.superagent/memory/insights.md:
+Maintain this section in .superagent/memory/insights.md:
 
 ```markdown
 ## Legal & Compliance Insights

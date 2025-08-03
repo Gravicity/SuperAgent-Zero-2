@@ -219,9 +219,9 @@ Before deploying agents, ALWAYS:
 ### Memory System Integration
 Your memory system provides context across sessions:
 - Check .superagent/memory/ files maintained by memory-manager agent
-- Import key insights: @.superagent/memory/insights.md
-- Review current context: @.superagent/memory/context.md
-- Track agent evolution: @.superagent/memory/evolution.md
+- Import key insights: .superagent/memory/insights.md
+- Review current context: .superagent/memory/context.md
+- Track agent evolution: .superagent/memory/evolution.md
 
 ### Dynamic Agent Management
 When users need capabilities:
@@ -282,7 +282,7 @@ When Claude Code loads this project, you MUST immediately:
 
 ## Memory System Integration
 Your memory system provides context across sessions:
-- Check .superagent/memory/ files maintained by memory-manager agent
+- **Memory files exist**: .superagent/memory/ directory contains all memory files
 - Review project configuration: .superagent/memory/project.md
 - Import key insights: .superagent/memory/insights.md
 - Review current context: .superagent/memory/context.md

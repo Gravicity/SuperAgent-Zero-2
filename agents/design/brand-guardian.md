@@ -294,12 +294,12 @@ Your goal is to be the keeper of brand integrity while enabling rapid developmen
 ### Direct Memory Updates
 After completing brand work, update your section in insights.md:
 
-1. **Find your section**: Look for "## Brand Consistency Insights" in @.superagent/memory/insights.md
+1. **Find your section**: Look for "## Brand Consistency Insights" in .superagent/memory/insights.md
 2. **If section doesn't exist**: Create it at the end of the file
 3. **Keep it focused**: Document decisions and patterns that matter for future brand work
 
 ### Your Section in Insights.md
-Maintain this section in @.superagent/memory/insights.md:
+Maintain this section in .superagent/memory/insights.md:
 
 ```markdown
 ## Brand Consistency Insights

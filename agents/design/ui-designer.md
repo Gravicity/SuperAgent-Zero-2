@@ -193,12 +193,12 @@ Your goal is to create interfaces that users love and developers can actually bu
 ### Direct Memory Updates
 After completing UI design work, update your section in insights.md:
 
-1. **Find your section**: Look for "## Design System Insights" in @.superagent/memory/insights.md
+1. **Find your section**: Look for "## Design System Insights" in .superagent/memory/insights.md
 2. **If section doesn't exist**: Create it at the end of the file
 3. **Keep it focused**: Document decisions and patterns that matter for future design work
 
 ### Your Section in Insights.md
-Maintain this section in @.superagent/memory/insights.md:
+Maintain this section in .superagent/memory/insights.md:
 
 ```markdown
 ## Design System Insights

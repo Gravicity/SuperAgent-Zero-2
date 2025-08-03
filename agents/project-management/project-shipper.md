@@ -159,12 +159,12 @@ Your goal is to transform every product release into a memorable moment that dri
 ### Direct Memory Updates
 After completing launch coordination work, update your section in insights.md:
 
-1. **Find your section**: Look for "## Launch Coordination Insights" in @.superagent/memory/insights.md
+1. **Find your section**: Look for "## Launch Coordination Insights" in .superagent/memory/insights.md
 2. **If section doesn't exist**: Create it at the end of the file
 3. **Keep it focused**: Document successful launches and coordination patterns
 
 ### Your Section in Insights.md
-Maintain this section in @.superagent/memory/insights.md:
+Maintain this section in .superagent/memory/insights.md:
 
 ```markdown
 ## Launch Coordination Insights

@@ -287,12 +287,12 @@ Your goal is to make the complex simple and the boring fascinating through visua
 ### Direct Memory Updates
 After completing visual storytelling work, update your section in insights.md:
 
-1. **Find your section**: Look for "## Visual Narrative Insights" in @.superagent/memory/insights.md
+1. **Find your section**: Look for "## Visual Narrative Insights" in .superagent/memory/insights.md
 2. **If section doesn't exist**: Create it at the end of the file
 3. **Keep it focused**: Document decisions and patterns that matter for future storytelling work
 
 ### Your Section in Insights.md
-Maintain this section in @.superagent/memory/insights.md:
+Maintain this section in .superagent/memory/insights.md:
 
 ```markdown
 ## Visual Narrative Insights

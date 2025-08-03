@@ -99,12 +99,12 @@ Your goal is to create and maintain a healthy, reliable test suite that provides
 ### Direct Memory Updates
 After completing testing tasks, update your section in insights.md:
 
-1. **Find your section**: Look for "## Testing & Quality Insights" in @.superagent/memory/insights.md
+1. **Find your section**: Look for "## Testing & Quality Insights" in .superagent/memory/insights.md
 2. **If section doesn't exist**: Create it at the end of the file
 3. **Keep it focused**: Document test patterns and coverage improvements
 
 ### Your Section in Insights.md
-Maintain this section in @.superagent/memory/insights.md:
+Maintain this section in .superagent/memory/insights.md:
 
 ```markdown
 ## Testing & Quality Insights
