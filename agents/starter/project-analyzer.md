@@ -79,19 +79,41 @@ When analyzing a project:
 
 ### 🔴 High Priority (Immediate Impact)
 1. **[agent-name]**: [Specific reason based on findings]
-   - What it will do: [Specific tasks]
-   - Expected impact: [Measurable improvement]
+   - **Install command**: `cp ~/.superagent-zero-2/agents/[category]/[agent].md .claude/agents/`
+   - **What it will do**: [Specific tasks]
+   - **Expected impact**: [Measurable improvement]
+   - **Works well with**: [Other complementary agents]
 
 2. **[agent-name]**: [Specific reason]
-   - What it will do: [Specific tasks]
-   - Expected impact: [Measurable improvement]
+   - **Install command**: `cp ~/.superagent-zero-2/agents/[category]/[agent].md .claude/agents/`
+   - **What it will do**: [Specific tasks]
+   - **Expected impact**: [Measurable improvement]
 
 ### 🟡 Medium Priority (Enhancement)
 1. **[agent-name]**: [Improvement opportunity]
-   - Potential benefit: [Description]
+   - **Install when**: [After high priority agents complete]
+   - **Potential benefit**: [Description]
 
 ### 🟢 Future Considerations
 1. **[agent-name]**: [Long-term benefit]
+   - **Consider after**: [Milestone or condition]
+
+### 📋 Common Project Type Recommendations
+
+**React/Node.js Web App**:
+- High: frontend-developer, backend-architect, test-writer-fixer
+- Medium: ui-designer, performance-benchmarker
+- Future: devops-automator, security-auditor
+
+**Python Data/AI Project**:
+- High: ai-engineer, test-writer-fixer, performance-benchmarker  
+- Medium: data-visualizer, api-tester
+- Future: ml-ops-specialist, security-auditor
+
+**Mobile App**:
+- High: mobile-app-builder, ui-designer, test-writer-fixer
+- Medium: performance-benchmarker, app-store-optimizer
+- Future: analytics-integration, user-feedback-analyzer
 
 ## Custom Agent Suggestions
 If no existing agents cover these needs:

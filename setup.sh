@@ -40,26 +40,152 @@ print_warning() {
     echo -e "${YELLOW}[⚠]${NC} $1"
 }
 
-# Detect project type
+# Detect project type and complexity
 detect_project() {
-    if [ -f "package.json" ]; then
-        echo "node"
-    elif [ -f "requirements.txt" ] || [ -f "setup.py" ] || [ -f "pyproject.toml" ]; then
-        echo "python"
-    elif [ -f "Cargo.toml" ]; then
-        echo "rust"
-    elif [ -f "go.mod" ]; then
-        echo "go"
-    elif [ "$(find . -maxdepth 1 -type f | wc -l)" -lt 3 ]; then
+    local file_count=$(find . -maxdepth 1 -type f | wc -l)
+    local code_files=$(find . -name "*.js" -o -name "*.ts" -o -name "*.py" -o -name "*.go" -o -name "*.rs" | wc -l)
+    local config_files=0
+    
+    # Count configuration files
+    [ -f "package.json" ] && config_files=$((config_files + 1))
+    [ -f "requirements.txt" ] && config_files=$((config_files + 1))
+    [ -f "setup.py" ] && config_files=$((config_files + 1))
+    [ -f "pyproject.toml" ] && config_files=$((config_files + 1))
+    [ -f "Cargo.toml" ] && config_files=$((config_files + 1))
+    [ -f "go.mod" ] && config_files=$((config_files + 1))
+    
+    # Determine project state
+    if [ $file_count -lt 3 ] && [ $code_files -eq 0 ]; then
         echo "empty"
+    elif [ $config_files -gt 0 ] && [ $code_files -gt 10 ]; then
+        echo "existing"
+    elif [ $config_files -gt 0 ] || [ $code_files -gt 0 ]; then
+        echo "partial"
     else
         echo "existing"
     fi
 }
 
+# Handle existing CLAUDE.md file
+handle_claude_md() {
+    if [ -f "CLAUDE.md" ]; then
+        print_warning "Existing CLAUDE.md found"
+        echo ""
+        echo "Options:"
+        echo "1) Backup existing and create SuperAgent Zero CLAUDE.md"
+        echo "2) Append SuperAgent Zero config to existing CLAUDE.md"
+        echo "3) Skip CLAUDE.md setup (manual configuration required)"
+        echo ""
+        
+        while true; do
+            read -p "Choose option (1/2/3): " choice
+            case $choice in
+                1)
+                    backup_and_create_claude_md
+                    break
+                    ;;
+                2)
+                    append_to_claude_md
+                    break
+                    ;;
+                3)
+                    print_warning "Skipping CLAUDE.md setup - SuperAgent Zero may not activate automatically"
+                    echo "To enable SuperAgent Zero, add the identity configuration to your existing CLAUDE.md"
+                    echo "See: ~/.superagent-zero-2/docs/claude-md-template.md"
+                    break
+                    ;;
+                *)
+                    echo "Please enter 1, 2, or 3"
+                    ;;
+            esac
+        done
+    else
+        create_claude_md
+    fi
+}
+
+# Backup existing and create new CLAUDE.md
+backup_and_create_claude_md() {
+    local backup_name="CLAUDE.md.backup.$(date +%s)"
+    mv "CLAUDE.md" "$backup_name"
+    print_status "Backed up existing CLAUDE.md to $backup_name"
+    create_claude_md
+    print_status "Created new SuperAgent Zero CLAUDE.md"
+}
+
+# Append SuperAgent Zero config to existing CLAUDE.md
+append_to_claude_md() {
+    echo "" >> CLAUDE.md
+    echo "# ===============================================" >> CLAUDE.md
+    echo "# SuperAgent Zero Integration (Added by setup)" >> CLAUDE.md
+    echo "# ===============================================" >> CLAUDE.md
+    echo "" >> CLAUDE.md
+    
+    cat >> CLAUDE.md << 'APPEND_EOF'
+## SuperAgent Zero Identity Integration
+
+When working in this project, you also have access to SuperAgent Zero capabilities:
+
+### Core SuperAgent Zero Characteristics
+- Analytical excellence with conversational warmth
+- Strategic thinking and optimization focus  
+- Collaborative partnership approach
+- Proactive problem-solving mindset
+
+### Agent Coordination Protocol
+1. Check available agents in .claude/agents/
+2. Deploy specialists via Task tool with subagent_type
+3. Memory-manager handles persistence across sessions
+4. Maintain strategic oversight of all agent activities
+5. Install new agents from ~/.superagent-zero-2/agents/ when needed
+6. Create custom agents for unique requirements
+
+### Memory System Integration
+Your memory system provides context across sessions:
+- Check .superagent/memory/ files maintained by memory-manager agent
+- Import key insights: @.superagent/memory/insights.md
+- Review current context: @.superagent/memory/context.md
+- Track agent evolution: @.superagent/memory/evolution.md
+
+### Dynamic Agent Management
+When users need capabilities:
+1. Check if a suitable agent exists in .claude/agents/
+2. If not, check .superagent/agent-catalog.json for recommendations
+3. Install from global library: cp ~/.superagent-zero-2/agents/[category]/[agent].md .claude/agents/
+4. OR create custom agent based on requirements
+5. Always explain what you're doing and why
+
+### Agent Discovery & Installation
+```bash
+# Check available agents in global library
+ls ~/.superagent-zero-2/agents/
+
+# View complete agent catalog with descriptions
+cat .superagent/agent-catalog.json
+
+# Install an agent from global library
+cp ~/.superagent-zero-2/agents/[category]/[agent].md .claude/agents/
+
+# Check currently installed agents
+ls .claude/agents/
+```
+
+### Agent Recommendations
+Use the agent catalog to recommend agents based on:
+- Project type and technology stack
+- User requirements and pain points  
+- Existing project structure and patterns
+- Development phase and priorities
+
+Remember: You can seamlessly blend your existing project identity with SuperAgent Zero's coordination capabilities.
+APPEND_EOF
+    
+    print_status "Appended SuperAgent Zero configuration to existing CLAUDE.md"
+}
+
 # Create CLAUDE.md for persistent identity
 create_claude_md() {
-    cat > .claude/CLAUDE.md << 'CLAUDE_EOF'
+    cat > CLAUDE.md << 'CLAUDE_EOF'
 # 🧠 SuperAgent Zero - Persistent Superintelligent Identity
 
 You are SuperAgent Zero, the superintelligent AI coordinator. This identity persists across ALL context windows and sessions in this project.
@@ -95,30 +221,71 @@ Your memory system provides context across sessions:
 ## Dynamic Agent Management
 When users need capabilities:
 1. Check if a suitable agent exists in .claude/agents/
-2. If not, check ~/.superagent-zero-2/agent-catalog.json
-3. Install from templates using cp command
+2. If not, check .superagent/agent-catalog.json for recommendations
+3. Install from global library: cp ~/.superagent-zero-2/agents/[category]/[agent].md .claude/agents/
 4. OR create custom agent based on requirements
 5. Always explain what you're doing and why
 
 ## First Launch Protocol
-1. Greet user as SuperAgent Zero
-2. Check project type and current state
-3. Deploy project-analyzer or project-planner via Task tool
-4. Get agent recommendations
-5. Offer to install recommended agents
-6. Begin work based on user guidance
 
-## Agent Installation Commands
+### Initial Assessment
+1. **Greet user as SuperAgent Zero** with confidence and capability overview
+2. **Check project context** by examining current directory and files
+3. **Determine project state**:
+   - **Empty/New Project**: Deploy project-planner to architect from concept
+   - **Existing Project**: Deploy project-analyzer to assess and optimize
+   - **Partial Project**: Assess whether to analyze existing work or plan remaining features
+
+### Context-Aware Agent Deployment
+Based on project state, deploy the appropriate starter agent:
+
+**For Empty Projects** (`project-planner` installed):
+- Goal: Transform ideas into structured implementation plan
+- Focus: Architecture decisions, technology choices, agent team assembly
+- Outcome: Detailed roadmap with phase-by-phase agent recommendations
+
+**For Existing Projects** (`project-analyzer` installed):  
+- Goal: Comprehensive assessment and optimization recommendations
+- Focus: Code quality, technology stack analysis, improvement opportunities
+- Outcome: Prioritized agent recommendations based on actual project needs
+
+**For Complex/Partial Projects** (`project-coordinator` + both agents installed):
+- Goal: Strategic coordination between analysis and planning needs
+- Focus: Balancing existing code optimization with new feature development
+- Outcome: Coordinated roadmap bridging current state to target architecture
+
+**For Hybrid Scenarios**:
+- Partially built: project-coordinator manages analysis + planning integration
+- Migration projects: Coordinated assessment and target architecture design
+- Refactoring: Strategic coordination of improvements and new development
+
+### Starter Agent Coordination
+4. **Deploy starter agent** with clear context about project goals
+5. **Process agent recommendations** and explain rationale to user
+6. **Install recommended agents** based on priority and user preferences
+7. **Establish workflow** with multi-agent coordination plan
+
+## Agent Discovery & Installation
 ```bash
-# List available agents
+# Check available agents in global library
 ls ~/.superagent-zero-2/agents/
 
-# Install an agent
+# View complete agent catalog with descriptions
+cat .superagent/agent-catalog.json
+
+# Install an agent from global library
 cp ~/.superagent-zero-2/agents/[category]/[agent].md .claude/agents/
 
-# Check installed agents
+# Check currently installed agents
 ls .claude/agents/
 ```
+
+## Agent Recommendations
+Use the agent catalog to recommend agents based on:
+- Project type and technology stack
+- User requirements and pain points
+- Existing project structure and patterns
+- Development phase and priorities
 
 Remember: This is your PERMANENT identity. Every time Claude Code loads this project, you ARE SuperAgent Zero - the superintelligent coordinator who orchestrates specialized agents for optimal outcomes.
 CLAUDE_EOF
@@ -257,8 +424,8 @@ main() {
         exit 1
     fi
     
-    # Check if already initialized
-    if [ -f ".claude/CLAUDE.md" ] && [ -d ".superagent/memory" ]; then
+    # Check if already initialized (only check memory system, not CLAUDE.md since we handle existing ones)
+    if [ -d ".superagent/memory" ] && [ -d ".claude/agents" ]; then
         print_warning "SuperAgent Zero already initialized in this project."
         echo "Use --add-agents to add more agents."
         exit 0
@@ -273,38 +440,58 @@ main() {
     mkdir -p .claude/agents
     mkdir -p .superagent/memory
     
-    # Determine starter agent
+    # Determine starter agents based on project complexity
     if [ "$PROJECT_TYPE" = "empty" ]; then
         STARTER_AGENT="project-planner"
-        print_status "New project - installing project-planner agent"
+        AGENTS_TO_INSTALL="project-planner memory-manager"
+        print_status "New project - installing project-planner and memory-manager"
+    elif [ "$PROJECT_TYPE" = "existing" ]; then
+        STARTER_AGENT="project-analyzer" 
+        AGENTS_TO_INSTALL="project-analyzer memory-manager"
+        print_status "Existing project - installing project-analyzer and memory-manager"
     else
-        STARTER_AGENT="project-analyzer"
-        print_status "Existing project - installing project-analyzer agent"
+        # For partial/complex projects, install coordinator + both analyzer and planner
+        STARTER_AGENT="project-coordinator"
+        AGENTS_TO_INSTALL="project-coordinator project-analyzer project-planner memory-manager"
+        print_status "Complex project detected - installing full coordination suite"
     fi
     
     # Copy starter agents
-    cp "$INSTALL_DIR/agents/starter/$STARTER_AGENT.md" ".claude/agents/"
-    cp "$INSTALL_DIR/agents/starter/memory-manager.md" ".claude/agents/"
-    print_success "Installed starter agents"
+    for agent in $AGENTS_TO_INSTALL; do
+        if [ -f "$INSTALL_DIR/agents/starter/$agent.md" ]; then
+            cp "$INSTALL_DIR/agents/starter/$agent.md" ".claude/agents/"
+        fi
+    done
+    print_success "Installed starter agents: $AGENTS_TO_INSTALL"
     
     # Create CLAUDE.md
     print_status "Creating SuperAgent Zero identity..."
-    create_claude_md
-    print_success "Created .claude/CLAUDE.md"
+    handle_claude_md
+    print_success "SuperAgent Zero identity configured"
     
     # Initialize memory
     print_status "Initializing memory system..."
     init_memory "$PROJECT_TYPE"
     print_success "Memory system initialized"
     
+    # Copy agent catalog to project
+    print_status "Installing agent catalog..."
+    if [ -f "$INSTALL_DIR/agent-catalog.json" ]; then
+        cp "$INSTALL_DIR/agent-catalog.json" ".superagent/"
+        print_success "Agent catalog installed"
+    else
+        print_warning "Agent catalog not found - agent discovery may be limited"
+    fi
+    
     echo ""
     echo -e "${GREEN}✨ SuperAgent Zero 2.0 Activated!${NC}"
     echo ""
     echo "Verification:"
     echo "- Project directory: ${BLUE}$(pwd)${NC}"
-    echo "- Identity file: ${BLUE}.claude/CLAUDE.md${NC} $([ -f ".claude/CLAUDE.md" ] && echo "✓" || echo "✗")"
+    echo "- Identity file: ${BLUE}CLAUDE.md${NC} $([ -f "CLAUDE.md" ] && echo "✓" || echo "✗")"
     echo "- Agents installed: $(ls -1 .claude/agents/ 2>/dev/null | wc -l | xargs) agents"
     echo "- Memory system: ${BLUE}.superagent/memory/${NC} $([ -d ".superagent/memory" ] && echo "✓" || echo "✗")"
+    echo "- Agent catalog: ${BLUE}.superagent/agent-catalog.json${NC} $([ -f ".superagent/agent-catalog.json" ] && echo "✓" || echo "✗")"
     echo ""
     echo "Next steps:"
     echo "1. ${YELLOW}IMPORTANT:${NC} Start Claude Code from THIS directory: ${BLUE}claude${NC}"
@@ -317,7 +504,8 @@ main() {
     echo ""
     echo -e "${YELLOW}Troubleshooting:${NC}"
     echo "- If SuperAgent Zero doesn't activate, ensure you start ${BLUE}claude${NC} from this directory"
-    echo "- Claude Code reads .claude/CLAUDE.md for identity only from the current directory"
+    echo "- Claude Code reads CLAUDE.md for identity from the current directory"
+    echo "- Check that CLAUDE.md exists in the project root (not in .claude/)"
     echo ""
 }
 

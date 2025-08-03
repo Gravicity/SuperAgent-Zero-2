@@ -1,7 +1,7 @@
 {
   "version": "2.0.0",
   "updated": "2025-08-03",
-  "total_agents": 38,
+  "total_agents": 39,
   "agents": {
     "starter/project-analyzer": {
       "name": "project-analyzer",
@@ -38,6 +38,15 @@
       "recommended_for": ["framework development", "agent optimization"],
       "tools": ["Read", "Write", "MultiEdit"],
       "expertise": ["agent enhancement", "memory protocols", "batch processing", "quality preservation"]
+    },
+    "starter/project-coordinator": {
+      "name": "project-coordinator",
+      "category": "starter",
+      "description": "Coordinates between project-analyzer and project-planner for complex scenarios",
+      "keywords": ["coordination", "strategy", "complex projects", "analysis", "planning"],
+      "recommended_for": ["partial projects", "migrations", "refactoring", "multi-phase development"],
+      "tools": ["Read", "Write", "Task"],
+      "expertise": ["strategic coordination", "agent orchestration", "complex scenario management", "transformation planning"]
     },
     "engineering/ai-engineer": {
       "name": "ai-engineer",
@@ -351,7 +360,7 @@
       "name": "Starter Agents",
       "description": "Essential agents for project initialization and coordination",
       "icon": "🚀",
-      "count": 4
+      "count": 5
     },
     "engineering": {
       "name": "Engineering",

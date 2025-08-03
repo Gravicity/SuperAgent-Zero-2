@@ -10,7 +10,7 @@ SuperAgent-Zero turns Claude Code into your personal AI superintendent - a persi
 
 - 🤖 **Persistent Identity**: Claude Code becomes SuperAgent Zero across all sessions
 - 🎯 **Smart Agent Recommendations**: Analyzes your project and suggests the right specialists
-- 📦 **40+ Pre-built Agents**: Engineering, design, marketing, product, and testing experts
+- 📦 **39 Pre-built Agents**: Engineering, design, marketing, product, testing, and business operations experts
 - 🛠️ **Custom Agent Creation**: Build specialized agents for your unique needs
 - 🧬 **Cross-Context Memory**: Maintains knowledge and context between sessions
 - 🚀 **Native Integration**: Built specifically for Claude Code's SubAgent system
@@ -43,6 +43,8 @@ That's it! Claude Code now identifies as SuperAgent Zero and has access to speci
 ## 🎭 How It Works
 
 ### First Launch
+
+**For Existing Projects:**
 ```
 SuperAgent Zero: "Hello! I'm SuperAgent Zero, your superintelligent AI coordinator. 
 I see you're working on a Node.js project. Let me deploy our project analyzer to 
@@ -52,8 +54,35 @@ assess your codebase and recommend specialized agents..."
 
 Project Analyzer: "Based on my analysis, I recommend:
 - backend-architect: Your API structure could be optimized
-- test-writer: No test coverage detected
+- test-writer-fixer: No test coverage detected  
 - ai-engineer: Opportunity to add AI features"
+```
+
+**For New Projects:**
+```
+SuperAgent Zero: "Hello! I'm SuperAgent Zero. I see this is an empty project directory. 
+Let me deploy our project planner to help architect your vision from concept to implementation..."
+
+[Plans project architecture]
+
+Project Planner: "Here's your development roadmap:
+Phase 1: backend-architect + devops-automator  
+Phase 2: frontend-developer + ui-designer
+Phase 3: test-writer-fixer + performance-benchmarker"
+```
+
+**For Complex Projects:**
+```
+SuperAgent Zero: "I see this is a partially built project with some existing code and new requirements. 
+Let me deploy our project coordinator to strategically balance analysis and planning..."
+
+[Coordinates assessment and planning]
+
+Project Coordinator: "I've analyzed your existing React components and planned your new AI features.
+Here's the integrated approach:
+- project-analyzer: Assess current frontend architecture
+- ai-engineer: Design new ML integration  
+- frontend-developer: Bridge existing and new components"
 ```
 
 ### Installing Agents
@@ -82,13 +111,16 @@ After initialization, your project will have:
 
 ```
 your-project/
+├── CLAUDE.md                  # SuperAgent Zero identity (auto-loaded)
 ├── .claude/
-│   ├── CLAUDE.md              # SuperAgent Zero identity (auto-loaded)
 │   └── agents/                # Your specialized agents
-│       ├── project-analyzer.md
+│       ├── project-analyzer.md    (for existing projects)
+│       ├── project-planner.md     (for new projects)  
+│       ├── project-coordinator.md (for complex projects)
 │       ├── memory-manager.md
-│       └── [your agents].md
+│       └── [additional agents].md
 └── .superagent/
+    ├── agent-catalog.json     # Complete agent library catalog
     └── memory/                # Persistent memory system
         ├── context.md         # Current session state
         ├── insights.md        # Accumulated knowledge
@@ -97,33 +129,65 @@ your-project/
 
 ## 🤝 Available Agents
 
-### Starter Agents
+### Starter Agents (5)
 - **project-analyzer**: Analyzes existing codebases and recommends improvements
-- **project-planner**: Helps plan new projects from scratch
-- **memory-manager**: Maintains context across sessions
+- **project-planner**: Helps plan new projects from concept to implementation
+- **project-coordinator**: Manages complex scenarios (migrations, refactoring, partial projects)
+- **memory-manager**: Maintains context and insights across sessions
+- **agent-enhancer**: Enhances existing agents with memory integration
 
-### Engineering Agents
+### Engineering Agents (7)
 - **ai-engineer**: AI/ML integration specialist
 - **backend-architect**: API and system design expert
 - **frontend-developer**: Modern UI framework specialist
 - **mobile-app-builder**: iOS/Android development expert
 - **devops-automator**: CI/CD and infrastructure specialist
+- **rapid-prototyper**: Fast MVP development and validation
+- **test-writer-fixer**: Comprehensive test coverage and bug fixes
 
-### Design Agents
+### Design Agents (5)
 - **ui-designer**: Interface and component design
 - **ux-researcher**: User experience optimization
+- **visual-storyteller**: Data visualization and narrative design
 - **brand-guardian**: Brand consistency and guidelines
+- **whimsy-injector**: User delight and micro-interactions
 
-### Product & Marketing
+### Marketing Agents (7)
+- **content-creator**: Multi-platform content strategy
 - **growth-hacker**: User acquisition and retention
-- **content-creator**: Technical and marketing content
-- **trend-researcher**: Market analysis and opportunities
-- **product-strategist**: Product roadmap and features
+- **app-store-optimizer**: Organic discovery and ASO
+- **instagram-curator**: Visual content and social growth
+- **reddit-community-builder**: Authentic community engagement
+- **tiktok-strategist**: Viral content and trends
+- **twitter-engager**: Real-time engagement and thought leadership
 
-### Testing & Quality
-- **test-writer-fixer**: Comprehensive test coverage
+### Product Agents (3)
+- **trend-researcher**: Market analysis and opportunities
+- **feedback-synthesizer**: User research and insights
+- **sprint-prioritizer**: Agile planning and feature prioritization
+
+### Testing & QA Agents (5)
+- **api-tester**: API testing and validation
 - **performance-benchmarker**: Speed and optimization
-- **security-auditor**: Vulnerability assessment
+- **test-results-analyzer**: Quality metrics and reporting
+- **tool-evaluator**: Development tool assessment
+- **workflow-optimizer**: Process improvement
+
+### Business Operations (5)
+- **analytics-reporter**: Data analysis and performance tracking
+- **finance-tracker**: Budget management and cost optimization
+- **infrastructure-maintainer**: System reliability and scaling
+- **legal-compliance-checker**: Regulatory compliance and risk management
+- **support-responder**: Customer support optimization
+
+### Team Dynamics (2)
+- **joker**: Tech humor and team morale
+- **studio-coach**: Performance coaching and coordination
+
+### Project Management (3)
+- **experiment-tracker**: A/B testing and feature validation
+- **project-shipper**: Release management and deployment
+- **studio-producer**: End-to-end project coordination
 
 [View all agents →](https://github.com/Gravicity/SuperAgent-Zero-2/tree/main/agents)
 
@@ -157,19 +221,25 @@ SuperAgent Zero: "I'll create a custom agent tailored to your database architect
 ### Updating the Framework
 
 ```bash
+# Smart update (preserves custom agents)
 ~/.superagent-zero-2/update.sh
+
+# Or re-run installer
+curl -sSL https://raw.githubusercontent.com/Gravicity/SuperAgent-Zero-2/main/install.sh | bash
 ```
 
 ## 🔧 Configuration
 
 ### For Teams
 
-Share agents across your team by committing `.claude/agents/` to version control:
+Share agents across your team by committing SuperAgent Zero setup to version control:
 
 ```bash
-git add .claude/agents/
-git commit -m "Add project-specific agents"
+git add CLAUDE.md .claude/agents/ .superagent/
+git commit -m "Add SuperAgent Zero setup and project agents"
 ```
+
+**Note**: Only commit `.superagent/memory/` if you want to share project context. Usually you'll want to add it to `.gitignore`.
 
 ### Custom Agent Templates
 
@@ -246,14 +316,15 @@ A: Yes! SuperAgent Zero can create custom agents on demand or you can add templa
 A: All data stays local. Memory and agents are stored in your project directory.
 
 **Q: How do updates work?**  
-A: Run `update.sh` to get the latest agents and improvements without affecting your existing setup.
+A: Run `~/.superagent-zero-2/update.sh` or re-run the installer. Smart updates preserve your custom agents while updating the core framework.
 
 ## 🐛 Troubleshooting
 
 ### Claude Code doesn't recognize SuperAgent Zero
-- Ensure `.claude/CLAUDE.md` exists
-- Restart Claude Code
-- Check file permissions
+- Ensure `CLAUDE.md` exists in project root (not in .claude/)
+- Start Claude Code from the project directory containing CLAUDE.md
+- Check that setup.sh completed successfully
+- Restart Claude Code if needed
 
 ### Agents not deploying
 - Verify `.claude/agents/` directory exists
@@ -261,8 +332,9 @@ A: Run `update.sh` to get the latest agents and improvements without affecting y
 - Ensure Claude Code has file system access
 
 ### Memory not persisting
-- Check `.superagent/memory/` directory
-- Verify memory-manager agent is installed
+- Check `.superagent/memory/` directory exists
+- Verify memory-manager agent is installed in `.claude/agents/`
+- Ensure agent-catalog.json exists in `.superagent/` 
 - Look for errors in memory file format
 
 ## 🤝 Contributing

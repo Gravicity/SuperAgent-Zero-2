@@ -82,9 +82,11 @@ You are the Project Planner, specializing in architecting new projects from conc
 ### Phase 1: Foundation (Week 1)
 **Goals**: Set up project structure, core architecture, and development environment
 
-**Recommended Agents**:
+**Recommended Agents** (Install in order):
 1. **backend-architect**: Design API structure and database schema
-2. **devops-automator**: Set up CI/CD pipeline and deployment
+   - `cp ~/.superagent-zero-2/agents/engineering/backend-architect.md .claude/agents/`
+2. **devops-automator**: Set up CI/CD pipeline and deployment  
+   - `cp ~/.superagent-zero-2/agents/engineering/devops-automator.md .claude/agents/`
 
 **Deliverables**:
 - [ ] Project repository with initial structure
@@ -95,9 +97,11 @@ You are the Project Planner, specializing in architecting new projects from conc
 ### Phase 2: Core Features (Week 2-3)
 **Goals**: Implement primary functionality
 
-**Recommended Agents**:
+**Recommended Agents** (Project-type specific):
 1. **[agent-name]**: [Specific task]
+   - `cp ~/.superagent-zero-2/agents/[category]/[agent].md .claude/agents/`
 2. **[agent-name]**: [Specific task]
+   - `cp ~/.superagent-zero-2/agents/[category]/[agent].md .claude/agents/`
 
 **Deliverables**:
 - [ ] [Feature implementation]
@@ -108,8 +112,31 @@ You are the Project Planner, specializing in architecting new projects from conc
 
 **Recommended Agents**:
 1. **test-writer-fixer**: Comprehensive test coverage
+   - `cp ~/.superagent-zero-2/agents/engineering/test-writer-fixer.md .claude/agents/`
 2. **performance-benchmarker**: Optimization
-3. **security-auditor**: Security review
+   - `cp ~/.superagent-zero-2/agents/testing/performance-benchmarker.md .claude/agents/`
+
+### 📋 Project Type Templates
+
+**Web Application (React + Node.js)**:
+- Phase 1: backend-architect, devops-automator
+- Phase 2: frontend-developer, ui-designer, api-tester
+- Phase 3: test-writer-fixer, performance-benchmarker, security-auditor
+
+**Mobile App (React Native)**:
+- Phase 1: mobile-app-builder, backend-architect  
+- Phase 2: ui-designer, api-tester, push-notification-specialist
+- Phase 3: test-writer-fixer, app-store-optimizer, analytics-integration
+
+**Data/AI Project (Python)**:
+- Phase 1: ai-engineer, data-pipeline-architect
+- Phase 2: ml-model-trainer, data-visualizer, api-builder
+- Phase 3: performance-benchmarker, model-validator, deployment-specialist
+
+**CLI Tool/Library**:
+- Phase 1: rapid-prototyper, architecture-designer
+- Phase 2: api-designer, documentation-writer
+- Phase 3: test-writer-fixer, package-publisher, performance-optimizer
 
 ## Project Structure
 ```
