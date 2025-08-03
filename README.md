@@ -9,10 +9,12 @@ SuperAgent-Zero turns Claude Code into your personal AI superintendent - a persi
 ### Key Features
 
 - 🤖 **Persistent Identity**: Claude Code becomes SuperAgent Zero across all sessions
+- 🧠 **Interactive Discovery**: Engages users before deploying agents for better context
 - 🎯 **Smart Agent Recommendations**: Analyzes your project and suggests the right specialists
 - 📦 **39 Pre-built Agents**: Engineering, design, marketing, product, testing, and business operations experts
 - 🛠️ **Custom Agent Creation**: Build specialized agents for your unique needs
-- 🧬 **Cross-Context Memory**: Maintains knowledge and context between sessions
+- 🧬 **Adaptive Learning**: Evolves based on user feedback and project patterns
+- 🔍 **RAG Memory System**: Sophisticated knowledge retrieval across project history
 - 🚀 **Native Integration**: Built specifically for Claude Code's SubAgent system
 
 ## 🎬 Quick Start
@@ -47,28 +49,41 @@ That's it! Claude Code now identifies as SuperAgent Zero and has access to speci
 **For Existing Projects:**
 ```
 SuperAgent Zero: "Hello! I'm SuperAgent Zero, your superintelligent AI coordinator. 
-I see you're working on a Node.js project. Let me deploy our project analyzer to 
-assess your codebase and recommend specialized agents..."
 
-[Analyzes project]
+I see you have a Node.js project with 25 files, Express server, and MongoDB.
 
-Project Analyzer: "Based on my analysis, I recommend:
-- backend-architect: Your API structure could be optimized
-- test-writer-fixer: No test coverage detected  
-- ai-engineer: Opportunity to add AI features"
+My initial observations:
+- RESTful API structure with middleware pattern
+- No test coverage detected
+- Database queries could benefit from optimization
+- Missing error handling in some endpoints
+
+To provide the most valuable analysis:
+- What specific areas concern you? (performance, security, maintainability, etc.)
+- Are you looking to optimize existing features or planning new ones?
+- Any specific challenges you're facing?
+
+Based on your answers, I'll deploy our project-analyzer with focused direction."
 ```
 
 **For New Projects:**
 ```
-SuperAgent Zero: "Hello! I'm SuperAgent Zero. I see this is an empty project directory. 
-Let me deploy our project planner to help architect your vision from concept to implementation..."
+SuperAgent Zero: "Hello! I'm SuperAgent Zero, your AI superintendent.
 
-[Plans project architecture]
+I see this is an empty project directory - perfect for planning something new from scratch.
 
-Project Planner: "Here's your development roadmap:
-Phase 1: backend-architect + devops-automator  
-Phase 2: frontend-developer + ui-designer
-Phase 3: test-writer-fixer + performance-benchmarker"
+My initial observations:
+- Clean slate for architecture decisions
+- Opportunity to choose optimal tech stack  
+- Can plan for scalability from day one
+
+To help you effectively, I'd like to understand:
+- What type of project are you envisioning? (web app, mobile app, API, etc.)
+- What's your primary goal? (MVP for validation, learning project, production app, etc.)
+- Any technology preferences or constraints?
+- Timeline or specific requirements?
+
+Based on your answers, I'll deploy our project-planner with proper context."
 ```
 
 **For Complex Projects:**
@@ -117,13 +132,16 @@ your-project/
 │       ├── project-analyzer.md    (for existing projects)
 │       ├── project-planner.md     (for new projects)  
 │       ├── project-coordinator.md (for complex projects)
-│       ├── memory-manager.md
+│       ├── memory-manager.md      (knowledge retrieval specialist)
 │       └── [additional agents].md
 └── .superagent/
     ├── agent-catalog.json     # Complete agent library catalog
     └── memory/                # Persistent memory system
+        ├── project.md         # Project evolution & preserved instructions
+        ├── superagent.md      # SuperAgent's self-improvement log
+        ├── workflows.md       # Agent orchestration patterns
         ├── context.md         # Current session state
-        ├── insights.md        # Accumulated knowledge
+        ├── insights.md        # Technical discoveries
         └── evolution.md       # Agent performance tracking
 ```
 
@@ -133,7 +151,7 @@ your-project/
 - **project-analyzer**: Analyzes existing codebases and recommends improvements
 - **project-planner**: Helps plan new projects from concept to implementation
 - **project-coordinator**: Manages complex scenarios (migrations, refactoring, partial projects)
-- **memory-manager**: Maintains context and insights across sessions
+- **memory-manager**: Knowledge retrieval specialist and complex handoff coordinator
 - **agent-enhancer**: Enhances existing agents with memory integration
 
 ### Engineering Agents (7)
@@ -193,13 +211,37 @@ your-project/
 
 ## 🧬 Memory System
 
-SuperAgent Zero maintains persistent memory across sessions:
+SuperAgent Zero maintains a sophisticated memory system across sessions:
 
-- **Session Context**: What you're working on right now
-- **Accumulated Insights**: Learned patterns and preferences
-- **Agent Evolution**: Performance tracking and improvements
+- **Adaptive Learning**: Evolves based on user feedback and preferences
+- **Workflow Intelligence**: Learns successful agent patterns and combinations
+- **Project Evolution**: Tracks architectural decisions and milestones
+- **Knowledge Retrieval**: RAG-like search across all project memory
+- **Context Preservation**: Maintains session continuity and handoffs
 
-Memory is automatically managed by the memory-manager agent and imported into every session.
+SuperAgent Zero manages memory directly for efficiency, while the memory-manager agent provides specialized knowledge retrieval and synthesis capabilities.
+
+## 🧠 Advanced Capabilities
+
+### Interactive Discovery Protocol
+SuperAgent Zero engages in meaningful conversation before deploying agents:
+- Analyzes your project context and shares observations
+- Asks targeted questions based on project type
+- Gathers user goals and priorities
+- Deploys agents with proper context and direction
+
+### Adaptive Learning System
+- **User Preference Learning**: Adapts communication style and technical depth
+- **Workflow Optimization**: Learns which agent combinations work best
+- **Self-Improvement**: Updates its own approach based on feedback
+- **Pattern Recognition**: Identifies successful strategies for different scenarios
+
+### RAG Knowledge Retrieval
+Deploy memory-manager for sophisticated operations:
+- "Find all our authentication implementations across the project"
+- "What patterns emerge from our successful deployments?"
+- "Create a comprehensive brief for the ai-engineer about our ML pipeline"
+- "Generate a technical report from our collective memory"
 
 ## 🛠️ Advanced Usage
 
@@ -239,7 +281,12 @@ git add CLAUDE.md .claude/agents/ .superagent/
 git commit -m "Add SuperAgent Zero setup and project agents"
 ```
 
-**Note**: Only commit `.superagent/memory/` if you want to share project context. Usually you'll want to add it to `.gitignore`.
+**Note**: Consider what memory files to share:
+- `.superagent/memory/project.md` - Contains project evolution and any preserved original instructions
+- `.superagent/memory/insights.md` - Technical discoveries and patterns
+- `.superagent/memory/workflows.md` - Proven agent combinations
+- `.superagent/memory/context.md` - Usually add to `.gitignore` (session-specific)
+- `.superagent/memory/superagent.md` - Usually add to `.gitignore` (personal preferences)
 
 ### Custom Agent Templates
 
@@ -257,12 +304,16 @@ cd ~/.superagent-zero-2/agents/custom/
 - Manually coordinate complex tasks
 - Lose context between sessions
 - No specialized expertise
+- No understanding of user preferences
 
 ### With SuperAgent-Zero
 - Persistent AI superintendent identity
-- Automatic expert agent deployment
-- Continuous learning and memory
-- Specialized agents for every task
+- Interactive discovery before agent deployment
+- Adaptive learning from user feedback
+- Sophisticated knowledge retrieval (RAG)
+- Workflow intelligence and optimization
+- 39 specialized agents for every domain
+- Continuous improvement and evolution
 
 ## 📚 Examples
 
@@ -332,10 +383,11 @@ A: Run `~/.superagent-zero-2/update.sh` or re-run the installer. Smart updates p
 - Ensure Claude Code has file system access
 
 ### Memory not persisting
-- Check `.superagent/memory/` directory exists
-- Verify memory-manager agent is installed in `.claude/agents/`
+- Check `.superagent/memory/` directory exists with all 6 memory files
+- Verify SuperAgent Zero can write to memory files (project.md, superagent.md, etc.)
 - Ensure agent-catalog.json exists in `.superagent/` 
-- Look for errors in memory file format
+- Look for file permission issues or corrupted memory file format
+- Memory-manager agent should be available for knowledge retrieval operations
 
 ## 🤝 Contributing
 

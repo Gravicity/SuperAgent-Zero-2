@@ -309,6 +309,33 @@
       "tools": ["Task", "Write", "Read"],
       "expertise": ["performance coaching", "team coordination", "motivational leadership", "crisis management"]
     },
+    "project-management/experiment-tracker": {
+      "name": "experiment-tracker",
+      "category": "project-management",
+      "description": "A/B testing and experimental validation specialist for rapid iteration cycles",
+      "keywords": ["experiments", "a/b testing", "validation", "metrics", "iteration", "feature flags"],
+      "recommended_for": ["feature validation", "A/B testing", "experimental features", "data-driven decisions"],
+      "tools": ["Read", "Write", "MultiEdit", "Grep", "Glob", "TodoWrite"],
+      "expertise": ["experiment design", "statistical analysis", "feature flagging", "rapid iteration"]
+    },
+    "project-management/project-shipper": {
+      "name": "project-shipper",
+      "category": "project-management",
+      "description": "Launch coordination and go-to-market specialist for rapid deployment cycles",
+      "keywords": ["launch", "deployment", "go-to-market", "coordination", "release management", "positioning"],
+      "recommended_for": ["feature launches", "release coordination", "go-to-market strategy", "launch planning"],
+      "tools": ["Read", "Write", "MultiEdit", "Grep", "Glob", "TodoWrite", "WebSearch"],
+      "expertise": ["launch orchestration", "release management", "market positioning", "stakeholder coordination"]
+    },
+    "project-management/studio-producer": {
+      "name": "studio-producer",
+      "category": "project-management",
+      "description": "Cross-functional coordination and resource optimization specialist for studio workflows",
+      "keywords": ["coordination", "resource allocation", "workflow optimization", "team management", "process design"],
+      "recommended_for": ["cross-team collaboration", "resource allocation", "workflow optimization", "process improvement"],
+      "tools": ["Read", "Write", "MultiEdit", "Grep", "Glob", "TodoWrite"],
+      "expertise": ["team coordination", "resource optimization", "process design", "workflow automation"]
+    },
     "studio-operations/analytics-reporter": {
       "name": "analytics-reporter",
       "category": "studio-operations",
@@ -392,11 +419,11 @@
       "icon": "🧪",
       "count": 5
     },
-    "custom": {
-      "name": "Custom",
-      "description": "Project-specific custom agents",
-      "icon": "🛠️",
-      "count": 0
+    "project-management": {
+      "name": "Project Management",
+      "description": "Coordination, shipping, and cross-functional orchestration",
+      "icon": "📋",
+      "count": 3
     },
     "bonus": {
       "name": "Bonus",
@@ -409,6 +436,12 @@
       "description": "Operational excellence and business management specialists",
       "icon": "🏢",
       "count": 5
+    },
+    "custom": {
+      "name": "Custom",
+      "description": "Project-specific custom agents",
+      "icon": "🛠️",
+      "count": 0
     }
   },
   "search_tags": {
@@ -430,6 +463,10 @@
     "finance": ["finance-tracker"],
     "infrastructure": ["infrastructure-maintainer", "devops-automator"],
     "compliance": ["legal-compliance-checker"],
-    "support": ["support-responder"]
+    "support": ["support-responder"],
+    "project_management": ["experiment-tracker", "project-shipper", "studio-producer"],
+    "launch": ["project-shipper"],
+    "experiments": ["experiment-tracker"],
+    "coordination": ["studio-producer", "project-coordinator"]
   }
 }
