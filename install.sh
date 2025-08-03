@@ -10,35 +10,48 @@ INSTALL_DIR="$HOME/.superagent-zero-2"
 REPO_URL="https://github.com/Gravicity/SuperAgent-Zero-2.git"
 VERSION="2.0.0"
 
-# Color codes for output
-GREEN='\033[0;32m'
-BLUE='\033[0;34m'
-YELLOW='\033[1;33m'
-RED='\033[0;31m'
-NC='\033[0m' # No Color
+# Color codes for output - detect terminal capabilities  
+# Check for --no-color flag or terminals that don't support ANSI colors properly
+if [ "$1" = "--no-color" ] || [ -n "$CURSOR_TERMINAL" ] || [ -n "$VSCODE_INJECTION" ] || [ "$TERM_PROGRAM" = "cursor" ] || [ "$TERM_PROGRAM" = "vscode" ] || [ "$TERM" = "dumb" ] || [ ! -t 1 ]; then
+    # Disable colors for problematic terminals or when requested
+    GREEN=''
+    BLUE=''
+    YELLOW=''
+    RED=''
+    NC=''
+    NO_COLOR=true
+else
+    # Enable colors for supported terminals
+    GREEN='\033[0;32m'
+    BLUE='\033[0;34m'
+    YELLOW='\033[1;33m'
+    RED='\033[0;31m'
+    NC='\033[0m'
+    NO_COLOR=false
+fi
 
 # Output functions
 print_header() {
-    echo -e "${BLUE}╔═══════════════════════════════════════════════════════════╗${NC}"
-    echo -e "${BLUE}║          🧠 SuperAgent-Zero 2.0 Global Installer          ║${NC}"
-    echo -e "${BLUE}╚═══════════════════════════════════════════════════════════╝${NC}"
-    echo ""
+    printf "${BLUE}╔═══════════════════════════════════════════════════════════╗${NC}\n"
+    printf "${BLUE}║          🧠 SuperAgent-Zero 2.0 Global Installer          ║${NC}\n"
+    printf "${BLUE}╚═══════════════════════════════════════════════════════════╝${NC}\n"
+    printf "\n"
 }
 
 print_status() {
-    echo -e "${BLUE}[INFO]${NC} $1"
+    printf "${BLUE}[INFO]${NC} %s\n" "$1"
 }
 
 print_success() {
-    echo -e "${GREEN}[✓]${NC} $1"
+    printf "${GREEN}[✓]${NC} %s\n" "$1"
 }
 
 print_warning() {
-    echo -e "${YELLOW}[!]${NC} $1"
+    printf "${YELLOW}[!]${NC} %s\n" "$1"
 }
 
 print_error() {
-    echo -e "${RED}[✗]${NC} $1"
+    printf "${RED}[✗]${NC} %s\n" "$1"
 }
 
 # Check prerequisites
@@ -62,12 +75,12 @@ check_prerequisites() {
     
     if [ ${#missing[@]} -ne 0 ]; then
         print_error "Missing required tools: ${missing[*]}"
-        echo ""
-        echo "Please install the missing tools:"
-        echo "  - Git: https://git-scm.com/"
-        echo "  - Node.js v18+: https://nodejs.org/"
-        echo "  - Claude Code: https://claude.ai/code"
-        echo ""
+        printf "\n"
+        printf "%s\n" "Please install the missing tools:"
+        printf "%s\n" "  - Git: https://git-scm.com/"
+        printf "%s\n" "  - Node.js v18+: https://nodejs.org/"
+        printf "%s\n" "  - Claude Code: https://claude.ai/code"
+        printf "\n"
         exit 1
     fi
     
@@ -88,20 +101,20 @@ handle_existing_installation() {
         current_version=$(cat "$INSTALL_DIR/VERSION")
     fi
     
-    echo "Current version: $current_version"
-    echo "Installing version: $VERSION"
-    echo ""
+    printf "%s\n" "Current version: $current_version"
+    printf "%s\n" "Installing version: $VERSION"
+    printf "\n"
     
     # If versions are the same and no --force flag, default to smart update
     if [ "$current_version" = "$VERSION" ] && [ "$1" != "--force" ]; then
-        echo "Same version detected. Performing smart update to refresh files..."
+        printf "%s\n" "Same version detected. Performing smart update to refresh files..."
         choice="1"
     else
-        echo "Update options:"
-        echo "1) Smart update (recommended) - Preserve customizations, update core files"
-        echo "2) Clean install - Remove everything and reinstall"
-        echo "3) Cancel installation"
-        echo ""
+        printf "%s\n" "Update options:"
+        printf "%s\n" "1) Smart update (recommended) - Preserve customizations, update core files"
+        printf "%s\n" "2) Clean install - Remove everything and reinstall"
+        printf "%s\n" "3) Cancel installation"
+        printf "\n"
         
         read -p "Choose option (1/2/3): " choice
     fi
@@ -124,7 +137,7 @@ handle_existing_installation() {
                 exit 0
                 ;;
             *)
-                echo "Please enter 1, 2, or 3"
+                printf "%s\n" "Please enter 1, 2, or 3"
                 ;;
         esac
     done
@@ -299,7 +312,7 @@ main() {
     print_header
     
     print_status "Installing SuperAgent-Zero 2.0..."
-    echo ""
+    printf "\n"
     
     check_prerequisites
     
@@ -315,49 +328,49 @@ main() {
         setup_path
     else
         # Update mode - only update VERSION and INSTALLED
-        echo ""
+        printf "\n"
     fi
     
     # Create VERSION file
     echo "$VERSION" > "$INSTALL_DIR/VERSION"
     echo "$(date -u +"%Y-%m-%dT%H:%M:%SZ")" > "$INSTALL_DIR/INSTALLED"
     
-    echo ""
+    printf "\n"
     if [ $update_mode -eq 0 ]; then
         print_success "SuperAgent-Zero 2.0 installation completed!"
-        echo ""
-        echo "📋 Installation Summary:"
-        echo "   📂 Location: $INSTALL_DIR"
-        echo "   📦 Version: $VERSION"
-        echo "   🤖 Agents: All 37 agents across 8 categories"
-        echo "   🔧 Scripts: setup.sh, update.sh"
-        echo ""
-        echo "🚀 Quick Start:"
-        echo "   1. cd your-project"
-        echo "   2. ~/.superagent-zero-2/setup.sh"
-        echo "   3. claude"
-        echo ""
+        printf "\n"
+        printf "%s\n" "📋 Installation Summary:"
+        printf "%s\n" "   📂 Location: $INSTALL_DIR"
+        printf "%s\n" "   📦 Version: $VERSION"
+        printf "%s\n" "   🤖 Agents: All 39 agents across 8 categories"
+        printf "%s\n" "   🔧 Scripts: setup.sh, update.sh"
+        printf "\n"
+        printf "%s\n" "🚀 Quick Start:"
+        printf "%s\n" "   1. cd your-project"
+        printf "%s\n" "   2. ~/.superagent-zero-2/setup.sh"
+        printf "%s\n" "   3. claude"
+        printf "\n"
     else
         print_success "SuperAgent-Zero 2.0 update completed!"
-        echo ""
-        echo "📋 Update Summary:"
-        echo "   📂 Location: $INSTALL_DIR"
-        echo "   📦 Updated to: $VERSION"
-        echo "   🤖 Core agents updated, custom agents preserved"
-        echo "   🔧 Scripts and catalog updated"
-        echo ""
-        echo "🔄 Next Steps:"
-        echo "   - Existing projects will use updated framework automatically"
-        echo "   - Run setup.sh in new projects to use latest version"
-        echo ""
+        printf "\n"
+        printf "%s\n" "📋 Update Summary:"
+        printf "%s\n" "   📂 Location: $INSTALL_DIR"
+        printf "%s\n" "   📦 Updated to: $VERSION"
+        printf "%s\n" "   🤖 Core agents updated, custom agents preserved"
+        printf "%s\n" "   🔧 Scripts and catalog updated"
+        printf "\n"
+        printf "%s\n" "🔄 Next Steps:"
+        printf "%s\n" "   - Existing projects will use updated framework automatically"
+        printf "%s\n" "   - Run setup.sh in new projects to use latest version"
+        printf "\n"
     fi
     
-    echo "✨ SuperAgent Zero will transform Claude Code into your AI superintendent!"
-    echo ""
-    echo "📚 For more information:"
-    echo "   - README: https://github.com/Gravicity/SuperAgent-Zero-2"
-    echo "   - Agents: https://github.com/Gravicity/SuperAgent-Zero-2/tree/main/agents"
-    echo ""
+    printf "%s\n" "✨ SuperAgent Zero will transform Claude Code into your AI superintendent!"
+    printf "\n"
+    printf "%s\n" "📚 For more information:"
+    printf "%s\n" "   - README: https://github.com/Gravicity/SuperAgent-Zero-2"
+    printf "%s\n" "   - Agents: https://github.com/Gravicity/SuperAgent-Zero-2/tree/main/agents"
+    printf "\n"
 }
 
 # Run installation
