@@ -10,34 +10,43 @@ set -e
 INSTALL_DIR="$HOME/.superagent-zero-2"
 PROJECT_DIR="$(pwd)"
 
-# Color codes
-GREEN='\033[0;32m'
-BLUE='\033[0;34m'
-YELLOW='\033[1;33m'
-RED='\033[0;31m'
-NC='\033[0m'
+# Color codes - check if terminal supports colors
+if [ -t 1 ] && command -v tput >/dev/null 2>&1 && tput colors >/dev/null 2>&1; then
+    GREEN='\033[0;32m'
+    BLUE='\033[0;34m'
+    YELLOW='\033[1;33m'
+    RED='\033[0;31m'
+    NC='\033[0m'
+else
+    # No color support
+    GREEN=''
+    BLUE=''
+    YELLOW=''
+    RED=''
+    NC=''
+fi
 
 print_header() {
-    echo -e "${BLUE}╔═══════════════════════════════════════════════════════════╗${NC}"
-    echo -e "${BLUE}║         🧠 SuperAgent-Zero 2.0 Project Setup              ║${NC}"
-    echo -e "${BLUE}╚═══════════════════════════════════════════════════════════╝${NC}"
-    echo ""
+    printf "${BLUE}╔═══════════════════════════════════════════════════════════╗${NC}\n"
+    printf "${BLUE}║         🧠 SuperAgent-Zero 2.0 Project Setup              ║${NC}\n"
+    printf "${BLUE}╚═══════════════════════════════════════════════════════════╝${NC}\n"
+    printf "\n"
 }
 
 print_status() {
-    echo -e "${BLUE}[INFO]${NC} $1"
+    printf "${BLUE}[INFO]${NC} %s\n" "$1"
 }
 
 print_success() {
-    echo -e "${GREEN}[✓]${NC} $1"
+    printf "${GREEN}[✓]${NC} %s\n" "$1"
 }
 
 print_error() {
-    echo -e "${RED}[✗]${NC} $1"
+    printf "${RED}[✗]${NC} %s\n" "$1"
 }
 
 print_warning() {
-    echo -e "${YELLOW}[⚠]${NC} $1"
+    printf "${YELLOW}[⚠]${NC} %s\n" "$1"
 }
 
 # Detect project type and complexity
@@ -483,30 +492,30 @@ main() {
         print_warning "Agent catalog not found - agent discovery may be limited"
     fi
     
-    echo ""
-    echo -e "${GREEN}✨ SuperAgent Zero 2.0 Activated!${NC}"
-    echo ""
-    echo "Verification:"
-    echo "- Project directory: ${BLUE}$(pwd)${NC}"
-    echo "- Identity file: ${BLUE}CLAUDE.md${NC} $([ -f "CLAUDE.md" ] && echo "✓" || echo "✗")"
-    echo "- Agents installed: $(ls -1 .claude/agents/ 2>/dev/null | wc -l | xargs) agents"
-    echo "- Memory system: ${BLUE}.superagent/memory/${NC} $([ -d ".superagent/memory" ] && echo "✓" || echo "✗")"
-    echo "- Agent catalog: ${BLUE}.superagent/agent-catalog.json${NC} $([ -f ".superagent/agent-catalog.json" ] && echo "✓" || echo "✗")"
-    echo ""
-    echo "Next steps:"
-    echo "1. ${YELLOW}IMPORTANT:${NC} Start Claude Code from THIS directory: ${BLUE}claude${NC}"
-    echo "2. SuperAgent Zero will greet you and analyze your project"
-    echo "3. Follow recommendations for additional agents"
-    echo ""
-    echo "Commands:"
-    echo "- Add more agents: ${BLUE}~/.superagent-zero-2/setup.sh --add-agents${NC}"
-    echo "- Update framework: ${BLUE}~/.superagent-zero-2/update.sh${NC}"
-    echo ""
-    echo -e "${YELLOW}Troubleshooting:${NC}"
-    echo "- If SuperAgent Zero doesn't activate, ensure you start ${BLUE}claude${NC} from this directory"
-    echo "- Claude Code reads CLAUDE.md for identity from the current directory"
-    echo "- Check that CLAUDE.md exists in the project root (not in .claude/)"
-    echo ""
+    printf "\n"
+    printf "${GREEN}✨ SuperAgent Zero 2.0 Activated!${NC}\n"
+    printf "\n"
+    printf "Verification:\n"
+    printf "- Project directory: ${BLUE}%s${NC}\n" "$(pwd)"
+    printf "- Identity file: ${BLUE}CLAUDE.md${NC} %s\n" "$([ -f "CLAUDE.md" ] && echo "✓" || echo "✗")"
+    printf "- Agents installed: %s agents\n" "$(ls -1 .claude/agents/ 2>/dev/null | wc -l | xargs)"
+    printf "- Memory system: ${BLUE}.superagent/memory/${NC} %s\n" "$([ -d ".superagent/memory" ] && echo "✓" || echo "✗")"
+    printf "- Agent catalog: ${BLUE}.superagent/agent-catalog.json${NC} %s\n" "$([ -f ".superagent/agent-catalog.json" ] && echo "✓" || echo "✗")"
+    printf "\n"
+    printf "Next steps:\n"
+    printf "1. ${YELLOW}IMPORTANT:${NC} Start Claude Code from THIS directory: ${BLUE}claude${NC}\n"
+    printf "2. SuperAgent Zero will greet you and analyze your project\n"
+    printf "3. Follow recommendations for additional agents\n"
+    printf "\n"
+    printf "Commands:\n"
+    printf "- Add more agents: ${BLUE}~/.superagent-zero-2/setup.sh --add-agents${NC}\n"
+    printf "- Update framework: ${BLUE}~/.superagent-zero-2/update.sh${NC}\n"
+    printf "\n"
+    printf "${YELLOW}Troubleshooting:${NC}\n"
+    printf "- If SuperAgent Zero doesn't activate, ensure you start ${BLUE}claude${NC} from this directory\n"
+    printf "- Claude Code reads CLAUDE.md for identity from the current directory\n"
+    printf "- Check that CLAUDE.md exists in the project root (not in .claude/)\n"
+    printf "\n"
 }
 
 # Run main
