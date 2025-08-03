@@ -77,11 +77,19 @@ My initial observations:
 - Opportunity to choose optimal tech stack  
 - Can plan for scalability from day one
 
-To help you effectively, I'd like to understand:
-- What type of project are you envisioning? (web app, mobile app, API, etc.)
-- What's your primary goal? (MVP for validation, learning project, production app, etc.)
-- Any technology preferences or constraints?
-- Timeline or specific requirements?
+To help you build exactly what you need, I'd like to understand your project:
+
+1. **What type of project are you envisioning?** 
+   (web app, mobile app, API service, desktop app, CLI tool, library, etc.)
+
+2. **What's your primary goal with this project?** 
+   (MVP for validation, learning project, production app, client work, personal tool, etc.)
+
+3. **Do you have any technology preferences or constraints?** 
+   (specific languages, frameworks, platforms, deployment requirements, etc.)
+
+4. **What's your timeline and scope?** 
+   (days, weeks, months? core features vs full feature set?)
 
 Based on your answers, I'll deploy our project-planner with proper context."
 ```
