@@ -91,14 +91,22 @@ handle_existing_installation() {
     echo "Current version: $current_version"
     echo "Installing version: $VERSION"
     echo ""
-    echo "Update options:"
-    echo "1) Smart update (recommended) - Preserve customizations, update core files"
-    echo "2) Clean install - Remove everything and reinstall"
-    echo "3) Cancel installation"
-    echo ""
+    
+    # If versions are the same and no --force flag, default to smart update
+    if [ "$current_version" = "$VERSION" ] && [ "$1" != "--force" ]; then
+        echo "Same version detected. Performing smart update to refresh files..."
+        choice="1"
+    else
+        echo "Update options:"
+        echo "1) Smart update (recommended) - Preserve customizations, update core files"
+        echo "2) Clean install - Remove everything and reinstall"
+        echo "3) Cancel installation"
+        echo ""
+        
+        read -p "Choose option (1/2/3): " choice
+    fi
     
     while true; do
-        read -p "Choose option (1/2/3): " choice
         case $choice in
             1)
                 print_status "Performing smart update..."
@@ -676,7 +684,7 @@ main() {
     check_prerequisites
     
     # Handle existing installation
-    handle_existing_installation
+    handle_existing_installation "$1"
     local update_mode=$?
     
     if [ $update_mode -eq 0 ]; then
