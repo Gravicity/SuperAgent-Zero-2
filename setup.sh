@@ -10,20 +10,24 @@ set -e
 INSTALL_DIR="$HOME/.superagent-zero-2"
 PROJECT_DIR="$(pwd)"
 
-# Color codes - check if terminal supports colors
-if [ -t 1 ] && command -v tput >/dev/null 2>&1 && tput colors >/dev/null 2>&1; then
-    GREEN='\033[0;32m'
-    BLUE='\033[0;34m'
-    YELLOW='\033[1;33m'
-    RED='\033[0;31m'
-    NC='\033[0m'
-else
-    # No color support
+# Color codes - detect terminal capabilities
+# Check for --no-color flag or terminals that don't support ANSI colors properly
+if [ "$1" = "--no-color" ] || [ -n "$CURSOR_TERMINAL" ] || [ -n "$VSCODE_INJECTION" ] || [ "$TERM_PROGRAM" = "cursor" ] || [ "$TERM_PROGRAM" = "vscode" ] || [ "$TERM" = "dumb" ] || [ ! -t 1 ]; then
+    # Disable colors for problematic terminals or when requested
     GREEN=''
     BLUE=''
     YELLOW=''
     RED=''
     NC=''
+    NO_COLOR=true
+else
+    # Enable colors for supported terminals
+    GREEN='\033[0;32m'
+    BLUE='\033[0;34m'
+    YELLOW='\033[1;33m'
+    RED='\033[0;31m'
+    NC='\033[0m'
+    NO_COLOR=false
 fi
 
 print_header() {
