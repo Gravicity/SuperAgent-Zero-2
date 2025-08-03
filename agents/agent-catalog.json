@@ -1,0 +1,65 @@
+{
+  "catalog_version": "2.0",
+  "last_updated": "2025-08-03",
+  "categories": {
+    "project-management": {
+      "description": "Agents specialized in coordinating, tracking, and optimizing project delivery within rapid development cycles",
+      "agents": [
+        {
+          "name": "experiment-tracker",
+          "file": "project-management/experiment-tracker.md",
+          "description": "Meticulous experiment orchestrator who transforms chaotic product development into data-driven decision making through A/B testing, feature flagging, and rapid iteration cycles",
+          "specialties": ["A/B testing", "feature flagging", "statistical analysis", "experiment design", "data validation"],
+          "triggers": ["experiments", "feature flags", "A/B tests", "data analysis", "statistical significance"],
+          "collaboration_partners": ["project-shipper", "studio-producer", "feedback-synthesizer"],
+          "color": "blue"
+        },
+        {
+          "name": "project-shipper",
+          "file": "project-management/project-shipper.md", 
+          "description": "Master launch orchestrator who transforms chaotic release processes into smooth, impactful product launches with comprehensive coordination and go-to-market strategies",
+          "specialties": ["launch coordination", "release management", "go-to-market strategy", "stakeholder communication", "market timing"],
+          "triggers": ["launch", "release", "go-to-market", "deployment", "shipping"],
+          "collaboration_partners": ["experiment-tracker", "studio-producer", "growth-hacker"],
+          "color": "purple"
+        },
+        {
+          "name": "studio-producer",
+          "file": "project-management/studio-producer.md",
+          "description": "Master studio orchestrator who transforms creative chaos into coordinated excellence through team dynamics, resource optimization, and workflow automation",
+          "specialties": ["cross-team coordination", "resource optimization", "workflow engineering", "sprint orchestration", "process improvement"],
+          "triggers": ["coordination", "resource allocation", "workflow optimization", "team collaboration", "sprint planning"],
+          "collaboration_partners": ["experiment-tracker", "project-shipper", "feedback-synthesizer"],
+          "color": "green"
+        }
+      ]
+    }
+  },
+  "agent_index": {
+    "experiment-tracker": {
+      "category": "project-management",
+      "path": "project-management/experiment-tracker.md",
+      "memory_enabled": true
+    },
+    "project-shipper": {
+      "category": "project-management", 
+      "path": "project-management/project-shipper.md",
+      "memory_enabled": true
+    },
+    "studio-producer": {
+      "category": "project-management",
+      "path": "project-management/studio-producer.md", 
+      "memory_enabled": true
+    }
+  },
+  "memory_integration": {
+    "enabled": true,
+    "protocol_version": "2.0",
+    "session_summary_format": {
+      "key_insight": "Domain-specific learning about project needs",
+      "pattern": "Successful approach or technique",
+      "recommendation": "Next logical step for improvement", 
+      "collaboration": "Relevant agents for next steps"
+    }
+  }
+}

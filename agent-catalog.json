@@ -1,0 +1,426 @@
+{
+  "version": "2.0.0",
+  "updated": "2025-08-03",
+  "total_agents": 38,
+  "agents": {
+    "starter/project-analyzer": {
+      "name": "project-analyzer",
+      "category": "starter",
+      "description": "Analyzes existing projects and recommends specialized agents",
+      "keywords": ["analysis", "recommendations", "assessment", "audit", "code review"],
+      "recommended_for": ["existing projects", "code optimization", "tech debt assessment"],
+      "tools": ["Read", "Grep", "LS", "WebSearch", "Bash"],
+      "expertise": ["project structure", "code quality", "dependency analysis", "security assessment"]
+    },
+    "starter/project-planner": {
+      "name": "project-planner",
+      "category": "starter",
+      "description": "Plans new projects from concept to implementation",
+      "keywords": ["planning", "architecture", "design", "roadmap", "scaffolding"],
+      "recommended_for": ["new projects", "greenfield development", "MVP planning", "architecture design"],
+      "tools": ["Write", "Read", "WebSearch"],
+      "expertise": ["system design", "technology selection", "project roadmapping", "team coordination"]
+    },
+    "starter/memory-manager": {
+      "name": "memory-manager",
+      "category": "starter",
+      "description": "Maintains cross-context memory and insights",
+      "keywords": ["memory", "persistence", "context", "insights", "continuity"],
+      "recommended_for": ["all projects"],
+      "tools": ["Read", "Write", "MultiEdit"],
+      "expertise": ["context preservation", "insight capture", "pattern recognition", "knowledge management"]
+    },
+    "starter/agent-enhancer": {
+      "name": "agent-enhancer",
+      "category": "starter",
+      "description": "Enhances existing agents with SuperAgent-Zero 2.0 memory integration",
+      "keywords": ["enhancement", "memory integration", "agent upgrade", "parallel processing"],
+      "recommended_for": ["framework development", "agent optimization"],
+      "tools": ["Read", "Write", "MultiEdit"],
+      "expertise": ["agent enhancement", "memory protocols", "batch processing", "quality preservation"]
+    },
+    "engineering/ai-engineer": {
+      "name": "ai-engineer",
+      "category": "engineering",
+      "description": "AI/ML integration specialist for production applications",
+      "keywords": ["ai", "ml", "llm", "machine learning", "automation", "embeddings"],
+      "recommended_for": ["ai features", "chatbots", "recommendations", "smart automation"],
+      "tools": ["Write", "Read", "MultiEdit", "Bash", "WebFetch"],
+      "expertise": ["LLM integration", "ML pipelines", "recommendation systems", "computer vision"]
+    },
+    "engineering/backend-architect": {
+      "name": "backend-architect",
+      "category": "engineering",
+      "description": "Designs scalable backend systems and APIs",
+      "keywords": ["api", "backend", "architecture", "scalability", "microservices"],
+      "recommended_for": ["web apps", "microservices", "REST APIs", "system design"],
+      "tools": ["Read", "Write", "MultiEdit", "Bash"],
+      "expertise": ["API design", "database architecture", "system scalability", "performance optimization"]
+    },
+    "engineering/frontend-developer": {
+      "name": "frontend-developer",
+      "category": "engineering",
+      "description": "Modern frontend development and user interface expert",
+      "keywords": ["frontend", "react", "vue", "angular", "ui", "performance"],
+      "recommended_for": ["web applications", "user interfaces", "frontend optimization"],
+      "tools": ["Write", "Read", "MultiEdit", "Bash"],
+      "expertise": ["modern frameworks", "component architecture", "performance optimization", "user experience"]
+    },
+    "engineering/mobile-app-builder": {
+      "name": "mobile-app-builder",
+      "category": "engineering",
+      "description": "Cross-platform mobile development specialist",
+      "keywords": ["mobile", "ios", "android", "react native", "flutter", "app development"],
+      "recommended_for": ["mobile apps", "cross-platform development", "native features"],
+      "tools": ["Write", "Read", "MultiEdit", "Bash"],
+      "expertise": ["mobile frameworks", "platform integration", "app store optimization", "performance"]
+    },
+    "engineering/devops-automator": {
+      "name": "devops-automator",
+      "category": "engineering",
+      "description": "CI/CD and infrastructure automation specialist",
+      "keywords": ["devops", "ci/cd", "deployment", "automation", "infrastructure"],
+      "recommended_for": ["deployment automation", "infrastructure management", "CI/CD pipelines"],
+      "tools": ["Bash", "Write", "Read", "MultiEdit"],
+      "expertise": ["deployment automation", "infrastructure as code", "monitoring", "security"]
+    },
+    "engineering/rapid-prototyper": {
+      "name": "rapid-prototyper",
+      "category": "engineering",
+      "description": "Fast MVP development and prototyping expert",
+      "keywords": ["prototype", "mvp", "rapid development", "validation", "iteration"],
+      "recommended_for": ["MVP development", "proof of concept", "rapid iteration"],
+      "tools": ["Write", "Read", "MultiEdit", "Bash"],
+      "expertise": ["rapid development", "MVP architecture", "market validation", "iterative design"]
+    },
+    "engineering/test-writer-fixer": {
+      "name": "test-writer-fixer",
+      "category": "engineering",
+      "description": "Comprehensive testing and quality assurance specialist",
+      "keywords": ["testing", "qa", "unit tests", "integration", "quality"],
+      "recommended_for": ["test coverage", "quality assurance", "bug fixing"],
+      "tools": ["Read", "Write", "MultiEdit", "Bash"],
+      "expertise": ["test automation", "quality metrics", "bug prevention", "code reliability"]
+    },
+    "design/ui-designer": {
+      "name": "ui-designer",
+      "category": "design",
+      "description": "User interface design and component systems expert",
+      "keywords": ["ui", "design", "components", "interface", "visual design"],
+      "recommended_for": ["interface design", "design systems", "visual optimization"],
+      "tools": ["Write", "Read", "MultiEdit"],
+      "expertise": ["visual design", "component systems", "design consistency", "user interfaces"]
+    },
+    "design/ux-researcher": {
+      "name": "ux-researcher",
+      "category": "design",
+      "description": "User experience research and behavioral analysis expert",
+      "keywords": ["ux", "research", "user behavior", "usability", "analytics"],
+      "recommended_for": ["user research", "usability testing", "behavior analysis"],
+      "tools": ["Read", "Write", "WebSearch", "WebFetch"],
+      "expertise": ["user research", "usability testing", "behavioral analysis", "data interpretation"]
+    },
+    "design/visual-storyteller": {
+      "name": "visual-storyteller",
+      "category": "design",
+      "description": "Visual communication and data storytelling specialist",
+      "keywords": ["storytelling", "visualization", "infographics", "communication", "narrative"],
+      "recommended_for": ["data visualization", "presentations", "marketing materials"],
+      "tools": ["Write", "Read", "WebFetch"],
+      "expertise": ["visual communication", "data storytelling", "infographic design", "narrative structure"]
+    },
+    "design/brand-guardian": {
+      "name": "brand-guardian",
+      "category": "design",
+      "description": "Brand consistency and identity management expert",
+      "keywords": ["brand", "identity", "consistency", "guidelines", "style"],
+      "recommended_for": ["brand development", "style guides", "brand consistency"],
+      "tools": ["Write", "Read", "MultiEdit"],
+      "expertise": ["brand identity", "style systems", "brand guidelines", "visual consistency"]
+    },
+    "design/whimsy-injector": {
+      "name": "whimsy-injector",
+      "category": "design",
+      "description": "User delight and micro-interaction specialist",
+      "keywords": ["delight", "micro-interactions", "fun", "engagement", "personality"],
+      "recommended_for": ["user engagement", "delightful experiences", "micro-interactions"],
+      "tools": ["Write", "Read", "MultiEdit"],
+      "expertise": ["micro-interactions", "user delight", "personality design", "engagement optimization"]
+    },
+    "marketing/content-creator": {
+      "name": "content-creator",
+      "category": "marketing",
+      "description": "Multi-platform content strategy and creation expert",
+      "keywords": ["content", "writing", "strategy", "social media", "engagement"],
+      "recommended_for": ["content strategy", "social media", "blog writing", "marketing copy"],
+      "tools": ["Write", "Read", "WebSearch", "WebFetch"],
+      "expertise": ["content strategy", "copywriting", "social media", "audience engagement"]
+    },
+    "marketing/growth-hacker": {
+      "name": "growth-hacker",
+      "category": "marketing",
+      "description": "Data-driven growth and user acquisition specialist",
+      "keywords": ["growth", "acquisition", "viral", "experimentation", "metrics"],
+      "recommended_for": ["user acquisition", "growth optimization", "viral mechanics"],
+      "tools": ["Read", "Write", "WebSearch", "Bash"],
+      "expertise": ["growth hacking", "viral mechanics", "user acquisition", "data analysis"]
+    },
+    "marketing/app-store-optimizer": {
+      "name": "app-store-optimizer",
+      "category": "marketing",
+      "description": "App store optimization and organic discovery expert",
+      "keywords": ["aso", "app store", "optimization", "discovery", "keywords"],
+      "recommended_for": ["app store presence", "organic discovery", "app marketing"],
+      "tools": ["Read", "Write", "WebSearch"],
+      "expertise": ["app store optimization", "keyword research", "organic discovery", "conversion optimization"]
+    },
+    "marketing/instagram-curator": {
+      "name": "instagram-curator",
+      "category": "marketing",
+      "description": "Instagram content strategy and growth specialist",
+      "keywords": ["instagram", "visual content", "stories", "reels", "engagement"],
+      "recommended_for": ["instagram marketing", "visual content", "social growth"],
+      "tools": ["Write", "Read", "WebFetch"],
+      "expertise": ["instagram strategy", "visual content", "social engagement", "influencer collaboration"]
+    },
+    "marketing/reddit-community-builder": {
+      "name": "reddit-community-builder",
+      "category": "marketing",
+      "description": "Authentic Reddit community engagement specialist",
+      "keywords": ["reddit", "community", "engagement", "authentic", "discussion"],
+      "recommended_for": ["reddit marketing", "community building", "authentic engagement"],
+      "tools": ["Read", "Write", "WebSearch"],
+      "expertise": ["reddit culture", "community building", "authentic engagement", "discussion facilitation"]
+    },
+    "marketing/tiktok-strategist": {
+      "name": "tiktok-strategist",
+      "category": "marketing",
+      "description": "TikTok viral content and trend specialist",
+      "keywords": ["tiktok", "viral", "trends", "short video", "cultural"],
+      "recommended_for": ["tiktok marketing", "viral content", "trend adaptation"],
+      "tools": ["Write", "Read", "WebFetch"],
+      "expertise": ["tiktok trends", "viral mechanics", "short-form content", "cultural relevance"]
+    },
+    "marketing/twitter-engager": {
+      "name": "twitter-engager",
+      "category": "marketing",
+      "description": "Real-time Twitter engagement and community building expert",
+      "keywords": ["twitter", "engagement", "real-time", "community", "conversation"],
+      "recommended_for": ["twitter marketing", "real-time engagement", "thought leadership"],
+      "tools": ["Read", "Write", "WebSearch"],
+      "expertise": ["twitter engagement", "real-time marketing", "community building", "conversation facilitation"]
+    },
+    "product/trend-researcher": {
+      "name": "trend-researcher",
+      "category": "product",
+      "description": "Market trend analysis and opportunity identification expert",
+      "keywords": ["trends", "market research", "opportunities", "viral", "timing"],
+      "recommended_for": ["market research", "trend analysis", "opportunity identification"],
+      "tools": ["WebSearch", "WebFetch", "Read", "Write"],
+      "expertise": ["trend analysis", "market research", "opportunity identification", "viral prediction"]
+    },
+    "product/feedback-synthesizer": {
+      "name": "feedback-synthesizer",
+      "category": "product",
+      "description": "User feedback analysis and insight generation expert",
+      "keywords": ["feedback", "user research", "insights", "analysis", "synthesis"],
+      "recommended_for": ["user feedback analysis", "product insights", "user research"],
+      "tools": ["Read", "Write", "MultiEdit"],
+      "expertise": ["feedback analysis", "user insights", "pattern recognition", "research synthesis"]
+    },
+    "product/sprint-prioritizer": {
+      "name": "sprint-prioritizer",
+      "category": "product",
+      "description": "Agile sprint planning and feature prioritization expert",
+      "keywords": ["sprint", "prioritization", "agile", "planning", "roadmap"],
+      "recommended_for": ["sprint planning", "feature prioritization", "agile development"],
+      "tools": ["Read", "Write", "MultiEdit"],
+      "expertise": ["sprint planning", "feature prioritization", "agile methodology", "roadmap planning"]
+    },
+    "testing/api-tester": {
+      "name": "api-tester",
+      "category": "testing",
+      "description": "API testing and validation specialist",
+      "keywords": ["api", "testing", "validation", "load testing", "performance"],
+      "recommended_for": ["api testing", "performance testing", "integration testing"],
+      "tools": ["Bash", "Read", "Write"],
+      "expertise": ["API testing", "load testing", "performance validation", "integration testing"]
+    },
+    "testing/performance-benchmarker": {
+      "name": "performance-benchmarker",
+      "category": "testing",
+      "description": "Performance testing and optimization specialist",
+      "keywords": ["performance", "benchmarking", "optimization", "speed", "metrics"],
+      "recommended_for": ["performance testing", "optimization", "benchmarking"],
+      "tools": ["Bash", "Read", "Write"],
+      "expertise": ["performance testing", "benchmarking", "optimization strategies", "metrics analysis"]
+    },
+    "testing/test-results-analyzer": {
+      "name": "test-results-analyzer",
+      "category": "testing",
+      "description": "Test data analysis and quality metrics specialist",
+      "keywords": ["test analysis", "quality metrics", "reporting", "trends", "insights"],
+      "recommended_for": ["test analysis", "quality reporting", "metrics tracking"],
+      "tools": ["Read", "Write", "MultiEdit"],
+      "expertise": ["test analysis", "quality metrics", "trend analysis", "reporting"]
+    },
+    "testing/tool-evaluator": {
+      "name": "tool-evaluator",
+      "category": "testing",
+      "description": "Development tool assessment and recommendation expert",
+      "keywords": ["tools", "evaluation", "productivity", "assessment", "recommendations"],
+      "recommended_for": ["tool evaluation", "productivity optimization", "technology assessment"],
+      "tools": ["Read", "Write", "WebSearch", "Bash"],
+      "expertise": ["tool evaluation", "productivity assessment", "technology comparison", "recommendations"]
+    },
+    "testing/workflow-optimizer": {
+      "name": "workflow-optimizer",
+      "category": "testing",
+      "description": "Process optimization and workflow improvement specialist",
+      "keywords": ["workflow", "optimization", "process", "efficiency", "automation"],
+      "recommended_for": ["workflow optimization", "process improvement", "efficiency gains"],
+      "tools": ["Read", "Write", "MultiEdit"],
+      "expertise": ["workflow optimization", "process improvement", "efficiency analysis", "automation strategies"]
+    },
+    "bonus/joker": {
+      "name": "joker",
+      "category": "bonus",
+      "description": "Tech humor specialist for team morale and lighthearted content",
+      "keywords": ["humor", "jokes", "morale", "team spirit", "fun", "programming puns"],
+      "recommended_for": ["team morale", "stress relief", "fun content", "error pages"],
+      "tools": ["Write"],
+      "expertise": ["tech humor", "programming puns", "team motivation", "situational comedy"]
+    },
+    "bonus/studio-coach": {
+      "name": "studio-coach",
+      "category": "bonus",
+      "description": "Elite performance coach for multi-agent coordination and motivation",
+      "keywords": ["coaching", "motivation", "coordination", "performance", "team dynamics", "leadership"],
+      "recommended_for": ["complex projects", "team coordination", "agent motivation", "sprint planning"],
+      "tools": ["Task", "Write", "Read"],
+      "expertise": ["performance coaching", "team coordination", "motivational leadership", "crisis management"]
+    },
+    "studio-operations/analytics-reporter": {
+      "name": "analytics-reporter",
+      "category": "studio-operations",
+      "description": "Data analytics and insights generation specialist for studio performance tracking",
+      "keywords": ["analytics", "data", "metrics", "insights", "reporting", "performance"],
+      "recommended_for": ["data analysis", "performance tracking", "user behavior analysis", "revenue optimization"],
+      "tools": ["Write", "Read", "MultiEdit", "WebSearch", "Grep"],
+      "expertise": ["data analysis", "statistical modeling", "dashboard creation", "trend identification"]
+    },
+    "studio-operations/finance-tracker": {
+      "name": "finance-tracker",
+      "category": "studio-operations",
+      "description": "Financial management and budget optimization specialist for studio operations",
+      "keywords": ["finance", "budget", "cost optimization", "revenue", "ROI", "forecasting"],
+      "recommended_for": ["budget planning", "cost analysis", "financial forecasting", "investment decisions"],
+      "tools": ["Write", "Read", "MultiEdit", "WebSearch", "Grep"],
+      "expertise": ["financial modeling", "cost optimization", "revenue analysis", "budget management"]
+    },
+    "studio-operations/infrastructure-maintainer": {
+      "name": "infrastructure-maintainer",
+      "category": "studio-operations",
+      "description": "Infrastructure reliability and performance optimization specialist",
+      "keywords": ["infrastructure", "performance", "scalability", "monitoring", "optimization", "reliability"],
+      "recommended_for": ["system optimization", "performance tuning", "infrastructure scaling", "monitoring setup"],
+      "tools": ["Write", "Read", "MultiEdit", "WebSearch", "Grep", "Bash"],
+      "expertise": ["system optimization", "performance tuning", "infrastructure management", "disaster recovery"]
+    },
+    "studio-operations/legal-compliance-checker": {
+      "name": "legal-compliance-checker",
+      "category": "studio-operations",
+      "description": "Legal compliance and regulatory requirement specialist for studio operations",
+      "keywords": ["compliance", "legal", "privacy", "regulations", "policies", "risk management"],
+      "recommended_for": ["legal compliance", "privacy policies", "regulatory audits", "risk assessment"],
+      "tools": ["Write", "Read", "MultiEdit", "WebSearch", "Grep"],
+      "expertise": ["regulatory compliance", "privacy law", "risk assessment", "policy development"]
+    },
+    "studio-operations/support-responder": {
+      "name": "support-responder",
+      "category": "studio-operations",
+      "description": "Customer support optimization and user experience specialist",
+      "keywords": ["support", "customer service", "user experience", "documentation", "automation", "satisfaction"],
+      "recommended_for": ["customer support", "user documentation", "support automation", "user satisfaction"],
+      "tools": ["Write", "Read", "MultiEdit", "WebSearch", "Grep"],
+      "expertise": ["support optimization", "documentation creation", "user communication", "satisfaction improvement"]
+    }
+  },
+  "categories": {
+    "starter": {
+      "name": "Starter Agents",
+      "description": "Essential agents for project initialization and coordination",
+      "icon": "🚀",
+      "count": 4
+    },
+    "engineering": {
+      "name": "Engineering",
+      "description": "Development, architecture, and technical implementation",
+      "icon": "⚙️",
+      "count": 7
+    },
+    "design": {
+      "name": "Design",
+      "description": "UI/UX, visual design, and user experience",
+      "icon": "🎨",
+      "count": 5
+    },
+    "marketing": {
+      "name": "Marketing",
+      "description": "Growth, content, and user acquisition",
+      "icon": "📈",
+      "count": 7
+    },
+    "product": {
+      "name": "Product",
+      "description": "Product management, strategy, and research",
+      "icon": "🎯",
+      "count": 3
+    },
+    "testing": {
+      "name": "Testing",
+      "description": "Quality assurance, testing, and performance",
+      "icon": "🧪",
+      "count": 5
+    },
+    "custom": {
+      "name": "Custom",
+      "description": "Project-specific custom agents",
+      "icon": "🛠️",
+      "count": 0
+    },
+    "bonus": {
+      "name": "Bonus",
+      "description": "Special purpose agents for team dynamics and creativity",
+      "icon": "🎁",
+      "count": 2
+    },
+    "studio-operations": {
+      "name": "Studio Operations",
+      "description": "Operational excellence and business management specialists",
+      "icon": "🏢",
+      "count": 5
+    }
+  },
+  "search_tags": {
+    "ai_ml": ["ai-engineer"],
+    "backend": ["backend-architect", "devops-automator"],
+    "frontend": ["frontend-developer", "ui-designer"],
+    "mobile": ["mobile-app-builder"],
+    "testing": ["test-writer-fixer", "api-tester", "performance-benchmarker", "test-results-analyzer"],
+    "design": ["ui-designer", "ux-researcher", "visual-storyteller", "brand-guardian", "whimsy-injector"],
+    "marketing": ["content-creator", "growth-hacker", "app-store-optimizer", "instagram-curator", "reddit-community-builder", "tiktok-strategist", "twitter-engager"],
+    "product": ["trend-researcher", "feedback-synthesizer", "sprint-prioritizer"],
+    "optimization": ["performance-benchmarker", "workflow-optimizer", "tool-evaluator"],
+    "rapid_development": ["rapid-prototyper", "project-planner"],
+    "team_dynamics": ["studio-coach", "joker"],
+    "creativity": ["joker", "whimsy-injector", "visual-storyteller"],
+    "motivation": ["studio-coach", "joker"],
+    "operations": ["analytics-reporter", "finance-tracker", "infrastructure-maintainer", "legal-compliance-checker", "support-responder"],
+    "analytics": ["analytics-reporter", "performance-benchmarker"],
+    "finance": ["finance-tracker"],
+    "infrastructure": ["infrastructure-maintainer", "devops-automator"],
+    "compliance": ["legal-compliance-checker"],
+    "support": ["support-responder"]
+  }
+}
