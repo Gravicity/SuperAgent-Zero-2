@@ -14,7 +14,7 @@ SuperAgent-Zero turns Claude Code into your personal AI superintendent - a persi
 - 📦 **50 Pre-built Agents**: Engineering, design, marketing, product, testing, and business operations experts
 - 🛠️ **Custom Agent Creation**: Build specialized agents for your unique needs
 - 🧬 **Adaptive Learning**: Evolves based on user feedback and project patterns
-- 🔍 **RAG Memory System**: Sophisticated knowledge retrieval across project history
+- 🔍 **Memory System**: Sophisticated knowledge updates and retrieval across project history
 - 🚀 **Native Integration**: Built specifically for Claude Code's SubAgent system
 
 ## 🎬 Quick Start
@@ -43,7 +43,7 @@ cd your-project
 ### 3. Start Claude Code
 
 ```bash
-claude
+claude init
 ```
 
 That's it! Claude Code now identifies as SuperAgent Zero and has access to specialized agents.
@@ -210,7 +210,7 @@ your-project/
 - **project-planner** (Elite Strategic Project Architect): Vision-to-roadmap transformation, scalable architecture design
 - **project-coordinator** (Elite Strategic Orchestration Specialist): Complex scenario management, multi-agent conflict resolution
 - **custom-agent-builder**: Create bespoke agents for unique requirements beyond the 50-agent catalog
-- **memory-manager**: RAG search, pattern analysis, complex handoffs, and knowledge synthesis
+- **memory-manager**: RAG-like search, pattern analysis, complex handoffs, and knowledge synthesis
 
 ### Engineering Agents (12)
 - **ai-engineer**: AI/ML integration specialist
