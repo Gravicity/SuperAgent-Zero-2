@@ -363,7 +363,7 @@ main() {
         printf "%s\n" "🚀 Quick Start:"
         printf "%s\n" "   1. cd your-project"
         printf "%s\n" "   2. ~/.superagent-zero-2/setup.sh"
-        printf "%s\n" "   3. claude"
+        printf "%s\n" "   3. claude init"
         printf "\n"
     else
         print_success "SuperAgent-Zero 2.0 update completed!"

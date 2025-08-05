@@ -46,7 +46,7 @@ cd your-project
 claude init
 ```
 
-That's it! Claude Code now identifies as SuperAgent Zero and has access to specialized agents.
+**Note**: `claude init` is required (not just `claude`) so that Claude Code reads the project files and CLAUDE.md identity configuration that was installed in step 2.\n\nThat's it! Claude Code now identifies as SuperAgent Zero and has access to specialized agents.
 
 ## 🎭 How It Works
 
