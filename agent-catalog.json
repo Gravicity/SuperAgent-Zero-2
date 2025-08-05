@@ -1,7 +1,7 @@
 {
   "version": "2.0.0",
-  "updated": "2025-08-03",
-  "total_agents": 39,
+  "updated": "2025-08-04",
+  "total_agents": 50,
   "agents": {
     "starter/project-analyzer": {
       "name": "project-analyzer",
@@ -30,14 +30,14 @@
       "tools": ["Read", "Write", "MultiEdit"],
       "expertise": ["context preservation", "insight capture", "pattern recognition", "knowledge management"]
     },
-    "starter/agent-enhancer": {
-      "name": "agent-enhancer",
+    "starter/custom-agent-builder": {
+      "name": "custom-agent-builder",
       "category": "starter",
-      "description": "Enhances existing agents with SuperAgent-Zero 2.0 memory integration",
-      "keywords": ["enhancement", "memory integration", "agent upgrade", "parallel processing"],
-      "recommended_for": ["framework development", "agent optimization"],
-      "tools": ["Read", "Write", "MultiEdit"],
-      "expertise": ["agent enhancement", "memory protocols", "batch processing", "quality preservation"]
+      "description": "Creates custom specialized agents tailored to specific project needs and unique requirements following SuperAgent-Zero framework",
+      "keywords": ["custom agents", "agent creation", "bespoke solutions", "framework compliance"],
+      "recommended_for": ["unique requirements", "specialized domains", "custom workflows", "gap filling"],
+      "tools": ["Read", "Write", "MultiEdit", "WebSearch"],
+      "expertise": ["agent architecture", "framework compliance", "domain research", "custom solutions"]
     },
     "starter/project-coordinator": {
       "name": "project-coordinator",
@@ -246,10 +246,109 @@
       "tools": ["Read", "Write", "MultiEdit"],
       "expertise": ["sprint planning", "feature prioritization", "agile methodology", "roadmap planning"]
     },
+    "product/competitive-intelligence-researcher": {
+      "name": "competitive-intelligence-researcher",
+      "category": "product",
+      "description": "Conducts deep competitive analysis of websites, SaaS products, and apps through comprehensive research, user feedback analysis, and strategic intelligence gathering",
+      "keywords": ["competitive analysis", "market research", "user feedback", "product intelligence", "competitor research"],
+      "recommended_for": ["product cloning", "competitive analysis", "market research", "feature gap analysis"],
+      "tools": ["WebSearch", "WebFetch", "Read", "Write", "MultiEdit"],
+      "expertise": ["competitive intelligence", "user feedback analysis", "technical architecture assessment", "market research"]
+    },
+    "product/product-clone-architect": {
+      "name": "product-clone-architect",
+      "category": "product",
+      "description": "Transforms competitive intelligence into actionable product development strategies, technical architecture plans, and differentiated cloning roadmaps",
+      "keywords": ["product cloning", "architecture design", "competitive strategy", "development planning", "product differentiation"],
+      "recommended_for": ["product cloning", "competitive product development", "architecture planning", "feature differentiation"],
+      "tools": ["Write", "Read", "MultiEdit", "Task", "TodoWrite"],
+      "expertise": ["product strategy", "technical architecture", "competitive differentiation", "development planning"]
+    },
+    "engineering/security-auditor": {
+      "name": "security-auditor",
+      "category": "engineering",
+      "description": "Conducts security assessments, vulnerability scanning, threat modeling, and implements comprehensive application security measures",
+      "keywords": ["security", "vulnerability assessment", "threat modeling", "penetration testing", "compliance"],
+      "recommended_for": ["security audits", "vulnerability assessment", "compliance requirements", "threat modeling"],
+      "tools": ["Read", "Grep", "WebSearch", "WebFetch", "Bash", "Write", "MultiEdit"],
+      "expertise": ["application security", "vulnerability assessment", "threat modeling", "security compliance"]
+    },
+    "engineering/data-engineer": {
+      "name": "data-engineer",
+      "category": "engineering",
+      "description": "Designs data pipelines, implements ETL processes, builds data warehouses, and architects scalable data infrastructure",
+      "keywords": ["data pipelines", "ETL", "data warehouse", "big data", "analytics infrastructure"],
+      "recommended_for": ["data infrastructure", "analytics systems", "data pipelines", "business intelligence"],
+      "tools": ["Write", "Read", "MultiEdit", "Bash", "Grep", "WebSearch"],
+      "expertise": ["data architecture", "ETL processes", "data warehousing", "stream processing"]
+    },
+    "engineering/documentation-architect": {
+      "name": "documentation-architect",
+      "category": "engineering",
+      "description": "Creates comprehensive technical documentation, API references, user guides, and knowledge bases that enable developers and users",
+      "keywords": ["documentation", "API docs", "technical writing", "knowledge base", "user guides"],
+      "recommended_for": ["API documentation", "technical writing", "user guides", "knowledge management"],
+      "tools": ["Write", "Read", "MultiEdit", "WebSearch", "WebFetch", "Grep"],
+      "expertise": ["technical writing", "API documentation", "information architecture", "developer experience"]
+    },
+    "engineering/blockchain-developer": {
+      "name": "blockchain-developer",
+      "category": "engineering",
+      "description": "Builds decentralized applications, smart contracts, Web3 integrations, and blockchain infrastructure for modern distributed systems",
+      "keywords": ["blockchain", "smart contracts", "Web3", "DeFi", "cryptocurrency", "NFT"],
+      "recommended_for": ["blockchain development", "smart contracts", "Web3 applications", "DeFi protocols"],
+      "tools": ["Write", "Read", "MultiEdit", "Bash", "WebSearch", "WebFetch"],
+      "expertise": ["smart contracts", "blockchain architecture", "DeFi protocols", "Web3 integration"]
+    },
+    "engineering/game-developer": {
+      "name": "game-developer",
+      "category": "engineering",
+      "description": "Creates interactive games, game mechanics, physics systems, and engaging player experiences across platforms and genres",
+      "keywords": ["game development", "game mechanics", "physics", "interactive experiences", "player engagement"],
+      "recommended_for": ["game development", "interactive applications", "gamification", "entertainment software"],
+      "tools": ["Write", "Read", "MultiEdit", "Bash", "WebSearch", "WebFetch"],
+      "expertise": ["game mechanics", "physics systems", "player experience", "game optimization"]
+    },
+    "design/accessibility-specialist": {
+      "name": "accessibility-specialist",
+      "category": "design",
+      "description": "Ensures digital products are accessible to all users through WCAG compliance, inclusive design, and assistive technology optimization",
+      "keywords": ["accessibility", "WCAG", "inclusive design", "assistive technology", "compliance"],
+      "recommended_for": ["accessibility compliance", "inclusive design", "WCAG implementation", "assistive technology"],
+      "tools": ["Read", "Write", "MultiEdit", "WebSearch", "WebFetch", "Grep"],
+      "expertise": ["accessibility standards", "inclusive design", "assistive technology", "WCAG compliance"]
+    },
+    "marketing/seo-optimizer": {
+      "name": "seo-optimizer",
+      "category": "marketing",
+      "description": "Drives organic search traffic through technical SEO, content optimization, link building strategies, and search visibility enhancement",
+      "keywords": ["SEO", "search optimization", "organic traffic", "content optimization", "link building"],
+      "recommended_for": ["search engine optimization", "organic growth", "content marketing", "search visibility"],
+      "tools": ["Read", "Write", "WebSearch", "WebFetch", "MultiEdit", "Grep"],
+      "expertise": ["technical SEO", "content optimization", "link building", "search analytics"]
+    },
+    "marketing/email-marketing-specialist": {
+      "name": "email-marketing-specialist",
+      "category": "marketing",
+      "description": "Creates high-converting email campaigns, automated sequences, newsletters, and retention strategies that drive engagement and revenue",
+      "keywords": ["email marketing", "automation", "newsletters", "email campaigns", "retention"],
+      "recommended_for": ["email marketing", "customer retention", "automated campaigns", "newsletter strategy"],
+      "tools": ["Write", "Read", "MultiEdit", "WebSearch", "WebFetch"],
+      "expertise": ["email campaigns", "marketing automation", "customer retention", "email analytics"]
+    },
+    "studio-operations/customer-success-manager": {
+      "name": "customer-success-manager",
+      "category": "studio-operations",
+      "description": "Drives user onboarding, retention, and growth through strategic customer relationship management and success optimization",
+      "keywords": ["customer success", "onboarding", "retention", "customer relationship", "user growth"],
+      "recommended_for": ["customer success", "user onboarding", "retention strategy", "customer growth"],
+      "tools": ["Write", "Read", "MultiEdit", "WebSearch", "WebFetch", "Grep"],
+      "expertise": ["customer success", "user onboarding", "retention optimization", "relationship management"]
+    },
     "testing/api-tester": {
       "name": "api-tester",
       "category": "testing",
-      "description": "API testing and validation specialist",
+      "description": "Ensures APIs are battle-tested through performance testing, load simulation, contract validation, and reliability verification",
       "keywords": ["api", "testing", "validation", "load testing", "performance"],
       "recommended_for": ["api testing", "performance testing", "integration testing"],
       "tools": ["Bash", "Read", "Write"],
@@ -258,7 +357,7 @@
     "testing/performance-benchmarker": {
       "name": "performance-benchmarker",
       "category": "testing",
-      "description": "Performance testing and optimization specialist",
+      "description": "Optimizes application performance through profiling, benchmarking, bottleneck identification, and actionable optimization recommendations",
       "keywords": ["performance", "benchmarking", "optimization", "speed", "metrics"],
       "recommended_for": ["performance testing", "optimization", "benchmarking"],
       "tools": ["Bash", "Read", "Write"],
@@ -267,7 +366,7 @@
     "testing/test-results-analyzer": {
       "name": "test-results-analyzer",
       "category": "testing",
-      "description": "Test data analysis and quality metrics specialist",
+      "description": "Transforms test results into actionable quality insights through trend analysis, flaky test detection, and comprehensive metrics reporting",
       "keywords": ["test analysis", "quality metrics", "reporting", "trends", "insights"],
       "recommended_for": ["test analysis", "quality reporting", "metrics tracking"],
       "tools": ["Read", "Write", "MultiEdit"],
@@ -285,7 +384,7 @@
     "testing/workflow-optimizer": {
       "name": "workflow-optimizer",
       "category": "testing",
-      "description": "Process optimization and workflow improvement specialist",
+      "description": "Optimizes human-agent collaboration workflows through bottleneck analysis, process automation, and efficient handoff design",
       "keywords": ["workflow", "optimization", "process", "efficiency", "automation"],
       "recommended_for": ["workflow optimization", "process improvement", "efficiency gains"],
       "tools": ["Read", "Write", "MultiEdit"],
@@ -357,7 +456,7 @@
     "studio-operations/infrastructure-maintainer": {
       "name": "infrastructure-maintainer",
       "category": "studio-operations",
-      "description": "Infrastructure reliability and performance optimization specialist",
+      "description": "Ensures infrastructure reliability through performance optimization, capacity planning, cost management, and proactive monitoring",
       "keywords": ["infrastructure", "performance", "scalability", "monitoring", "optimization", "reliability"],
       "recommended_for": ["system optimization", "performance tuning", "infrastructure scaling", "monitoring setup"],
       "tools": ["Write", "Read", "MultiEdit", "WebSearch", "Grep", "Bash"],
@@ -366,7 +465,7 @@
     "studio-operations/legal-compliance-checker": {
       "name": "legal-compliance-checker",
       "category": "studio-operations",
-      "description": "Legal compliance and regulatory requirement specialist for studio operations",
+      "description": "Ensures regulatory compliance through privacy policy management, legal requirement assessment, and risk mitigation strategies",
       "keywords": ["compliance", "legal", "privacy", "regulations", "policies", "risk management"],
       "recommended_for": ["legal compliance", "privacy policies", "regulatory audits", "risk assessment"],
       "tools": ["Write", "Read", "MultiEdit", "WebSearch", "Grep"],
@@ -375,7 +474,7 @@
     "studio-operations/support-responder": {
       "name": "support-responder",
       "category": "studio-operations",
-      "description": "Customer support optimization and user experience specialist",
+      "description": "Maintains exceptional customer support through inquiry management, documentation creation, and user experience optimization",
       "keywords": ["support", "customer service", "user experience", "documentation", "automation", "satisfaction"],
       "recommended_for": ["customer support", "user documentation", "support automation", "user satisfaction"],
       "tools": ["Write", "Read", "MultiEdit", "WebSearch", "Grep"],
@@ -393,25 +492,25 @@
       "name": "Engineering",
       "description": "Development, architecture, and technical implementation",
       "icon": "⚙️",
-      "count": 7
+      "count": 12
     },
     "design": {
       "name": "Design",
       "description": "UI/UX, visual design, and user experience",
       "icon": "🎨",
-      "count": 5
+      "count": 6
     },
     "marketing": {
       "name": "Marketing",
       "description": "Growth, content, and user acquisition",
       "icon": "📈",
-      "count": 7
+      "count": 9
     },
     "product": {
       "name": "Product",
-      "description": "Product management, strategy, and research",
+      "description": "Product management, strategy, research, and competitive intelligence",
       "icon": "🎯",
-      "count": 3
+      "count": 5
     },
     "testing": {
       "name": "Testing",
@@ -435,7 +534,7 @@
       "name": "Studio Operations",
       "description": "Operational excellence and business management specialists",
       "icon": "🏢",
-      "count": 5
+      "count": 6
     },
     "custom": {
       "name": "Custom",
@@ -452,7 +551,7 @@
     "testing": ["test-writer-fixer", "api-tester", "performance-benchmarker", "test-results-analyzer"],
     "design": ["ui-designer", "ux-researcher", "visual-storyteller", "brand-guardian", "whimsy-injector"],
     "marketing": ["content-creator", "growth-hacker", "app-store-optimizer", "instagram-curator", "reddit-community-builder", "tiktok-strategist", "twitter-engager"],
-    "product": ["trend-researcher", "feedback-synthesizer", "sprint-prioritizer"],
+    "product": ["trend-researcher", "feedback-synthesizer", "sprint-prioritizer", "competitive-intelligence-researcher", "product-clone-architect"],
     "optimization": ["performance-benchmarker", "workflow-optimizer", "tool-evaluator"],
     "rapid_development": ["rapid-prototyper", "project-planner"],
     "team_dynamics": ["studio-coach", "joker"],
@@ -467,6 +566,38 @@
     "project_management": ["experiment-tracker", "project-shipper", "studio-producer"],
     "launch": ["project-shipper"],
     "experiments": ["experiment-tracker"],
-    "coordination": ["studio-producer", "project-coordinator"]
+    "coordination": ["studio-producer", "project-coordinator"],
+    "competitive_analysis": ["competitive-intelligence-researcher", "trend-researcher"],
+    "product_cloning": ["competitive-intelligence-researcher", "product-clone-architect"],
+    "market_research": ["competitive-intelligence-researcher", "trend-researcher", "feedback-synthesizer"],
+    "architecture_planning": ["product-clone-architect", "backend-architect"],
+    "security": ["security-auditor", "backend-architect"],
+    "data_engineering": ["data-engineer", "analytics-reporter"],
+    "documentation": ["documentation-architect", "support-responder"],
+    "accessibility": ["accessibility-specialist", "ui-designer"],
+    "seo": ["seo-optimizer", "content-creator"],
+    "email_marketing": ["email-marketing-specialist", "content-creator"],
+    "blockchain": ["blockchain-developer"],
+    "gaming": ["game-developer", "whimsy-injector"],
+    "customer_success": ["customer-success-manager", "support-responder"],
+    "web3": ["blockchain-developer"],
+    "defi": ["blockchain-developer"],
+    "vulnerability_assessment": ["security-auditor"],
+    "threat_modeling": ["security-auditor"],
+    "data_pipelines": ["data-engineer"],
+    "etl": ["data-engineer"],
+    "technical_writing": ["documentation-architect"],
+    "wcag": ["accessibility-specialist"],
+    "inclusive_design": ["accessibility-specialist"],
+    "search_optimization": ["seo-optimizer"],
+    "organic_traffic": ["seo-optimizer"],
+    "automation_sequences": ["email-marketing-specialist"],
+    "smart_contracts": ["blockchain-developer"],
+    "game_mechanics": ["game-developer"],
+    "user_onboarding": ["customer-success-manager"],
+    "retention_strategy": ["customer-success-manager", "email-marketing-specialist"],
+    "custom_agents": ["custom-agent-builder"],
+    "agent_creation": ["custom-agent-builder"],
+    "bespoke_solutions": ["custom-agent-builder"]
   }
 }

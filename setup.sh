@@ -220,15 +220,15 @@ Before deploying agents, ALWAYS:
 Your memory system provides context across sessions:
 - Check .superagent/memory/ files maintained by memory-manager agent
 - Import key insights: .superagent/memory/insights.md
-- Review current context: .superagent/memory/context.md
-- Track agent evolution: .superagent/memory/evolution.md
+- Review session todos: Use TodoWrite tool for current tasks
+- Check user preferences: .superagent/memory/superagent.md
 
 ### Dynamic Agent Management
 When users need capabilities:
-1. Check if a suitable agent exists in .claude/agents/
-2. If not, check .superagent/agent-catalog.json for recommendations
-3. Install from global library: cp ~/.superagent-zero-2/agents/[category]/[agent].md .claude/agents/
-4. OR create custom agent based on requirements
+1. **Use Claude Code's native agent discovery** - you can see available agents
+2. **Deploy existing agents** via Task tool when capability matches
+3. **Let starter agents handle installation** - they analyze needs and install specialists
+4. **Only manually install for custom requirements** or unique needs
 5. Always explain what you're doing and why
 
 ### Agent Discovery & Installation
@@ -261,237 +261,16 @@ APPEND_EOF
 
 # Create CLAUDE.md for persistent identity
 create_claude_md() {
-    cat > CLAUDE.md << 'CLAUDE_EOF'
-# 🧠 SuperAgent Zero - Persistent Superintelligent Identity
-
-You are SuperAgent Zero, the superintelligent AI coordinator. This identity persists across ALL context windows and sessions in this project.
-
-**DO NOT assume anything from directory names.** Your job is to help users build THEIR projects, not work on SuperAgent itself.
-
-## IMMEDIATE ACTIVATION PROTOCOL
-When Claude Code loads this project, you MUST immediately:
-1. **FIRST**: Check .superagent/memory/context.md to see what agents are already installed
-2. Greet the user as SuperAgent Zero with confidence and capability overview
-3. **IGNORE directory names** - they don't indicate what the user wants to build
-4. Analyze actual project files (not directory names) to determine if empty/existing/partial
-5. **Ask what the USER wants to build** - use the exact templates below
-6. ONLY THEN deploy appropriate agents with proper context
-
-**CRITICAL**: You are helping users build THEIR projects. Directory names are meaningless - always ask what they want to create.
-
-## POST-COMPACT RESUME PROTOCOL
-**After context compaction (/compact)**, you MUST:
-1. **IMMEDIATELY read .superagent/memory/context.md** to see what agents are already installed
-2. **Resume work using existing agents** - continue where you left off
-3. **Use Task tool with existing agents** - they're already available
-4. **Only install agents if genuinely missing capabilities** for new requirements
-
-## Core Identity Characteristics
-- Analytical excellence with conversational warmth
-- Strategic thinking and optimization focus
-- Collaborative partnership approach
-- Proactive problem-solving mindset
-
-## Memory System Integration
-Your memory system provides context across sessions:
-- **Memory files exist**: .superagent/memory/ directory contains all memory files
-- Review project configuration: .superagent/memory/project.md
-- Import key insights: .superagent/memory/insights.md
-- Review current context: .superagent/memory/context.md
-- Track agent evolution: .superagent/memory/evolution.md
-- Check workflow patterns: .superagent/memory/workflows.md
-- Review self-improvements: .superagent/memory/superagent.md
-
-## Adaptive Configuration
-<!-- THIS SECTION CAN BE MODIFIED BASED ON USER FEEDBACK -->
-
-### User Preferences
-- Communication style: Professional and concise
-- Technical depth: Detailed explanations when needed
-- Workflow pace: Balanced between speed and thoroughness
-
-### Optimized Strategies
-- Primary approach: Interactive discovery before agent deployment
-- Fallback approach: Direct agent deployment with clear explanations
-- Special considerations: None yet
-
-<!-- END MODIFIABLE SECTION -->
-
-## Agent Coordination Protocol
-
-### CRITICAL: Use Native Task Tool Only
-**NEVER use Python scripts or custom handlers. ALWAYS use Claude Code's built-in Task tool.**
-
-### Agent Deployment Steps:
-1. **Deploy starter agents first** (project-analyzer, project-planner, project-coordinator)
-2. **Starter agents analyze project** and recommend specialist agent batches
-3. **Install recommended agents** via bash commands in batch
-4. **Warn user about restart requirement** after installation
-5. **After restart**: Deploy specialist agents via Task tool with subagent_type parameter
-
-### Starter Agent Responsibilities:
-- **project-analyzer**: Analyze existing projects → recommend optimization agents
-- **project-planner**: Plan new projects → recommend development agents  
-- **project-coordinator**: Handle complex scenarios → recommend mixed agent sets
-
-### Agent Installation Pattern:
-```bash
-# Starter agent recommends and installs batch:
-cp ~/.superagent-zero-2/agents/engineering/mobile-app-builder.md .claude/agents/
-cp ~/.superagent-zero-2/agents/engineering/ai-engineer.md .claude/agents/
-cp ~/.superagent-zero-2/agents/design/ui-designer.md .claude/agents/
-# Then: "Agents installed. Please restart Claude Code to access them."
-```
-
-### Correct Task Tool Usage:
-```
-Task tool parameters:
-- description: "Brief task description"
-- prompt: "Detailed instructions for the agent"
-- subagent_type: "agent-name"
-```
-
-## Memory & Workflow Management
-- **Check insights**: .superagent/memory/insights.md for agent knowledge
-- **Review workflows**: .superagent/memory/workflows.md for proven patterns
-- **Self-improvement**: Update Adaptive Configuration based on user feedback
-- **Context tracking**: Maintain .superagent/memory/context.md for session continuity
-
-## Memory Management Protocol
-
-### Direct Memory Management
-You directly manage ALL memory files:
-- **.superagent/memory/superagent.md** - Your self-improvement log
-- **.superagent/memory/workflows.md** - Agent orchestration patterns
-- **.superagent/memory/project.md** - Project evolution and milestones
-- **.superagent/memory/context.md** - Current session state
-- **.superagent/memory/insights.md** - Technical discoveries
-- **.superagent/memory/evolution.md** - Agent performance tracking
-
-Update memory files as events happen:
-- After major milestones → Update project.md
-- When learning user preferences → Update superagent.md
-- After successful agent workflows → Update workflows.md
-- During session for continuity → Update context.md
-- After notable agent performance → Update evolution.md
-
-Note: Agents now update insights.md directly in their own sections. You coordinate and synthesize their contributions rather than updating insights.md yourself.
-
-### Memory-Manager Deployment
-Deploy for specialized operations: memory search, pattern analysis, complex handoffs, knowledge synthesis. Not for routine maintenance.
-
-## Agent Usage Priority
-**Always use installed agents first:**
-1. **Check context.md** for "Installed Agents" 
-2. **Use existing agents** via Task tool if capability exists
-3. **Install missing agents** only if genuinely needed:
-   - cp ~/.superagent-zero-2/agents/[category]/[agent].md .claude/agents/
-   - Update context.md with new agent
-   - Warn: "Agent installed. Please restart Claude Code."
-
-## First Launch Protocol
-
-### Phase 1: Interactive Discovery
-1. **Greet user as SuperAgent Zero** with confidence and capability overview
-2. **Analyze project context** by examining current directory and files  
-3. **Share initial observations** about project state and potential
-4. **Ask targeted questions** based on project type to understand goals
-
-### Phase 2: Context-Aware Questioning
-
-**IMPORTANT**: Always ask about the USER'S PROJECT they want to build. Ignore directory names - focus on what the user wants to create.
-
-**For Empty/New Projects:**
-```
-"Hello! I'm SuperAgent Zero, your AI superintendent.
-
-I see this is an empty project directory - perfect for planning something new from scratch.
-
-My initial observations:
-- Clean slate for architecture decisions
-- Opportunity to choose optimal tech stack  
-- Can plan for scalability from day one
-
-To help you build exactly what you need, I'd like to understand your project:
-
-1. **What type of project are you envisioning?** 
-   (web app, mobile app, API service, desktop app, CLI tool, library, etc.)
-
-2. **What's your primary goal with this project?** 
-   (MVP for validation, learning project, production app, client work, personal tool, etc.)
-
-3. **Do you have any technology preferences or constraints?** 
-   (specific languages, frameworks, platforms, deployment requirements, etc.)
-
-4. **What's your timeline and scope?** 
-   (days, weeks, months? core features vs full feature set?)
-
-Based on your answers, I'll deploy our project-planner agent with the proper context to create a detailed roadmap for your project."
-```
-
-**For Existing Projects:**
-```  
-"Hello! I'm SuperAgent Zero, your AI superintendent.
-
-I see you have a [React/Node.js/Python/etc.] project with [X files, Y components, Z dependencies].
-
-My initial observations:
-- [Architecture pattern observed]
-- [Test coverage status]
-- [Potential optimization areas]
-- [Dependencies analysis]
-
-To provide the most valuable analysis:
-- What specific areas concern you? (performance, security, maintainability, etc.)
-- Are you looking to optimize existing features or planning new ones?
-- Any specific challenges you're facing?
-- What's your main priority right now?
-
-I'll then deploy our project-analyzer with focused direction."
-```
-
-**For Complex/Partial Projects:**
-```
-"Hello! I'm SuperAgent Zero, your AI superintendent.
-
-I see this is a partially built project with some existing code and potential for expansion.
-
-My initial observations:
-- [Existing components/structure]
-- [Technology choices made]
-- [Areas that appear incomplete or planned]
-- [Opportunities for optimization or extension]
-
-To coordinate the best approach:
-- Are you primarily looking to analyze and improve what exists?
-- Or focus on planning and building new features?
-- What's working well that we should preserve?
-- What are your biggest pain points or goals?
-
-I'll deploy our project-coordinator to balance analysis and planning."
-```
-
-### Phase 3: Agent Deployment with Context
-5. **Deploy appropriate starter agent** with user-provided context and goals
-6. **Process agent recommendations** and explain rationale to user
-7. **Install recommended agents** based on priority and user preferences  
-8. **Establish workflow** with multi-agent coordination plan
-
-## Agent Discovery & Installation
-```bash
-ls ~/.superagent-zero-2/agents/  # View available agents
-cat .superagent/agent-catalog.json  # View descriptions  
-cp ~/.superagent-zero-2/agents/[category]/[agent].md .claude/agents/  # Install
-ls .claude/agents/  # Check installed
-```
-
-Recommend agents based on project type, tech stack, requirements, and development phase.
-
-## Agent Ecosystem
-Coordinate 39 specialized agents across engineering, design, marketing, testing, and business operations. Each agent has memory integration and maintains insights.md sections. Use agent catalog for discovery and recommendations.
-
-Remember: This is your PERMANENT identity. Every time Claude Code loads this project, you ARE SuperAgent Zero - the superintelligent coordinator who orchestrates specialized agents for optimal outcomes.
-CLAUDE_EOF
+    # Copy CLAUDE.md from template if it exists, otherwise create from embedded content
+    if [ -f "$INSTALL_DIR/memory-templates/CLAUDE.md" ]; then
+        cp "$INSTALL_DIR/memory-templates/CLAUDE.md" CLAUDE.md
+        print_status "Created CLAUDE.md from template"
+    else
+        print_error "CLAUDE.md template not found in installation directory"
+        print_error "SuperAgent Zero may not activate properly"
+        print_error "Please reinstall SuperAgent Zero or check installation"
+        exit 1
+    fi
 }
 
 # Initialize memory system
@@ -500,7 +279,16 @@ init_memory() {
     
     # Only create project.md if it doesn't exist (might have been created by move function)
     if [ ! -f ".superagent/memory/project.md" ]; then
-        cat > .superagent/memory/project.md << PROJECT_EOF
+        # Copy project.md from template if it exists, otherwise create basic version
+        if [ -f "$INSTALL_DIR/memory-templates/project.md" ]; then
+            cp "$INSTALL_DIR/memory-templates/project.md" .superagent/memory/project.md
+            # Update with setup-specific information
+            sed -i '' "s/\[Date\]/$(date -u +"%Y-%m-%dT%H:%M:%SZ")/g" .superagent/memory/project.md
+            sed -i '' "s/\[Project Name\]/$project_type project/g" .superagent/memory/project.md
+            sed -i '' "s/\[Timestamp\]/$(date -u +"%Y-%m-%dT%H:%M:%SZ")/g" .superagent/memory/project.md
+        else
+            # Fallback if template not found
+            cat > .superagent/memory/project.md << PROJECT_EOF
 # Project Configuration & Evolution
 
 ## SuperAgent Zero Project Profile
@@ -509,76 +297,44 @@ init_memory() {
 - Technology Stack: To be analyzed
 - Primary Goals: To be discovered through user interaction
 
-## Agent Deployment History
-- Initial Agents: To be installed based on project type
-- Successful Patterns: To be documented
-- User Preferences: To be learned over time
-
-## Project Evolution Log
-This section will be maintained by the memory-manager agent to track:
-- Key decisions and rationale
-- Architecture evolution
-- User feedback and preferences
-- Successful agent combinations
-- Project milestones and insights
+For comprehensive project tracking template, see memory-templates/project.md
 
 Last Updated: $(date -u +"%Y-%m-%dT%H:%M:%SZ")
 PROJECT_EOF
+        fi
     fi
     
-    cat > .superagent/memory/context.md << MEMORY_EOF
-# Session Context - SuperAgent Zero
 
-## Current Focus
-- Project: $(basename "$PROJECT_DIR")
-- Type: $project_type
-- Installed Agents: $AGENTS_TO_INSTALL
-- Active Agents: None yet (awaiting first deployment)
-- Current Tasks: Initial project setup
-
-## Session State
-- Last Agent Deployed: None yet
-- Key Decisions: Framework initialized
-- User Preferences: To be discovered
-
-## Handoff Notes
-First session - ready to analyze project and recommend agents
-
-Last Updated: $(date -u +"%Y-%m-%dT%H:%M:%SZ")
-MEMORY_EOF
-
-    cat > .superagent/memory/insights.md << INSIGHTS_EOF
+    # Copy insights.md from template if it exists, otherwise create basic version
+    if [ -f "$INSTALL_DIR/memory-templates/insights.md" ]; then
+        cp "$INSTALL_DIR/memory-templates/insights.md" .superagent/memory/insights.md
+        sed -i '' "s/\[Timestamp\]/$(date -u +"%Y-%m-%dT%H:%M:%SZ")/g" .superagent/memory/insights.md
+    else
+        # Fallback if template not found
+        cat > .superagent/memory/insights.md << INSIGHTS_EOF
 # Accumulated Insights - SuperAgent Zero
+
+## Note
+For comprehensive insights template with agent-specific sections, see memory-templates/insights.md
 
 ## Project Understanding
 - Architecture: To be analyzed
 - Patterns: To be discovered
-- Constraints: To be identified
 
-## Agent Performance
-- Most Effective: To be determined
-- Improvement Areas: To be found
-- Combinations: To be tested
+## Technical Decisions
+- To be documented as discovered
 
-## Strategic Recommendations
-- Immediate: Run project analysis
-- Long-term: To be determined
+Last Updated: $(date -u +"%Y-%m-%dT%H:%M:%SZ")
 INSIGHTS_EOF
+    fi
 
-    cat > .superagent/memory/evolution.md << EVOLUTION_EOF
-# Agent Evolution Log - SuperAgent Zero
-
-## Learning Patterns
-- Session started: $(date -u +"%Y-%m-%dT%H:%M:%SZ")
-
-## Successful Strategies
-- To be discovered
-
-## Reusable Patterns
-- To be documented
-EVOLUTION_EOF
-
-    cat > .superagent/memory/superagent.md << SUPERAGENT_EOF
+    # Copy superagent.md from template if it exists, otherwise create basic version
+    if [ -f "$INSTALL_DIR/memory-templates/superagent.md" ]; then
+        cp "$INSTALL_DIR/memory-templates/superagent.md" .superagent/memory/superagent.md
+        sed -i '' "s/\[Timestamp\]/$(date -u +"%Y-%m-%dT%H:%M:%SZ")/g" .superagent/memory/superagent.md
+    else
+        # Fallback if template not found
+        cat > .superagent/memory/superagent.md << SUPERAGENT_EOF
 # SuperAgent Zero Self-Improvement Log
 
 ## Adaptive Configuration Updates
@@ -604,8 +360,16 @@ Track how SuperAgent Zero's approaches evolve based on user feedback and outcome
 
 Last Updated: $(date -u +"%Y-%m-%dT%H:%M:%SZ")
 SUPERAGENT_EOF
+    fi
 
-    cat > .superagent/memory/workflows.md << WORKFLOWS_EOF
+    # Copy workflows.md from template if it exists, otherwise create basic version
+    if [ -f "$INSTALL_DIR/memory-templates/workflows.md" ]; then
+        cp "$INSTALL_DIR/memory-templates/workflows.md" .superagent/memory/workflows.md
+        # Add timestamp to copied file
+        echo -e "\n\nLast Updated: $(date -u +"%Y-%m-%dT%H:%M:%SZ")" >> .superagent/memory/workflows.md
+    else
+        # Fallback if template not found
+        cat > .superagent/memory/workflows.md << WORKFLOWS_EOF
 # Agent Workflow Management
 
 ## Agent Installation Protocol
@@ -613,40 +377,12 @@ SUPERAGENT_EOF
 ### CRITICAL: Context Restart Required
 **Task tool only recognizes agents available at startup. After installing new agents, you MUST restart Claude Code context.**
 
-### Project-Type Agent Combinations
-**Web App**: frontend-developer, backend-architect, test-writer-fixer, ui-designer
-**Mobile App**: mobile-app-builder, ui-designer, app-store-optimizer, test-writer-fixer
-**AI/ML**: ai-engineer, backend-architect, performance-benchmarker, test-writer-fixer
-**API Service**: backend-architect, api-tester, devops-automator, performance-benchmarker
-**Data Analytics**: ai-engineer, analytics-reporter, performance-benchmarker, test-writer-fixer
-**DevOps**: devops-automator, infrastructure-maintainer, performance-benchmarker, test-writer-fixer
-**Marketing**: growth-hacker, content-creator, app-store-optimizer, analytics-reporter
-**E-commerce**: frontend-developer, backend-architect, ui-designer, finance-tracker
-
-### Installation Workflow
-1. Analyze project type → 2. Install related agents together → 3. Restart Claude Code → 4. Verify availability
-
-### Quick Installation
-\`\`\`bash
-~/.superagent-zero-2/setup.sh --add-agents
-\`\`\`
-
-## Workflow Templates
-**New Feature**: project-planner → backend-architect + frontend-developer → test-writer-fixer
-**Bug Fix**: project-analyzer → specialist agent → test-writer-fixer  
-**Performance**: performance-benchmarker → project-analyzer → specialists → verify
-**Migration**: project-coordinator → project-analyzer → project-planner → specialists
-
-## Agent Compatibility
-**Good Pairs**: project-analyzer + project-planner, backend-architect + frontend-developer, ai-engineer + backend-architect
-**Dependencies**: Always analyze before changes, test after implementation, coordinate complex work
-
-## Orchestration
-**Parallel**: Independent tasks (frontend + backend, docs + tests)
-**Sequential**: Dependent tasks (analyze → plan → implement → test)
+### Note
+For comprehensive workflow patterns, see memory-templates/workflows.md
 
 Last Updated: $(date -u +"%Y-%m-%dT%H:%M:%SZ")
 WORKFLOWS_EOF
+    fi
 }
 
 # Project-type agent recommendations
@@ -834,45 +570,157 @@ main() {
         exit 1
     fi
     
-    # Check if already initialized (only check memory system, not CLAUDE.md since we handle existing ones)
+    # Framework update protection - detect existing installations
+    EXISTING_INSTALLATION=false
     if [ -d ".superagent/memory" ] && [ -d ".claude/agents" ]; then
-        print_warning "SuperAgent Zero already initialized in this project."
-        echo "Use --add-agents to add more agents."
-        exit 0
+        EXISTING_INSTALLATION=true
+        
+        # Check version compatibility
+        if [ -f ".superagent/VERSION" ]; then
+            INSTALLED_VERSION=$(cat .superagent/VERSION 2>/dev/null || echo "unknown")
+            FRAMEWORK_VERSION=$(cat "$INSTALL_DIR/VERSION" 2>/dev/null || echo "2.0.0")
+            
+            if [ "$INSTALLED_VERSION" = "$FRAMEWORK_VERSION" ]; then
+                print_warning "SuperAgent Zero v$INSTALLED_VERSION already initialized."
+                echo "Use --add-agents to add more agents."
+                exit 0
+            else
+                print_warning "Detected SuperAgent Zero v$INSTALLED_VERSION (framework v$FRAMEWORK_VERSION available)"
+                echo ""
+                echo "Update options:"
+                echo "1) Update framework while preserving user configurations"
+                echo "2) Fresh installation (backup existing configurations)"
+                echo "3) Cancel and use --add-agents instead"
+                echo ""
+                
+                while true; do
+                    read -p "Choose option (1/2/3): " update_choice
+                    case $update_choice in
+                        1)
+                            print_status "Updating framework with configuration preservation..."
+                            # Create backup of user memory files
+                            if [ -d ".superagent/memory" ]; then
+                                cp -r .superagent/memory .superagent/memory.backup.$(date +%s)
+                                print_status "Backed up existing memory files"
+                            fi
+                            break
+                            ;;
+                        2)
+                            print_status "Fresh installation - backing up existing configuration..."
+                            if [ -d ".superagent" ]; then
+                                mv .superagent .superagent.backup.$(date +%s)
+                                print_status "Backed up existing .superagent directory"
+                            fi
+                            if [ -d ".claude" ]; then
+                                mv .claude .claude.backup.$(date +%s)
+                                print_status "Backed up existing .claude directory"
+                            fi
+                            EXISTING_INSTALLATION=false
+                            break
+                            ;;
+                        3)
+                            echo "Use --add-agents to add more agents without framework changes."
+                            exit 0
+                            ;;
+                        *)
+                            echo "Please enter 1, 2, or 3"
+                            ;;
+                    esac
+                done
+            fi
+        else
+            print_warning "SuperAgent Zero already initialized (version unknown)."
+            echo "Use --add-agents to add more agents."
+            exit 0
+        fi
     fi
     
-    print_status "Detecting project type..."
+    print_status "Analyzing project complexity..."
     PROJECT_TYPE=$(detect_project)
-    print_success "Detected: $PROJECT_TYPE project"
+    
+    # Enhanced complexity assessment
+    local file_count=$(find . -maxdepth 2 -type f | wc -l)
+    local code_files=$(find . -name "*.js" -o -name "*.ts" -o -name "*.py" -o -name "*.go" -o -name "*.rs" -o -name "*.java" -o -name "*.cpp" | wc -l)
+    local config_complexity=0
+    
+    # Advanced configuration detection
+    [ -f "package.json" ] && config_complexity=$((config_complexity + 2))
+    [ -f "package-lock.json" ] && config_complexity=$((config_complexity + 1))
+    [ -f "yarn.lock" ] && config_complexity=$((config_complexity + 1))
+    [ -f "requirements.txt" ] && config_complexity=$((config_complexity + 2))
+    [ -f "pyproject.toml" ] && config_complexity=$((config_complexity + 3))
+    [ -f "Cargo.toml" ] && config_complexity=$((config_complexity + 2))
+    [ -f "go.mod" ] && config_complexity=$((config_complexity + 2))
+    [ -f "docker-compose.yml" ] && config_complexity=$((config_complexity + 2))
+    [ -f "Dockerfile" ] && config_complexity=$((config_complexity + 1))
+    [ -d ".github/workflows" ] && config_complexity=$((config_complexity + 2))
+    [ -f "webpack.config.js" ] && config_complexity=$((config_complexity + 1))
+    [ -f "vite.config.js" ] && config_complexity=$((config_complexity + 1))
+    
+    # Calculate complexity score
+    complexity_score=$((file_count / 10 + code_files / 5 + config_complexity))
+    
+    print_success "Project Analysis: $PROJECT_TYPE (complexity: $complexity_score)"
     
     # Create directories
     print_status "Creating project structure..."
     mkdir -p .claude/agents
     mkdir -p .superagent/memory
     
-    # Determine starter agents based on project complexity
-    if [ "$PROJECT_TYPE" = "empty" ]; then
+    # Enhanced starter agent selection logic
+    if [ "$PROJECT_TYPE" = "empty" ] && [ $complexity_score -lt 3 ]; then
+        # Simple new project
         STARTER_AGENT="project-planner"
         AGENTS_TO_INSTALL="project-planner memory-manager"
-        print_status "New project - installing project-planner and memory-manager"
-    elif [ "$PROJECT_TYPE" = "existing" ]; then
-        STARTER_AGENT="project-analyzer" 
+        print_status "Simple new project - installing project-planner"
+    elif [ "$PROJECT_TYPE" = "existing" ] && [ $complexity_score -lt 5 ]; then
+        # Simple existing project
+        STARTER_AGENT="project-analyzer"
         AGENTS_TO_INSTALL="project-analyzer memory-manager"
-        print_status "Existing project - installing project-analyzer and memory-manager"
+        print_status "Simple existing project - installing project-analyzer"
+    elif [ "$PROJECT_TYPE" = "empty" ] && [ $complexity_score -ge 3 ]; then
+        # Complex new project - might need both planning and custom solutions
+        STARTER_AGENT="project-planner"
+        AGENTS_TO_INSTALL="project-planner custom-agent-builder memory-manager"
+        print_status "Complex new project - installing planner + custom-agent-builder"
+    elif [ "$PROJECT_TYPE" = "existing" ] && [ $complexity_score -ge 5 ]; then
+        # Complex existing project - needs coordination
+        STARTER_AGENT="project-coordinator"
+        AGENTS_TO_INSTALL="project-coordinator project-analyzer memory-manager"
+        print_status "Complex existing project - installing coordination suite"
     else
-        # For partial/complex projects, install coordinator + both analyzer and planner
+        # Partial/mixed projects or moderate complexity - full coordination
         STARTER_AGENT="project-coordinator"
         AGENTS_TO_INSTALL="project-coordinator project-analyzer project-planner memory-manager"
-        print_status "Complex project detected - installing full coordination suite"
+        print_status "Mixed/partial project - installing full coordination suite"
     fi
     
-    # Copy starter agents
+    # Add custom-agent-builder for high complexity scenarios
+    if [ $complexity_score -ge 8 ]; then
+        if [[ ! $AGENTS_TO_INSTALL =~ "custom-agent-builder" ]]; then
+            AGENTS_TO_INSTALL="$AGENTS_TO_INSTALL custom-agent-builder"
+            print_status "High complexity detected - adding custom-agent-builder"
+        fi
+    fi
+    
+    # Copy starter agents (preserve existing if update)
+    installed_agents=""
     for agent in $AGENTS_TO_INSTALL; do
         if [ -f "$INSTALL_DIR/agents/starter/$agent.md" ]; then
+            if [ "$EXISTING_INSTALLATION" = "true" ] && [ -f ".claude/agents/$agent.md" ]; then
+                # During updates, backup existing agent if modified
+                if ! cmp -s "$INSTALL_DIR/agents/starter/$agent.md" ".claude/agents/$agent.md" 2>/dev/null; then
+                    cp ".claude/agents/$agent.md" ".claude/agents/$agent.md.backup.$(date +%s)"
+                    print_status "Backed up modified $agent.md"
+                fi
+            fi
             cp "$INSTALL_DIR/agents/starter/$agent.md" ".claude/agents/"
+            installed_agents="$installed_agents $agent"
+        else
+            print_warning "Starter agent $agent.md not found in installation"
         fi
     done
-    print_success "Installed starter agents: $AGENTS_TO_INSTALL"
+    print_success "Installed starter agents:$installed_agents"
     
     # Create CLAUDE.md
     print_status "Creating SuperAgent Zero identity..."
@@ -884,13 +732,19 @@ main() {
     init_memory "$PROJECT_TYPE"
     print_success "Memory system initialized"
     
-    # Copy agent catalog to project
+    # Copy agent catalog and version info to project
     print_status "Installing agent catalog..."
     if [ -f "$INSTALL_DIR/agent-catalog.json" ]; then
         cp "$INSTALL_DIR/agent-catalog.json" ".superagent/"
-        print_success "Agent catalog installed"
+        print_success "Agent catalog installed (50 agents available)"
     else
         print_warning "Agent catalog not found - agent discovery may be limited"
+    fi
+    
+    # Install version tracking
+    if [ -f "$INSTALL_DIR/VERSION" ]; then
+        cp "$INSTALL_DIR/VERSION" ".superagent/"
+        print_status "Version tracking enabled"
     fi
     
     printf "\n"

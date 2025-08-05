@@ -166,6 +166,7 @@ update_core_files() {
     
     # Update specific core files without touching custom directory
     local core_dirs=("starter" "engineering" "design" "marketing" "product" "testing" "bonus" "project-management" "studio-operations")
+    # Note: custom directory is preserved separately to maintain user customizations
     
     for dir in "${core_dirs[@]}"; do
         if [ -d "$(dirname "$0")/agents/$dir" ]; then
@@ -182,6 +183,11 @@ update_core_files() {
     
     if [ -f "$(dirname "$0")/agent-catalog.json" ]; then
         cp "$(dirname "$0")/agent-catalog.json" "$INSTALL_DIR/"
+    fi
+    
+    # Update memory templates
+    if [ -d "$(dirname "$0")/memory-templates" ]; then
+        cp -r "$(dirname "$0")/memory-templates" "$INSTALL_DIR/"
     fi
     
     # Restore custom agents
@@ -220,6 +226,11 @@ install_agents() {
         if [ -f "$(dirname "$0")/agent-catalog.json" ]; then
             cp "$(dirname "$0")/agent-catalog.json" "$INSTALL_DIR/"
         fi
+        
+        # Copy memory templates if they exist
+        if [ -d "$(dirname "$0")/memory-templates" ]; then
+            cp -r "$(dirname "$0")/memory-templates" "$INSTALL_DIR/"
+        fi
     else
         # Download from GitHub
         print_status "Downloading agents from GitHub..."
@@ -246,7 +257,7 @@ download_from_github() {
     
     # Copy agents and catalog
     if [ -d "$temp_dir/agents" ]; then
-        print_status "Installing all 37 agents..."
+        print_status "Installing all 50 agents..."
         cp -r "$temp_dir/agents/"* "$INSTALL_DIR/agents/"
     fi
     
@@ -257,6 +268,10 @@ download_from_github() {
     if [ -f "$temp_dir/setup.sh" ]; then
         cp "$temp_dir/setup.sh" "$INSTALL_DIR/"
         chmod +x "$INSTALL_DIR/setup.sh"
+    fi
+    
+    if [ -d "$temp_dir/memory-templates" ]; then
+        cp -r "$temp_dir/memory-templates" "$INSTALL_DIR/"
     fi
     
     # Cleanup
@@ -342,7 +357,7 @@ main() {
         printf "%s\n" "📋 Installation Summary:"
         printf "%s\n" "   📂 Location: $INSTALL_DIR"
         printf "%s\n" "   📦 Version: $VERSION"
-        printf "%s\n" "   🤖 Agents: All 39 agents across 8 categories"
+        printf "%s\n" "   🤖 Agents: All 50 agents across 9 categories"
         printf "%s\n" "   🔧 Scripts: setup.sh, update.sh"
         printf "\n"
         printf "%s\n" "🚀 Quick Start:"

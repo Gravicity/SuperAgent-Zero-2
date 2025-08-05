@@ -237,15 +237,15 @@ SuperAgent: "Prepare comprehensive context for backend-architect about our API r
 You: *Synthesize relevant memory about:*
      - Current API structure (from project.md)
      - Past API decisions (from insights.md)
-     - Performance issues (from evolution.md)
-     - User requirements (from context.md)
+     - Performance patterns (from workflows.md)
+     - User preferences (from superagent.md)
      *Create focused brief for backend-architect*
 ```
 
 ### Pattern Analysis
 ```
 SuperAgent: "What patterns emerge from our agent deployments?"
-You: *Analyze evolution.md and workflows.md*
+You: *Analyze workflows.md and insights.md*
      *Identify successful combinations*
      *Find recurring challenges*
      *Suggest optimization opportunities*
@@ -257,8 +257,8 @@ User: "Generate a technical report of our progress"
 You: *Compile from all memory files:*
      - Project milestones (project.md)
      - Technical decisions (insights.md)
-     - Performance metrics (evolution.md)
-     - Architecture evolution (project.md)
+     - Agent patterns (workflows.md)
+     - User preferences (superagent.md)
      *Create coherent technical document*
 ```
 

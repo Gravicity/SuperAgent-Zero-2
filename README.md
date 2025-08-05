@@ -11,7 +11,7 @@ SuperAgent-Zero turns Claude Code into your personal AI superintendent - a persi
 - 🤖 **Persistent Identity**: Claude Code becomes SuperAgent Zero across all sessions
 - 🧠 **Interactive Discovery**: Engages users before deploying agents for better context
 - 🎯 **Smart Agent Recommendations**: Analyzes your project and suggests the right specialists
-- 📦 **39 Pre-built Agents**: Engineering, design, marketing, product, testing, and business operations experts
+- 📦 **50 Pre-built Agents**: Engineering, design, marketing, product, testing, and business operations experts
 - 🛠️ **Custom Agent Creation**: Build specialized agents for your unique needs
 - 🧬 **Adaptive Learning**: Evolves based on user feedback and project patterns
 - 🔍 **RAG Memory System**: Sophisticated knowledge retrieval across project history
@@ -34,6 +34,12 @@ cd your-project
 ~/.superagent-zero-2/setup.sh
 ```
 
+**Enhanced Setup Features:**
+- 🧠 **Intelligent Project Detection**: Analyzes complexity and selects optimal starter agents
+- 🔒 **Framework Update Protection**: Preserves user configurations during updates
+- ⚡ **Smart Agent Selection**: Deploys elite coordination suite for complex projects
+- 📊 **50-Agent Catalog Integration**: Full access to specialized agent library
+
 ### 3. Start Claude Code
 
 ```bash
@@ -43,6 +49,21 @@ claude
 That's it! Claude Code now identifies as SuperAgent Zero and has access to specialized agents.
 
 ## 🎭 How It Works
+
+### Enhanced Setup Intelligence
+
+SuperAgent-Zero 2.0 features an intelligent setup system that analyzes your project and deploys optimal agents:
+
+**Project Complexity Assessment:**
+- **File count analysis**: Counts project files and code files
+- **Configuration detection**: Identifies 12+ different config file types with weighted scoring
+- **Technology stack analysis**: Detects frameworks, databases, and deployment configurations
+
+**Smart Agent Selection:**
+- **Simple projects** (complexity <3-5): Single elite agent (analyzer OR planner)
+- **Complex projects** (complexity ≥5): Coordination suite with multi-agent workflows
+- **High complexity** (≥8): Full orchestration + custom-agent-builder integration
+- **Automatic custom-agent-builder**: Added for projects needing unique solutions
 
 ### First Launch
 
@@ -176,24 +197,22 @@ your-project/
 └── .superagent/
     ├── agent-catalog.json     # Complete agent library catalog
     └── memory/                # Persistent memory system
-        ├── project.md         # Project evolution & preserved instructions
-        ├── superagent.md      # SuperAgent's self-improvement log
-        ├── workflows.md       # Agent orchestration patterns & batch installation guides
-        ├── context.md         # Current session state
-        ├── insights.md        # Technical discoveries
-        └── evolution.md       # Agent performance tracking
+        ├── project.md         # Project evolution & milestones
+        ├── superagent.md      # User preferences & learning patterns  
+        ├── workflows.md       # Proven agent coordination patterns
+        └── insights.md        # Agent discoveries organized by domain
 ```
 
 ## 🤝 Available Agents
 
 ### Starter Agents (5)
-- **project-analyzer**: Analyzes existing codebases and recommends improvements
-- **project-planner**: Helps plan new projects from concept to implementation
-- **project-coordinator**: Manages complex scenarios (migrations, refactoring, partial projects)
-- **memory-manager**: Knowledge retrieval specialist and complex handoff coordinator
-- **agent-enhancer**: Enhances existing agents with memory integration
+- **project-analyzer** (Elite Project Intelligence Specialist): Deep codebase analysis, architecture assessment, tech debt identification
+- **project-planner** (Elite Strategic Project Architect): Vision-to-roadmap transformation, scalable architecture design
+- **project-coordinator** (Elite Strategic Orchestration Specialist): Complex scenario management, multi-agent conflict resolution
+- **custom-agent-builder**: Create bespoke agents for unique requirements beyond the 50-agent catalog
+- **memory-manager**: RAG search, pattern analysis, complex handoffs, and knowledge synthesis
 
-### Engineering Agents (7)
+### Engineering Agents (12)
 - **ai-engineer**: AI/ML integration specialist
 - **backend-architect**: API and system design expert
 - **frontend-developer**: Modern UI framework specialist
@@ -201,15 +220,21 @@ your-project/
 - **devops-automator**: CI/CD and infrastructure specialist
 - **rapid-prototyper**: Fast MVP development and validation
 - **test-writer-fixer**: Comprehensive test coverage and bug fixes
+- **security-auditor**: Security analysis and vulnerability assessment
+- **data-engineer**: Database design and data pipeline optimization
+- **documentation-architect**: Technical documentation and API docs
+- **blockchain-developer**: Smart contracts and DeFi development
+- **game-developer**: Game mechanics and interactive experience design
 
-### Design Agents (5)
+### Design Agents (6)
 - **ui-designer**: Interface and component design
 - **ux-researcher**: User experience optimization
 - **visual-storyteller**: Data visualization and narrative design
 - **brand-guardian**: Brand consistency and guidelines
 - **whimsy-injector**: User delight and micro-interactions
+- **accessibility-specialist**: WCAG compliance and inclusive design
 
-### Marketing Agents (7)
+### Marketing Agents (9)
 - **content-creator**: Multi-platform content strategy
 - **growth-hacker**: User acquisition and retention
 - **app-store-optimizer**: Organic discovery and ASO
@@ -217,11 +242,15 @@ your-project/
 - **reddit-community-builder**: Authentic community engagement
 - **tiktok-strategist**: Viral content and trends
 - **twitter-engager**: Real-time engagement and thought leadership
+- **seo-optimizer**: Search engine optimization and organic traffic
+- **email-marketing-specialist**: Email campaigns and automation
 
-### Product Agents (3)
+### Product Agents (5)
 - **trend-researcher**: Market analysis and opportunities
 - **feedback-synthesizer**: User research and insights
 - **sprint-prioritizer**: Agile planning and feature prioritization
+- **competitive-intelligence-researcher**: Deep competitive analysis and market intelligence
+- **product-clone-architect**: Strategic clone planning and technical implementation
 
 ### Testing & QA Agents (5)
 - **api-tester**: API testing and validation
@@ -230,12 +259,13 @@ your-project/
 - **tool-evaluator**: Development tool assessment
 - **workflow-optimizer**: Process improvement
 
-### Business Operations (5)
+### Studio Operations (6)
 - **analytics-reporter**: Data analysis and performance tracking
 - **finance-tracker**: Budget management and cost optimization
 - **infrastructure-maintainer**: System reliability and scaling
 - **legal-compliance-checker**: Regulatory compliance and risk management
 - **support-responder**: Customer support optimization
+- **customer-success-manager**: Client relationship management and retention
 
 ### Team Dynamics (2)
 - **joker**: Tech humor and team morale
@@ -253,10 +283,11 @@ your-project/
 SuperAgent Zero maintains a sophisticated memory system across sessions:
 
 - **Adaptive Learning**: Evolves based on user feedback and preferences
-- **Workflow Intelligence**: Learns successful agent patterns and combinations
+- **Workflow Intelligence**: Starter agents document coordination patterns; SuperAgent validates and refines them
 - **Project Evolution**: Tracks architectural decisions and milestones
 - **Knowledge Retrieval**: RAG-like search across all project memory
 - **Context Preservation**: Maintains session continuity and handoffs
+- **Self-Improving Coordination**: Learns optimal agent deployment patterns over time
 
 SuperAgent Zero manages memory directly for efficiency, while the memory-manager agent provides specialized knowledge retrieval and synthesis capabilities.
 
@@ -357,11 +388,10 @@ git commit -m "Add SuperAgent Zero setup and project agents"
 ```
 
 **Note**: Consider what memory files to share:
-- `.superagent/memory/project.md` - Contains project evolution and any preserved original instructions
-- `.superagent/memory/insights.md` - Technical discoveries and patterns
-- `.superagent/memory/workflows.md` - Proven agent combinations
-- `.superagent/memory/context.md` - Usually add to `.gitignore` (session-specific)
-- `.superagent/memory/superagent.md` - Usually add to `.gitignore` (personal preferences)
+- `.superagent/memory/project.md` - Project evolution, milestones, and preserved original instructions
+- `.superagent/memory/insights.md` - Technical discoveries organized by agent domain  
+- `.superagent/memory/workflows.md` - Starter agent coordination recommendations and validated patterns
+- `.superagent/memory/superagent.md` - Usually add to `.gitignore` (personal preferences and learning patterns)
 
 ### Custom Agent Templates
 
@@ -387,7 +417,7 @@ cd ~/.superagent-zero-2/agents/custom/
 - Adaptive learning from user feedback
 - Sophisticated knowledge retrieval (RAG)
 - Workflow intelligence and optimization
-- 39 specialized agents for every domain
+- 50 specialized agents for every domain
 - Continuous improvement and evolution
 
 ## 📚 Examples
@@ -461,8 +491,8 @@ A: Run `~/.superagent-zero-2/update.sh` or re-run the installer. Smart updates p
 - Use "What agents do I have?" to verify availability
 
 ### Memory not persisting
-- Check `.superagent/memory/` directory exists with all 6 memory files
-- Verify SuperAgent Zero can write to memory files (project.md, superagent.md, etc.)
+- Check `.superagent/memory/` directory exists with 4 memory files (project.md, insights.md, workflows.md, superagent.md)
+- Verify SuperAgent Zero can write to memory files
 - Ensure agent-catalog.json exists in `.superagent/` 
 - Look for file permission issues or corrupted memory file format
 - Memory-manager agent should be available for knowledge retrieval operations
