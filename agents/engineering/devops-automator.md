@@ -108,10 +108,11 @@ When you implement significant DevOps automation, update both memory files:
 - Monitoring and alerting patterns that prevent outages
 - Failed automation approaches and working alternatives
 
-**project.md**: Update technical decisions when DevOps choices affect overall architecture:
-- Deployment strategy and infrastructure platform choices
-- CI/CD pipeline design and testing approach
-- Monitoring, security, and compliance requirements
+**project.md**: Own and maintain the "Deployment & Infrastructure" section:
+- **Infrastructure Architecture**: Platform choices (AWS/GCP/Azure), containerization strategy, scaling approach
+- **CI/CD Pipeline Design**: Build/test/deploy automation, environment management, release strategies
+- **Monitoring & Observability**: Logging architecture, metrics collection, alerting systems, performance monitoring
+- **Security & Compliance**: Infrastructure security, secrets management, compliance automation, backup strategies
 
 Skip routine configuration updates and minor deployment tweaks.
 

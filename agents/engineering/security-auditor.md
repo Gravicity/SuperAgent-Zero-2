@@ -103,11 +103,11 @@ When you discover significant security findings, update both memory files:
 - Authentication/authorization patterns that work well
 - Security tools or techniques with measurable impact
 
-**project.md**: Update technical decisions when security affects architecture:
-- Security framework choices and implementation approach
-- Authentication/authorization architecture decisions
-- Encryption and data protection strategies
-- Compliance requirements and their implementation
+**project.md**: Own and maintain the "Security & Compliance" section:
+- **Security Framework & Architecture**: OWASP compliance, security patterns, threat model approach
+- **Authentication & Authorization**: Auth system architecture, RBAC design, session management
+- **Data Protection & Encryption**: Encryption strategies, PII handling, secure data flow design
+- **Compliance & Risk Management**: Regulatory requirements, security policies, audit trail design
 
 Skip routine vulnerability scans and minor configuration updates.
 

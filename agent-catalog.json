@@ -1,603 +1,1972 @@
 {
   "version": "2.0.0",
   "updated": "2025-08-04",
-  "total_agents": 50,
+  "total_agents": 51,
   "agents": {
     "starter/project-analyzer": {
       "name": "project-analyzer",
       "category": "starter",
       "description": "Analyzes existing projects and recommends specialized agents",
-      "keywords": ["analysis", "recommendations", "assessment", "audit", "code review"],
-      "recommended_for": ["existing projects", "code optimization", "tech debt assessment"],
-      "tools": ["Read", "Grep", "LS", "WebSearch", "Bash"],
-      "expertise": ["project structure", "code quality", "dependency analysis", "security assessment"]
+      "keywords": [
+        "analysis",
+        "recommendations",
+        "assessment",
+        "audit",
+        "code review"
+      ],
+      "recommended_for": [
+        "existing projects",
+        "code optimization",
+        "tech debt assessment"
+      ],
+      "tools": [
+        "Read",
+        "Grep",
+        "LS",
+        "WebSearch",
+        "Bash"
+      ],
+      "expertise": [
+        "project structure",
+        "code quality",
+        "dependency analysis",
+        "security assessment"
+      ],
+      "install_command": "cp ~/.superagent-zero-2/agents/starter/project-analyzer.md .claude/agents/"
     },
     "starter/project-planner": {
       "name": "project-planner",
       "category": "starter",
       "description": "Plans new projects from concept to implementation",
-      "keywords": ["planning", "architecture", "design", "roadmap", "scaffolding"],
-      "recommended_for": ["new projects", "greenfield development", "MVP planning", "architecture design"],
-      "tools": ["Write", "Read", "WebSearch"],
-      "expertise": ["system design", "technology selection", "project roadmapping", "team coordination"]
+      "keywords": [
+        "planning",
+        "architecture",
+        "design",
+        "roadmap",
+        "scaffolding"
+      ],
+      "recommended_for": [
+        "new projects",
+        "greenfield development",
+        "MVP planning",
+        "architecture design"
+      ],
+      "tools": [
+        "Write",
+        "Read",
+        "WebSearch"
+      ],
+      "expertise": [
+        "system design",
+        "technology selection",
+        "project roadmapping",
+        "team coordination"
+      ],
+      "install_command": "cp ~/.superagent-zero-2/agents/starter/project-planner.md .claude/agents/"
     },
     "starter/memory-manager": {
       "name": "memory-manager",
       "category": "starter",
       "description": "Maintains cross-context memory and insights",
-      "keywords": ["memory", "persistence", "context", "insights", "continuity"],
-      "recommended_for": ["all projects"],
-      "tools": ["Read", "Write", "MultiEdit"],
-      "expertise": ["context preservation", "insight capture", "pattern recognition", "knowledge management"]
+      "keywords": [
+        "memory",
+        "persistence",
+        "context",
+        "insights",
+        "continuity"
+      ],
+      "recommended_for": [
+        "all projects"
+      ],
+      "tools": [
+        "Read",
+        "Write",
+        "MultiEdit"
+      ],
+      "expertise": [
+        "context preservation",
+        "insight capture",
+        "pattern recognition",
+        "knowledge management"
+      ],
+      "install_command": "cp ~/.superagent-zero-2/agents/starter/memory-manager.md .claude/agents/"
     },
     "starter/custom-agent-builder": {
       "name": "custom-agent-builder",
       "category": "starter",
       "description": "Creates custom specialized agents tailored to specific project needs and unique requirements following SuperAgent-Zero framework",
-      "keywords": ["custom agents", "agent creation", "bespoke solutions", "framework compliance"],
-      "recommended_for": ["unique requirements", "specialized domains", "custom workflows", "gap filling"],
-      "tools": ["Read", "Write", "MultiEdit", "WebSearch"],
-      "expertise": ["agent architecture", "framework compliance", "domain research", "custom solutions"]
+      "keywords": [
+        "custom agents",
+        "agent creation",
+        "bespoke solutions",
+        "framework compliance"
+      ],
+      "recommended_for": [
+        "unique requirements",
+        "specialized domains",
+        "custom workflows",
+        "gap filling"
+      ],
+      "tools": [
+        "Read",
+        "Write",
+        "MultiEdit",
+        "WebSearch"
+      ],
+      "expertise": [
+        "agent architecture",
+        "framework compliance",
+        "domain research",
+        "custom solutions"
+      ],
+      "install_command": "cp ~/.superagent-zero-2/agents/starter/custom-agent-builder.md .claude/agents/"
     },
     "starter/project-coordinator": {
       "name": "project-coordinator",
       "category": "starter",
       "description": "Coordinates between project-analyzer and project-planner for complex scenarios",
-      "keywords": ["coordination", "strategy", "complex projects", "analysis", "planning"],
-      "recommended_for": ["partial projects", "migrations", "refactoring", "multi-phase development"],
-      "tools": ["Read", "Write", "Task"],
-      "expertise": ["strategic coordination", "agent orchestration", "complex scenario management", "transformation planning"]
+      "keywords": [
+        "coordination",
+        "strategy",
+        "complex projects",
+        "analysis",
+        "planning"
+      ],
+      "recommended_for": [
+        "partial projects",
+        "migrations",
+        "refactoring",
+        "multi-phase development"
+      ],
+      "tools": [
+        "Read",
+        "Write",
+        "Task"
+      ],
+      "expertise": [
+        "strategic coordination",
+        "agent orchestration",
+        "complex scenario management",
+        "transformation planning"
+      ],
+      "install_command": "cp ~/.superagent-zero-2/agents/starter/project-coordinator.md .claude/agents/"
     },
     "engineering/ai-engineer": {
       "name": "ai-engineer",
       "category": "engineering",
       "description": "AI/ML integration specialist for production applications",
-      "keywords": ["ai", "ml", "llm", "machine learning", "automation", "embeddings"],
-      "recommended_for": ["ai features", "chatbots", "recommendations", "smart automation"],
-      "tools": ["Write", "Read", "MultiEdit", "Bash", "WebFetch"],
-      "expertise": ["LLM integration", "ML pipelines", "recommendation systems", "computer vision"]
+      "keywords": [
+        "ai",
+        "ml",
+        "llm",
+        "machine learning",
+        "automation",
+        "embeddings"
+      ],
+      "recommended_for": [
+        "ai features",
+        "chatbots",
+        "recommendations",
+        "smart automation"
+      ],
+      "tools": [
+        "Write",
+        "Read",
+        "MultiEdit",
+        "Bash",
+        "WebFetch"
+      ],
+      "expertise": [
+        "LLM integration",
+        "ML pipelines",
+        "recommendation systems",
+        "computer vision"
+      ],
+      "install_command": "cp ~/.superagent-zero-2/agents/engineering/ai-engineer.md .claude/agents/"
     },
     "engineering/backend-architect": {
       "name": "backend-architect",
       "category": "engineering",
       "description": "Designs scalable backend systems and APIs",
-      "keywords": ["api", "backend", "architecture", "scalability", "microservices"],
-      "recommended_for": ["web apps", "microservices", "REST APIs", "system design"],
-      "tools": ["Read", "Write", "MultiEdit", "Bash"],
-      "expertise": ["API design", "database architecture", "system scalability", "performance optimization"]
+      "keywords": [
+        "api",
+        "backend",
+        "architecture",
+        "scalability",
+        "microservices"
+      ],
+      "recommended_for": [
+        "web apps",
+        "microservices",
+        "REST APIs",
+        "system design"
+      ],
+      "tools": [
+        "Read",
+        "Write",
+        "MultiEdit",
+        "Bash"
+      ],
+      "expertise": [
+        "API design",
+        "database architecture",
+        "system scalability",
+        "performance optimization"
+      ],
+      "install_command": "cp ~/.superagent-zero-2/agents/engineering/backend-architect.md .claude/agents/"
     },
     "engineering/frontend-developer": {
       "name": "frontend-developer",
       "category": "engineering",
       "description": "Modern frontend development and user interface expert",
-      "keywords": ["frontend", "react", "vue", "angular", "ui", "performance"],
-      "recommended_for": ["web applications", "user interfaces", "frontend optimization"],
-      "tools": ["Write", "Read", "MultiEdit", "Bash"],
-      "expertise": ["modern frameworks", "component architecture", "performance optimization", "user experience"]
+      "keywords": [
+        "frontend",
+        "react",
+        "vue",
+        "angular",
+        "ui",
+        "performance"
+      ],
+      "recommended_for": [
+        "web applications",
+        "user interfaces",
+        "frontend optimization"
+      ],
+      "tools": [
+        "Write",
+        "Read",
+        "MultiEdit",
+        "Bash"
+      ],
+      "expertise": [
+        "modern frameworks",
+        "component architecture",
+        "performance optimization",
+        "user experience"
+      ],
+      "install_command": "cp ~/.superagent-zero-2/agents/engineering/frontend-developer.md .claude/agents/"
     },
     "engineering/mobile-app-builder": {
       "name": "mobile-app-builder",
       "category": "engineering",
       "description": "Cross-platform mobile development specialist",
-      "keywords": ["mobile", "ios", "android", "react native", "flutter", "app development"],
-      "recommended_for": ["mobile apps", "cross-platform development", "native features"],
-      "tools": ["Write", "Read", "MultiEdit", "Bash"],
-      "expertise": ["mobile frameworks", "platform integration", "app store optimization", "performance"]
+      "keywords": [
+        "mobile",
+        "ios",
+        "android",
+        "react native",
+        "flutter",
+        "app development"
+      ],
+      "recommended_for": [
+        "mobile apps",
+        "cross-platform development",
+        "native features"
+      ],
+      "tools": [
+        "Write",
+        "Read",
+        "MultiEdit",
+        "Bash"
+      ],
+      "expertise": [
+        "mobile frameworks",
+        "platform integration",
+        "app store optimization",
+        "performance"
+      ],
+      "install_command": "cp ~/.superagent-zero-2/agents/engineering/mobile-app-builder.md .claude/agents/"
     },
     "engineering/devops-automator": {
       "name": "devops-automator",
       "category": "engineering",
       "description": "CI/CD and infrastructure automation specialist",
-      "keywords": ["devops", "ci/cd", "deployment", "automation", "infrastructure"],
-      "recommended_for": ["deployment automation", "infrastructure management", "CI/CD pipelines"],
-      "tools": ["Bash", "Write", "Read", "MultiEdit"],
-      "expertise": ["deployment automation", "infrastructure as code", "monitoring", "security"]
+      "keywords": [
+        "devops",
+        "ci/cd",
+        "deployment",
+        "automation",
+        "infrastructure"
+      ],
+      "recommended_for": [
+        "deployment automation",
+        "infrastructure management",
+        "CI/CD pipelines"
+      ],
+      "tools": [
+        "Bash",
+        "Write",
+        "Read",
+        "MultiEdit"
+      ],
+      "expertise": [
+        "deployment automation",
+        "infrastructure as code",
+        "monitoring",
+        "security"
+      ],
+      "install_command": "cp ~/.superagent-zero-2/agents/engineering/devops-automator.md .claude/agents/"
     },
     "engineering/rapid-prototyper": {
       "name": "rapid-prototyper",
       "category": "engineering",
       "description": "Fast MVP development and prototyping expert",
-      "keywords": ["prototype", "mvp", "rapid development", "validation", "iteration"],
-      "recommended_for": ["MVP development", "proof of concept", "rapid iteration"],
-      "tools": ["Write", "Read", "MultiEdit", "Bash"],
-      "expertise": ["rapid development", "MVP architecture", "market validation", "iterative design"]
+      "keywords": [
+        "prototype",
+        "mvp",
+        "rapid development",
+        "validation",
+        "iteration"
+      ],
+      "recommended_for": [
+        "MVP development",
+        "proof of concept",
+        "rapid iteration"
+      ],
+      "tools": [
+        "Write",
+        "Read",
+        "MultiEdit",
+        "Bash"
+      ],
+      "expertise": [
+        "rapid development",
+        "MVP architecture",
+        "market validation",
+        "iterative design"
+      ],
+      "install_command": "cp ~/.superagent-zero-2/agents/engineering/rapid-prototyper.md .claude/agents/"
     },
     "engineering/test-writer-fixer": {
       "name": "test-writer-fixer",
       "category": "engineering",
       "description": "Comprehensive testing and quality assurance specialist",
-      "keywords": ["testing", "qa", "unit tests", "integration", "quality"],
-      "recommended_for": ["test coverage", "quality assurance", "bug fixing"],
-      "tools": ["Read", "Write", "MultiEdit", "Bash"],
-      "expertise": ["test automation", "quality metrics", "bug prevention", "code reliability"]
+      "keywords": [
+        "testing",
+        "qa",
+        "unit tests",
+        "integration",
+        "quality"
+      ],
+      "recommended_for": [
+        "test coverage",
+        "quality assurance",
+        "bug fixing"
+      ],
+      "tools": [
+        "Read",
+        "Write",
+        "MultiEdit",
+        "Bash"
+      ],
+      "expertise": [
+        "test automation",
+        "quality metrics",
+        "bug prevention",
+        "code reliability"
+      ],
+      "install_command": "cp ~/.superagent-zero-2/agents/engineering/test-writer-fixer.md .claude/agents/"
+    },
+    "engineering/build-and-lint-fixer": {
+      "name": "build-and-lint-fixer",
+      "category": "engineering", 
+      "description": "Automated build error resolution and lint fixing specialist that reduces context usage",
+      "keywords": [
+        "build",
+        "lint",
+        "errors", 
+        "automation",
+        "typescript",
+        "eslint",
+        "debugging"
+      ],
+      "recommended_for": [
+        "build error resolution",
+        "lint violation fixes",
+        "configuration issues",
+        "automated cleanup"
+      ],
+      "tools": [
+        "Bash",
+        "Read", 
+        "Write",
+        "MultiEdit",
+        "Grep",
+        "Glob"
+      ],
+      "expertise": [
+        "build systems",
+        "linting tools",
+        "dependency management", 
+        "automated error resolution"
+      ],
+      "install_command": "cp ~/.superagent-zero-2/agents/engineering/build-and-lint-fixer.md .claude/agents/"
     },
     "design/ui-designer": {
       "name": "ui-designer",
       "category": "design",
       "description": "User interface design and component systems expert",
-      "keywords": ["ui", "design", "components", "interface", "visual design"],
-      "recommended_for": ["interface design", "design systems", "visual optimization"],
-      "tools": ["Write", "Read", "MultiEdit"],
-      "expertise": ["visual design", "component systems", "design consistency", "user interfaces"]
+      "keywords": [
+        "ui",
+        "design",
+        "components",
+        "interface",
+        "visual design"
+      ],
+      "recommended_for": [
+        "interface design",
+        "design systems",
+        "visual optimization"
+      ],
+      "tools": [
+        "Write",
+        "Read",
+        "MultiEdit"
+      ],
+      "expertise": [
+        "visual design",
+        "component systems",
+        "design consistency",
+        "user interfaces"
+      ],
+      "install_command": "cp ~/.superagent-zero-2/agents/design/ui-designer.md .claude/agents/"
     },
     "design/ux-researcher": {
       "name": "ux-researcher",
       "category": "design",
       "description": "User experience research and behavioral analysis expert",
-      "keywords": ["ux", "research", "user behavior", "usability", "analytics"],
-      "recommended_for": ["user research", "usability testing", "behavior analysis"],
-      "tools": ["Read", "Write", "WebSearch", "WebFetch"],
-      "expertise": ["user research", "usability testing", "behavioral analysis", "data interpretation"]
+      "keywords": [
+        "ux",
+        "research",
+        "user behavior",
+        "usability",
+        "analytics"
+      ],
+      "recommended_for": [
+        "user research",
+        "usability testing",
+        "behavior analysis"
+      ],
+      "tools": [
+        "Read",
+        "Write",
+        "WebSearch",
+        "WebFetch"
+      ],
+      "expertise": [
+        "user research",
+        "usability testing",
+        "behavioral analysis",
+        "data interpretation"
+      ],
+      "install_command": "cp ~/.superagent-zero-2/agents/design/ux-researcher.md .claude/agents/"
     },
     "design/visual-storyteller": {
       "name": "visual-storyteller",
       "category": "design",
       "description": "Visual communication and data storytelling specialist",
-      "keywords": ["storytelling", "visualization", "infographics", "communication", "narrative"],
-      "recommended_for": ["data visualization", "presentations", "marketing materials"],
-      "tools": ["Write", "Read", "WebFetch"],
-      "expertise": ["visual communication", "data storytelling", "infographic design", "narrative structure"]
+      "keywords": [
+        "storytelling",
+        "visualization",
+        "infographics",
+        "communication",
+        "narrative"
+      ],
+      "recommended_for": [
+        "data visualization",
+        "presentations",
+        "marketing materials"
+      ],
+      "tools": [
+        "Write",
+        "Read",
+        "WebFetch"
+      ],
+      "expertise": [
+        "visual communication",
+        "data storytelling",
+        "infographic design",
+        "narrative structure"
+      ],
+      "install_command": "cp ~/.superagent-zero-2/agents/design/visual-storyteller.md .claude/agents/"
     },
     "design/brand-guardian": {
       "name": "brand-guardian",
       "category": "design",
       "description": "Brand consistency and identity management expert",
-      "keywords": ["brand", "identity", "consistency", "guidelines", "style"],
-      "recommended_for": ["brand development", "style guides", "brand consistency"],
-      "tools": ["Write", "Read", "MultiEdit"],
-      "expertise": ["brand identity", "style systems", "brand guidelines", "visual consistency"]
+      "keywords": [
+        "brand",
+        "identity",
+        "consistency",
+        "guidelines",
+        "style"
+      ],
+      "recommended_for": [
+        "brand development",
+        "style guides",
+        "brand consistency"
+      ],
+      "tools": [
+        "Write",
+        "Read",
+        "MultiEdit"
+      ],
+      "expertise": [
+        "brand identity",
+        "style systems",
+        "brand guidelines",
+        "visual consistency"
+      ],
+      "install_command": "cp ~/.superagent-zero-2/agents/design/brand-guardian.md .claude/agents/"
     },
     "design/whimsy-injector": {
       "name": "whimsy-injector",
       "category": "design",
       "description": "User delight and micro-interaction specialist",
-      "keywords": ["delight", "micro-interactions", "fun", "engagement", "personality"],
-      "recommended_for": ["user engagement", "delightful experiences", "micro-interactions"],
-      "tools": ["Write", "Read", "MultiEdit"],
-      "expertise": ["micro-interactions", "user delight", "personality design", "engagement optimization"]
+      "keywords": [
+        "delight",
+        "micro-interactions",
+        "fun",
+        "engagement",
+        "personality"
+      ],
+      "recommended_for": [
+        "user engagement",
+        "delightful experiences",
+        "micro-interactions"
+      ],
+      "tools": [
+        "Write",
+        "Read",
+        "MultiEdit"
+      ],
+      "expertise": [
+        "micro-interactions",
+        "user delight",
+        "personality design",
+        "engagement optimization"
+      ],
+      "install_command": "cp ~/.superagent-zero-2/agents/design/whimsy-injector.md .claude/agents/"
     },
     "marketing/content-creator": {
       "name": "content-creator",
       "category": "marketing",
       "description": "Multi-platform content strategy and creation expert",
-      "keywords": ["content", "writing", "strategy", "social media", "engagement"],
-      "recommended_for": ["content strategy", "social media", "blog writing", "marketing copy"],
-      "tools": ["Write", "Read", "WebSearch", "WebFetch"],
-      "expertise": ["content strategy", "copywriting", "social media", "audience engagement"]
+      "keywords": [
+        "content",
+        "writing",
+        "strategy",
+        "social media",
+        "engagement"
+      ],
+      "recommended_for": [
+        "content strategy",
+        "social media",
+        "blog writing",
+        "marketing copy"
+      ],
+      "tools": [
+        "Write",
+        "Read",
+        "WebSearch",
+        "WebFetch"
+      ],
+      "expertise": [
+        "content strategy",
+        "copywriting",
+        "social media",
+        "audience engagement"
+      ],
+      "install_command": "cp ~/.superagent-zero-2/agents/marketing/content-creator.md .claude/agents/"
     },
     "marketing/growth-hacker": {
       "name": "growth-hacker",
       "category": "marketing",
       "description": "Data-driven growth and user acquisition specialist",
-      "keywords": ["growth", "acquisition", "viral", "experimentation", "metrics"],
-      "recommended_for": ["user acquisition", "growth optimization", "viral mechanics"],
-      "tools": ["Read", "Write", "WebSearch", "Bash"],
-      "expertise": ["growth hacking", "viral mechanics", "user acquisition", "data analysis"]
+      "keywords": [
+        "growth",
+        "acquisition",
+        "viral",
+        "experimentation",
+        "metrics"
+      ],
+      "recommended_for": [
+        "user acquisition",
+        "growth optimization",
+        "viral mechanics"
+      ],
+      "tools": [
+        "Read",
+        "Write",
+        "WebSearch",
+        "Bash"
+      ],
+      "expertise": [
+        "growth hacking",
+        "viral mechanics",
+        "user acquisition",
+        "data analysis"
+      ],
+      "install_command": "cp ~/.superagent-zero-2/agents/marketing/growth-hacker.md .claude/agents/"
     },
     "marketing/app-store-optimizer": {
       "name": "app-store-optimizer",
       "category": "marketing",
       "description": "App store optimization and organic discovery expert",
-      "keywords": ["aso", "app store", "optimization", "discovery", "keywords"],
-      "recommended_for": ["app store presence", "organic discovery", "app marketing"],
-      "tools": ["Read", "Write", "WebSearch"],
-      "expertise": ["app store optimization", "keyword research", "organic discovery", "conversion optimization"]
+      "keywords": [
+        "aso",
+        "app store",
+        "optimization",
+        "discovery",
+        "keywords"
+      ],
+      "recommended_for": [
+        "app store presence",
+        "organic discovery",
+        "app marketing"
+      ],
+      "tools": [
+        "Read",
+        "Write",
+        "WebSearch"
+      ],
+      "expertise": [
+        "app store optimization",
+        "keyword research",
+        "organic discovery",
+        "conversion optimization"
+      ],
+      "install_command": "cp ~/.superagent-zero-2/agents/marketing/app-store-optimizer.md .claude/agents/"
     },
     "marketing/instagram-curator": {
       "name": "instagram-curator",
       "category": "marketing",
       "description": "Instagram content strategy and growth specialist",
-      "keywords": ["instagram", "visual content", "stories", "reels", "engagement"],
-      "recommended_for": ["instagram marketing", "visual content", "social growth"],
-      "tools": ["Write", "Read", "WebFetch"],
-      "expertise": ["instagram strategy", "visual content", "social engagement", "influencer collaboration"]
+      "keywords": [
+        "instagram",
+        "visual content",
+        "stories",
+        "reels",
+        "engagement"
+      ],
+      "recommended_for": [
+        "instagram marketing",
+        "visual content",
+        "social growth"
+      ],
+      "tools": [
+        "Write",
+        "Read",
+        "WebFetch"
+      ],
+      "expertise": [
+        "instagram strategy",
+        "visual content",
+        "social engagement",
+        "influencer collaboration"
+      ],
+      "install_command": "cp ~/.superagent-zero-2/agents/marketing/instagram-curator.md .claude/agents/"
     },
     "marketing/reddit-community-builder": {
       "name": "reddit-community-builder",
       "category": "marketing",
       "description": "Authentic Reddit community engagement specialist",
-      "keywords": ["reddit", "community", "engagement", "authentic", "discussion"],
-      "recommended_for": ["reddit marketing", "community building", "authentic engagement"],
-      "tools": ["Read", "Write", "WebSearch"],
-      "expertise": ["reddit culture", "community building", "authentic engagement", "discussion facilitation"]
+      "keywords": [
+        "reddit",
+        "community",
+        "engagement",
+        "authentic",
+        "discussion"
+      ],
+      "recommended_for": [
+        "reddit marketing",
+        "community building",
+        "authentic engagement"
+      ],
+      "tools": [
+        "Read",
+        "Write",
+        "WebSearch"
+      ],
+      "expertise": [
+        "reddit culture",
+        "community building",
+        "authentic engagement",
+        "discussion facilitation"
+      ],
+      "install_command": "cp ~/.superagent-zero-2/agents/marketing/reddit-community-builder.md .claude/agents/"
     },
     "marketing/tiktok-strategist": {
       "name": "tiktok-strategist",
       "category": "marketing",
       "description": "TikTok viral content and trend specialist",
-      "keywords": ["tiktok", "viral", "trends", "short video", "cultural"],
-      "recommended_for": ["tiktok marketing", "viral content", "trend adaptation"],
-      "tools": ["Write", "Read", "WebFetch"],
-      "expertise": ["tiktok trends", "viral mechanics", "short-form content", "cultural relevance"]
+      "keywords": [
+        "tiktok",
+        "viral",
+        "trends",
+        "short video",
+        "cultural"
+      ],
+      "recommended_for": [
+        "tiktok marketing",
+        "viral content",
+        "trend adaptation"
+      ],
+      "tools": [
+        "Write",
+        "Read",
+        "WebFetch"
+      ],
+      "expertise": [
+        "tiktok trends",
+        "viral mechanics",
+        "short-form content",
+        "cultural relevance"
+      ],
+      "install_command": "cp ~/.superagent-zero-2/agents/marketing/tiktok-strategist.md .claude/agents/"
     },
     "marketing/twitter-engager": {
       "name": "twitter-engager",
       "category": "marketing",
       "description": "Real-time Twitter engagement and community building expert",
-      "keywords": ["twitter", "engagement", "real-time", "community", "conversation"],
-      "recommended_for": ["twitter marketing", "real-time engagement", "thought leadership"],
-      "tools": ["Read", "Write", "WebSearch"],
-      "expertise": ["twitter engagement", "real-time marketing", "community building", "conversation facilitation"]
+      "keywords": [
+        "twitter",
+        "engagement",
+        "real-time",
+        "community",
+        "conversation"
+      ],
+      "recommended_for": [
+        "twitter marketing",
+        "real-time engagement",
+        "thought leadership"
+      ],
+      "tools": [
+        "Read",
+        "Write",
+        "WebSearch"
+      ],
+      "expertise": [
+        "twitter engagement",
+        "real-time marketing",
+        "community building",
+        "conversation facilitation"
+      ],
+      "install_command": "cp ~/.superagent-zero-2/agents/marketing/twitter-engager.md .claude/agents/"
     },
     "product/trend-researcher": {
       "name": "trend-researcher",
       "category": "product",
       "description": "Market trend analysis and opportunity identification expert",
-      "keywords": ["trends", "market research", "opportunities", "viral", "timing"],
-      "recommended_for": ["market research", "trend analysis", "opportunity identification"],
-      "tools": ["WebSearch", "WebFetch", "Read", "Write"],
-      "expertise": ["trend analysis", "market research", "opportunity identification", "viral prediction"]
+      "keywords": [
+        "trends",
+        "market research",
+        "opportunities",
+        "viral",
+        "timing"
+      ],
+      "recommended_for": [
+        "market research",
+        "trend analysis",
+        "opportunity identification"
+      ],
+      "tools": [
+        "WebSearch",
+        "WebFetch",
+        "Read",
+        "Write"
+      ],
+      "expertise": [
+        "trend analysis",
+        "market research",
+        "opportunity identification",
+        "viral prediction"
+      ],
+      "install_command": "cp ~/.superagent-zero-2/agents/product/trend-researcher.md .claude/agents/"
     },
     "product/feedback-synthesizer": {
       "name": "feedback-synthesizer",
       "category": "product",
       "description": "User feedback analysis and insight generation expert",
-      "keywords": ["feedback", "user research", "insights", "analysis", "synthesis"],
-      "recommended_for": ["user feedback analysis", "product insights", "user research"],
-      "tools": ["Read", "Write", "MultiEdit"],
-      "expertise": ["feedback analysis", "user insights", "pattern recognition", "research synthesis"]
+      "keywords": [
+        "feedback",
+        "user research",
+        "insights",
+        "analysis",
+        "synthesis"
+      ],
+      "recommended_for": [
+        "user feedback analysis",
+        "product insights",
+        "user research"
+      ],
+      "tools": [
+        "Read",
+        "Write",
+        "MultiEdit"
+      ],
+      "expertise": [
+        "feedback analysis",
+        "user insights",
+        "pattern recognition",
+        "research synthesis"
+      ],
+      "install_command": "cp ~/.superagent-zero-2/agents/product/feedback-synthesizer.md .claude/agents/"
     },
     "product/sprint-prioritizer": {
       "name": "sprint-prioritizer",
       "category": "product",
       "description": "Agile sprint planning and feature prioritization expert",
-      "keywords": ["sprint", "prioritization", "agile", "planning", "roadmap"],
-      "recommended_for": ["sprint planning", "feature prioritization", "agile development"],
-      "tools": ["Read", "Write", "MultiEdit"],
-      "expertise": ["sprint planning", "feature prioritization", "agile methodology", "roadmap planning"]
+      "keywords": [
+        "sprint",
+        "prioritization",
+        "agile",
+        "planning",
+        "roadmap"
+      ],
+      "recommended_for": [
+        "sprint planning",
+        "feature prioritization",
+        "agile development"
+      ],
+      "tools": [
+        "Read",
+        "Write",
+        "MultiEdit"
+      ],
+      "expertise": [
+        "sprint planning",
+        "feature prioritization",
+        "agile methodology",
+        "roadmap planning"
+      ],
+      "install_command": "cp ~/.superagent-zero-2/agents/product/sprint-prioritizer.md .claude/agents/"
     },
     "product/competitive-intelligence-researcher": {
       "name": "competitive-intelligence-researcher",
       "category": "product",
       "description": "Conducts deep competitive analysis of websites, SaaS products, and apps through comprehensive research, user feedback analysis, and strategic intelligence gathering",
-      "keywords": ["competitive analysis", "market research", "user feedback", "product intelligence", "competitor research"],
-      "recommended_for": ["product cloning", "competitive analysis", "market research", "feature gap analysis"],
-      "tools": ["WebSearch", "WebFetch", "Read", "Write", "MultiEdit"],
-      "expertise": ["competitive intelligence", "user feedback analysis", "technical architecture assessment", "market research"]
+      "keywords": [
+        "competitive analysis",
+        "market research",
+        "user feedback",
+        "product intelligence",
+        "competitor research"
+      ],
+      "recommended_for": [
+        "product cloning",
+        "competitive analysis",
+        "market research",
+        "feature gap analysis"
+      ],
+      "tools": [
+        "WebSearch",
+        "WebFetch",
+        "Read",
+        "Write",
+        "MultiEdit"
+      ],
+      "expertise": [
+        "competitive intelligence",
+        "user feedback analysis",
+        "technical architecture assessment",
+        "market research"
+      ],
+      "install_command": "cp ~/.superagent-zero-2/agents/product/competitive-intelligence-researcher.md .claude/agents/"
     },
     "product/product-clone-architect": {
       "name": "product-clone-architect",
       "category": "product",
       "description": "Transforms competitive intelligence into actionable product development strategies, technical architecture plans, and differentiated cloning roadmaps",
-      "keywords": ["product cloning", "architecture design", "competitive strategy", "development planning", "product differentiation"],
-      "recommended_for": ["product cloning", "competitive product development", "architecture planning", "feature differentiation"],
-      "tools": ["Write", "Read", "MultiEdit", "Task", "TodoWrite"],
-      "expertise": ["product strategy", "technical architecture", "competitive differentiation", "development planning"]
+      "keywords": [
+        "product cloning",
+        "architecture design",
+        "competitive strategy",
+        "development planning",
+        "product differentiation"
+      ],
+      "recommended_for": [
+        "product cloning",
+        "competitive product development",
+        "architecture planning",
+        "feature differentiation"
+      ],
+      "tools": [
+        "Write",
+        "Read",
+        "MultiEdit",
+        "Task",
+        "TodoWrite"
+      ],
+      "expertise": [
+        "product strategy",
+        "technical architecture",
+        "competitive differentiation",
+        "development planning"
+      ],
+      "install_command": "cp ~/.superagent-zero-2/agents/product/product-clone-architect.md .claude/agents/"
     },
     "engineering/security-auditor": {
       "name": "security-auditor",
       "category": "engineering",
       "description": "Conducts security assessments, vulnerability scanning, threat modeling, and implements comprehensive application security measures",
-      "keywords": ["security", "vulnerability assessment", "threat modeling", "penetration testing", "compliance"],
-      "recommended_for": ["security audits", "vulnerability assessment", "compliance requirements", "threat modeling"],
-      "tools": ["Read", "Grep", "WebSearch", "WebFetch", "Bash", "Write", "MultiEdit"],
-      "expertise": ["application security", "vulnerability assessment", "threat modeling", "security compliance"]
+      "keywords": [
+        "security",
+        "vulnerability assessment",
+        "threat modeling",
+        "penetration testing",
+        "compliance"
+      ],
+      "recommended_for": [
+        "security audits",
+        "vulnerability assessment",
+        "compliance requirements",
+        "threat modeling"
+      ],
+      "tools": [
+        "Read",
+        "Grep",
+        "WebSearch",
+        "WebFetch",
+        "Bash",
+        "Write",
+        "MultiEdit"
+      ],
+      "expertise": [
+        "application security",
+        "vulnerability assessment",
+        "threat modeling",
+        "security compliance"
+      ],
+      "install_command": "cp ~/.superagent-zero-2/agents/engineering/security-auditor.md .claude/agents/"
     },
     "engineering/data-engineer": {
       "name": "data-engineer",
       "category": "engineering",
       "description": "Designs data pipelines, implements ETL processes, builds data warehouses, and architects scalable data infrastructure",
-      "keywords": ["data pipelines", "ETL", "data warehouse", "big data", "analytics infrastructure"],
-      "recommended_for": ["data infrastructure", "analytics systems", "data pipelines", "business intelligence"],
-      "tools": ["Write", "Read", "MultiEdit", "Bash", "Grep", "WebSearch"],
-      "expertise": ["data architecture", "ETL processes", "data warehousing", "stream processing"]
+      "keywords": [
+        "data pipelines",
+        "ETL",
+        "data warehouse",
+        "big data",
+        "analytics infrastructure"
+      ],
+      "recommended_for": [
+        "data infrastructure",
+        "analytics systems",
+        "data pipelines",
+        "business intelligence"
+      ],
+      "tools": [
+        "Write",
+        "Read",
+        "MultiEdit",
+        "Bash",
+        "Grep",
+        "WebSearch"
+      ],
+      "expertise": [
+        "data architecture",
+        "ETL processes",
+        "data warehousing",
+        "stream processing"
+      ],
+      "install_command": "cp ~/.superagent-zero-2/agents/engineering/data-engineer.md .claude/agents/"
     },
     "engineering/documentation-architect": {
       "name": "documentation-architect",
       "category": "engineering",
       "description": "Creates comprehensive technical documentation, API references, user guides, and knowledge bases that enable developers and users",
-      "keywords": ["documentation", "API docs", "technical writing", "knowledge base", "user guides"],
-      "recommended_for": ["API documentation", "technical writing", "user guides", "knowledge management"],
-      "tools": ["Write", "Read", "MultiEdit", "WebSearch", "WebFetch", "Grep"],
-      "expertise": ["technical writing", "API documentation", "information architecture", "developer experience"]
+      "keywords": [
+        "documentation",
+        "API docs",
+        "technical writing",
+        "knowledge base",
+        "user guides"
+      ],
+      "recommended_for": [
+        "API documentation",
+        "technical writing",
+        "user guides",
+        "knowledge management"
+      ],
+      "tools": [
+        "Write",
+        "Read",
+        "MultiEdit",
+        "WebSearch",
+        "WebFetch",
+        "Grep"
+      ],
+      "expertise": [
+        "technical writing",
+        "API documentation",
+        "information architecture",
+        "developer experience"
+      ],
+      "install_command": "cp ~/.superagent-zero-2/agents/engineering/documentation-architect.md .claude/agents/"
     },
     "engineering/blockchain-developer": {
       "name": "blockchain-developer",
       "category": "engineering",
       "description": "Builds decentralized applications, smart contracts, Web3 integrations, and blockchain infrastructure for modern distributed systems",
-      "keywords": ["blockchain", "smart contracts", "Web3", "DeFi", "cryptocurrency", "NFT"],
-      "recommended_for": ["blockchain development", "smart contracts", "Web3 applications", "DeFi protocols"],
-      "tools": ["Write", "Read", "MultiEdit", "Bash", "WebSearch", "WebFetch"],
-      "expertise": ["smart contracts", "blockchain architecture", "DeFi protocols", "Web3 integration"]
+      "keywords": [
+        "blockchain",
+        "smart contracts",
+        "Web3",
+        "DeFi",
+        "cryptocurrency",
+        "NFT"
+      ],
+      "recommended_for": [
+        "blockchain development",
+        "smart contracts",
+        "Web3 applications",
+        "DeFi protocols"
+      ],
+      "tools": [
+        "Write",
+        "Read",
+        "MultiEdit",
+        "Bash",
+        "WebSearch",
+        "WebFetch"
+      ],
+      "expertise": [
+        "smart contracts",
+        "blockchain architecture",
+        "DeFi protocols",
+        "Web3 integration"
+      ],
+      "install_command": "cp ~/.superagent-zero-2/agents/engineering/blockchain-developer.md .claude/agents/"
     },
     "engineering/game-developer": {
       "name": "game-developer",
       "category": "engineering",
       "description": "Creates interactive games, game mechanics, physics systems, and engaging player experiences across platforms and genres",
-      "keywords": ["game development", "game mechanics", "physics", "interactive experiences", "player engagement"],
-      "recommended_for": ["game development", "interactive applications", "gamification", "entertainment software"],
-      "tools": ["Write", "Read", "MultiEdit", "Bash", "WebSearch", "WebFetch"],
-      "expertise": ["game mechanics", "physics systems", "player experience", "game optimization"]
+      "keywords": [
+        "game development",
+        "game mechanics",
+        "physics",
+        "interactive experiences",
+        "player engagement"
+      ],
+      "recommended_for": [
+        "game development",
+        "interactive applications",
+        "gamification",
+        "entertainment software"
+      ],
+      "tools": [
+        "Write",
+        "Read",
+        "MultiEdit",
+        "Bash",
+        "WebSearch",
+        "WebFetch"
+      ],
+      "expertise": [
+        "game mechanics",
+        "physics systems",
+        "player experience",
+        "game optimization"
+      ],
+      "install_command": "cp ~/.superagent-zero-2/agents/engineering/game-developer.md .claude/agents/"
     },
     "design/accessibility-specialist": {
       "name": "accessibility-specialist",
       "category": "design",
       "description": "Ensures digital products are accessible to all users through WCAG compliance, inclusive design, and assistive technology optimization",
-      "keywords": ["accessibility", "WCAG", "inclusive design", "assistive technology", "compliance"],
-      "recommended_for": ["accessibility compliance", "inclusive design", "WCAG implementation", "assistive technology"],
-      "tools": ["Read", "Write", "MultiEdit", "WebSearch", "WebFetch", "Grep"],
-      "expertise": ["accessibility standards", "inclusive design", "assistive technology", "WCAG compliance"]
+      "keywords": [
+        "accessibility",
+        "WCAG",
+        "inclusive design",
+        "assistive technology",
+        "compliance"
+      ],
+      "recommended_for": [
+        "accessibility compliance",
+        "inclusive design",
+        "WCAG implementation",
+        "assistive technology"
+      ],
+      "tools": [
+        "Read",
+        "Write",
+        "MultiEdit",
+        "WebSearch",
+        "WebFetch",
+        "Grep"
+      ],
+      "expertise": [
+        "accessibility standards",
+        "inclusive design",
+        "assistive technology",
+        "WCAG compliance"
+      ],
+      "install_command": "cp ~/.superagent-zero-2/agents/design/accessibility-specialist.md .claude/agents/"
     },
     "marketing/seo-optimizer": {
       "name": "seo-optimizer",
       "category": "marketing",
       "description": "Drives organic search traffic through technical SEO, content optimization, link building strategies, and search visibility enhancement",
-      "keywords": ["SEO", "search optimization", "organic traffic", "content optimization", "link building"],
-      "recommended_for": ["search engine optimization", "organic growth", "content marketing", "search visibility"],
-      "tools": ["Read", "Write", "WebSearch", "WebFetch", "MultiEdit", "Grep"],
-      "expertise": ["technical SEO", "content optimization", "link building", "search analytics"]
+      "keywords": [
+        "SEO",
+        "search optimization",
+        "organic traffic",
+        "content optimization",
+        "link building"
+      ],
+      "recommended_for": [
+        "search engine optimization",
+        "organic growth",
+        "content marketing",
+        "search visibility"
+      ],
+      "tools": [
+        "Read",
+        "Write",
+        "WebSearch",
+        "WebFetch",
+        "MultiEdit",
+        "Grep"
+      ],
+      "expertise": [
+        "technical SEO",
+        "content optimization",
+        "link building",
+        "search analytics"
+      ],
+      "install_command": "cp ~/.superagent-zero-2/agents/marketing/seo-optimizer.md .claude/agents/"
     },
     "marketing/email-marketing-specialist": {
       "name": "email-marketing-specialist",
       "category": "marketing",
       "description": "Creates high-converting email campaigns, automated sequences, newsletters, and retention strategies that drive engagement and revenue",
-      "keywords": ["email marketing", "automation", "newsletters", "email campaigns", "retention"],
-      "recommended_for": ["email marketing", "customer retention", "automated campaigns", "newsletter strategy"],
-      "tools": ["Write", "Read", "MultiEdit", "WebSearch", "WebFetch"],
-      "expertise": ["email campaigns", "marketing automation", "customer retention", "email analytics"]
+      "keywords": [
+        "email marketing",
+        "automation",
+        "newsletters",
+        "email campaigns",
+        "retention"
+      ],
+      "recommended_for": [
+        "email marketing",
+        "customer retention",
+        "automated campaigns",
+        "newsletter strategy"
+      ],
+      "tools": [
+        "Write",
+        "Read",
+        "MultiEdit",
+        "WebSearch",
+        "WebFetch"
+      ],
+      "expertise": [
+        "email campaigns",
+        "marketing automation",
+        "customer retention",
+        "email analytics"
+      ],
+      "install_command": "cp ~/.superagent-zero-2/agents/marketing/email-marketing-specialist.md .claude/agents/"
     },
     "studio-operations/customer-success-manager": {
       "name": "customer-success-manager",
       "category": "studio-operations",
       "description": "Drives user onboarding, retention, and growth through strategic customer relationship management and success optimization",
-      "keywords": ["customer success", "onboarding", "retention", "customer relationship", "user growth"],
-      "recommended_for": ["customer success", "user onboarding", "retention strategy", "customer growth"],
-      "tools": ["Write", "Read", "MultiEdit", "WebSearch", "WebFetch", "Grep"],
-      "expertise": ["customer success", "user onboarding", "retention optimization", "relationship management"]
+      "keywords": [
+        "customer success",
+        "onboarding",
+        "retention",
+        "customer relationship",
+        "user growth"
+      ],
+      "recommended_for": [
+        "customer success",
+        "user onboarding",
+        "retention strategy",
+        "customer growth"
+      ],
+      "tools": [
+        "Write",
+        "Read",
+        "MultiEdit",
+        "WebSearch",
+        "WebFetch",
+        "Grep"
+      ],
+      "expertise": [
+        "customer success",
+        "user onboarding",
+        "retention optimization",
+        "relationship management"
+      ],
+      "install_command": "cp ~/.superagent-zero-2/agents/studio-operations/customer-success-manager.md .claude/agents/"
     },
     "testing/api-tester": {
       "name": "api-tester",
       "category": "testing",
       "description": "Ensures APIs are battle-tested through performance testing, load simulation, contract validation, and reliability verification",
-      "keywords": ["api", "testing", "validation", "load testing", "performance"],
-      "recommended_for": ["api testing", "performance testing", "integration testing"],
-      "tools": ["Bash", "Read", "Write"],
-      "expertise": ["API testing", "load testing", "performance validation", "integration testing"]
+      "keywords": [
+        "api",
+        "testing",
+        "validation",
+        "load testing",
+        "performance"
+      ],
+      "recommended_for": [
+        "api testing",
+        "performance testing",
+        "integration testing"
+      ],
+      "tools": [
+        "Bash",
+        "Read",
+        "Write"
+      ],
+      "expertise": [
+        "API testing",
+        "load testing",
+        "performance validation",
+        "integration testing"
+      ],
+      "install_command": "cp ~/.superagent-zero-2/agents/testing/api-tester.md .claude/agents/"
     },
     "testing/performance-benchmarker": {
       "name": "performance-benchmarker",
       "category": "testing",
       "description": "Optimizes application performance through profiling, benchmarking, bottleneck identification, and actionable optimization recommendations",
-      "keywords": ["performance", "benchmarking", "optimization", "speed", "metrics"],
-      "recommended_for": ["performance testing", "optimization", "benchmarking"],
-      "tools": ["Bash", "Read", "Write"],
-      "expertise": ["performance testing", "benchmarking", "optimization strategies", "metrics analysis"]
+      "keywords": [
+        "performance",
+        "benchmarking",
+        "optimization",
+        "speed",
+        "metrics"
+      ],
+      "recommended_for": [
+        "performance testing",
+        "optimization",
+        "benchmarking"
+      ],
+      "tools": [
+        "Bash",
+        "Read",
+        "Write"
+      ],
+      "expertise": [
+        "performance testing",
+        "benchmarking",
+        "optimization strategies",
+        "metrics analysis"
+      ],
+      "install_command": "cp ~/.superagent-zero-2/agents/testing/performance-benchmarker.md .claude/agents/"
     },
     "testing/test-results-analyzer": {
       "name": "test-results-analyzer",
       "category": "testing",
       "description": "Transforms test results into actionable quality insights through trend analysis, flaky test detection, and comprehensive metrics reporting",
-      "keywords": ["test analysis", "quality metrics", "reporting", "trends", "insights"],
-      "recommended_for": ["test analysis", "quality reporting", "metrics tracking"],
-      "tools": ["Read", "Write", "MultiEdit"],
-      "expertise": ["test analysis", "quality metrics", "trend analysis", "reporting"]
+      "keywords": [
+        "test analysis",
+        "quality metrics",
+        "reporting",
+        "trends",
+        "insights"
+      ],
+      "recommended_for": [
+        "test analysis",
+        "quality reporting",
+        "metrics tracking"
+      ],
+      "tools": [
+        "Read",
+        "Write",
+        "MultiEdit"
+      ],
+      "expertise": [
+        "test analysis",
+        "quality metrics",
+        "trend analysis",
+        "reporting"
+      ],
+      "install_command": "cp ~/.superagent-zero-2/agents/testing/test-results-analyzer.md .claude/agents/"
     },
     "testing/tool-evaluator": {
       "name": "tool-evaluator",
       "category": "testing",
       "description": "Development tool assessment and recommendation expert",
-      "keywords": ["tools", "evaluation", "productivity", "assessment", "recommendations"],
-      "recommended_for": ["tool evaluation", "productivity optimization", "technology assessment"],
-      "tools": ["Read", "Write", "WebSearch", "Bash"],
-      "expertise": ["tool evaluation", "productivity assessment", "technology comparison", "recommendations"]
+      "keywords": [
+        "tools",
+        "evaluation",
+        "productivity",
+        "assessment",
+        "recommendations"
+      ],
+      "recommended_for": [
+        "tool evaluation",
+        "productivity optimization",
+        "technology assessment"
+      ],
+      "tools": [
+        "Read",
+        "Write",
+        "WebSearch",
+        "Bash"
+      ],
+      "expertise": [
+        "tool evaluation",
+        "productivity assessment",
+        "technology comparison",
+        "recommendations"
+      ],
+      "install_command": "cp ~/.superagent-zero-2/agents/testing/tool-evaluator.md .claude/agents/"
     },
     "testing/workflow-optimizer": {
       "name": "workflow-optimizer",
       "category": "testing",
       "description": "Optimizes human-agent collaboration workflows through bottleneck analysis, process automation, and efficient handoff design",
-      "keywords": ["workflow", "optimization", "process", "efficiency", "automation"],
-      "recommended_for": ["workflow optimization", "process improvement", "efficiency gains"],
-      "tools": ["Read", "Write", "MultiEdit"],
-      "expertise": ["workflow optimization", "process improvement", "efficiency analysis", "automation strategies"]
+      "keywords": [
+        "workflow",
+        "optimization",
+        "process",
+        "efficiency",
+        "automation"
+      ],
+      "recommended_for": [
+        "workflow optimization",
+        "process improvement",
+        "efficiency gains"
+      ],
+      "tools": [
+        "Read",
+        "Write",
+        "MultiEdit"
+      ],
+      "expertise": [
+        "workflow optimization",
+        "process improvement",
+        "efficiency analysis",
+        "automation strategies"
+      ],
+      "install_command": "cp ~/.superagent-zero-2/agents/testing/workflow-optimizer.md .claude/agents/"
     },
     "bonus/joker": {
       "name": "joker",
       "category": "bonus",
       "description": "Tech humor specialist for team morale and lighthearted content",
-      "keywords": ["humor", "jokes", "morale", "team spirit", "fun", "programming puns"],
-      "recommended_for": ["team morale", "stress relief", "fun content", "error pages"],
-      "tools": ["Write"],
-      "expertise": ["tech humor", "programming puns", "team motivation", "situational comedy"]
+      "keywords": [
+        "humor",
+        "jokes",
+        "morale",
+        "team spirit",
+        "fun",
+        "programming puns"
+      ],
+      "recommended_for": [
+        "team morale",
+        "stress relief",
+        "fun content",
+        "error pages"
+      ],
+      "tools": [
+        "Write"
+      ],
+      "expertise": [
+        "tech humor",
+        "programming puns",
+        "team motivation",
+        "situational comedy"
+      ],
+      "install_command": "cp ~/.superagent-zero-2/agents/bonus/joker.md .claude/agents/"
     },
     "bonus/studio-coach": {
       "name": "studio-coach",
       "category": "bonus",
       "description": "Elite performance coach for multi-agent coordination and motivation",
-      "keywords": ["coaching", "motivation", "coordination", "performance", "team dynamics", "leadership"],
-      "recommended_for": ["complex projects", "team coordination", "agent motivation", "sprint planning"],
-      "tools": ["Task", "Write", "Read"],
-      "expertise": ["performance coaching", "team coordination", "motivational leadership", "crisis management"]
+      "keywords": [
+        "coaching",
+        "motivation",
+        "coordination",
+        "performance",
+        "team dynamics",
+        "leadership"
+      ],
+      "recommended_for": [
+        "complex projects",
+        "team coordination",
+        "agent motivation",
+        "sprint planning"
+      ],
+      "tools": [
+        "Task",
+        "Write",
+        "Read"
+      ],
+      "expertise": [
+        "performance coaching",
+        "team coordination",
+        "motivational leadership",
+        "crisis management"
+      ],
+      "install_command": "cp ~/.superagent-zero-2/agents/bonus/studio-coach.md .claude/agents/"
     },
     "project-management/experiment-tracker": {
       "name": "experiment-tracker",
       "category": "project-management",
       "description": "A/B testing and experimental validation specialist for rapid iteration cycles",
-      "keywords": ["experiments", "a/b testing", "validation", "metrics", "iteration", "feature flags"],
-      "recommended_for": ["feature validation", "A/B testing", "experimental features", "data-driven decisions"],
-      "tools": ["Read", "Write", "MultiEdit", "Grep", "Glob", "TodoWrite"],
-      "expertise": ["experiment design", "statistical analysis", "feature flagging", "rapid iteration"]
+      "keywords": [
+        "experiments",
+        "a/b testing",
+        "validation",
+        "metrics",
+        "iteration",
+        "feature flags"
+      ],
+      "recommended_for": [
+        "feature validation",
+        "A/B testing",
+        "experimental features",
+        "data-driven decisions"
+      ],
+      "tools": [
+        "Read",
+        "Write",
+        "MultiEdit",
+        "Grep",
+        "Glob",
+        "TodoWrite"
+      ],
+      "expertise": [
+        "experiment design",
+        "statistical analysis",
+        "feature flagging",
+        "rapid iteration"
+      ],
+      "install_command": "cp ~/.superagent-zero-2/agents/project-management/experiment-tracker.md .claude/agents/"
     },
     "project-management/project-shipper": {
       "name": "project-shipper",
       "category": "project-management",
       "description": "Launch coordination and go-to-market specialist for rapid deployment cycles",
-      "keywords": ["launch", "deployment", "go-to-market", "coordination", "release management", "positioning"],
-      "recommended_for": ["feature launches", "release coordination", "go-to-market strategy", "launch planning"],
-      "tools": ["Read", "Write", "MultiEdit", "Grep", "Glob", "TodoWrite", "WebSearch"],
-      "expertise": ["launch orchestration", "release management", "market positioning", "stakeholder coordination"]
+      "keywords": [
+        "launch",
+        "deployment",
+        "go-to-market",
+        "coordination",
+        "release management",
+        "positioning"
+      ],
+      "recommended_for": [
+        "feature launches",
+        "release coordination",
+        "go-to-market strategy",
+        "launch planning"
+      ],
+      "tools": [
+        "Read",
+        "Write",
+        "MultiEdit",
+        "Grep",
+        "Glob",
+        "TodoWrite",
+        "WebSearch"
+      ],
+      "expertise": [
+        "launch orchestration",
+        "release management",
+        "market positioning",
+        "stakeholder coordination"
+      ],
+      "install_command": "cp ~/.superagent-zero-2/agents/project-management/project-shipper.md .claude/agents/"
     },
     "project-management/studio-producer": {
       "name": "studio-producer",
       "category": "project-management",
       "description": "Cross-functional coordination and resource optimization specialist for studio workflows",
-      "keywords": ["coordination", "resource allocation", "workflow optimization", "team management", "process design"],
-      "recommended_for": ["cross-team collaboration", "resource allocation", "workflow optimization", "process improvement"],
-      "tools": ["Read", "Write", "MultiEdit", "Grep", "Glob", "TodoWrite"],
-      "expertise": ["team coordination", "resource optimization", "process design", "workflow automation"]
+      "keywords": [
+        "coordination",
+        "resource allocation",
+        "workflow optimization",
+        "team management",
+        "process design"
+      ],
+      "recommended_for": [
+        "cross-team collaboration",
+        "resource allocation",
+        "workflow optimization",
+        "process improvement"
+      ],
+      "tools": [
+        "Read",
+        "Write",
+        "MultiEdit",
+        "Grep",
+        "Glob",
+        "TodoWrite"
+      ],
+      "expertise": [
+        "team coordination",
+        "resource optimization",
+        "process design",
+        "workflow automation"
+      ],
+      "install_command": "cp ~/.superagent-zero-2/agents/project-management/studio-producer.md .claude/agents/"
     },
     "studio-operations/analytics-reporter": {
       "name": "analytics-reporter",
       "category": "studio-operations",
       "description": "Data analytics and insights generation specialist for studio performance tracking",
-      "keywords": ["analytics", "data", "metrics", "insights", "reporting", "performance"],
-      "recommended_for": ["data analysis", "performance tracking", "user behavior analysis", "revenue optimization"],
-      "tools": ["Write", "Read", "MultiEdit", "WebSearch", "Grep"],
-      "expertise": ["data analysis", "statistical modeling", "dashboard creation", "trend identification"]
+      "keywords": [
+        "analytics",
+        "data",
+        "metrics",
+        "insights",
+        "reporting",
+        "performance"
+      ],
+      "recommended_for": [
+        "data analysis",
+        "performance tracking",
+        "user behavior analysis",
+        "revenue optimization"
+      ],
+      "tools": [
+        "Write",
+        "Read",
+        "MultiEdit",
+        "WebSearch",
+        "Grep"
+      ],
+      "expertise": [
+        "data analysis",
+        "statistical modeling",
+        "dashboard creation",
+        "trend identification"
+      ],
+      "install_command": "cp ~/.superagent-zero-2/agents/studio-operations/analytics-reporter.md .claude/agents/"
     },
     "studio-operations/finance-tracker": {
       "name": "finance-tracker",
       "category": "studio-operations",
       "description": "Financial management and budget optimization specialist for studio operations",
-      "keywords": ["finance", "budget", "cost optimization", "revenue", "ROI", "forecasting"],
-      "recommended_for": ["budget planning", "cost analysis", "financial forecasting", "investment decisions"],
-      "tools": ["Write", "Read", "MultiEdit", "WebSearch", "Grep"],
-      "expertise": ["financial modeling", "cost optimization", "revenue analysis", "budget management"]
+      "keywords": [
+        "finance",
+        "budget",
+        "cost optimization",
+        "revenue",
+        "ROI",
+        "forecasting"
+      ],
+      "recommended_for": [
+        "budget planning",
+        "cost analysis",
+        "financial forecasting",
+        "investment decisions"
+      ],
+      "tools": [
+        "Write",
+        "Read",
+        "MultiEdit",
+        "WebSearch",
+        "Grep"
+      ],
+      "expertise": [
+        "financial modeling",
+        "cost optimization",
+        "revenue analysis",
+        "budget management"
+      ],
+      "install_command": "cp ~/.superagent-zero-2/agents/studio-operations/finance-tracker.md .claude/agents/"
     },
     "studio-operations/infrastructure-maintainer": {
       "name": "infrastructure-maintainer",
       "category": "studio-operations",
       "description": "Ensures infrastructure reliability through performance optimization, capacity planning, cost management, and proactive monitoring",
-      "keywords": ["infrastructure", "performance", "scalability", "monitoring", "optimization", "reliability"],
-      "recommended_for": ["system optimization", "performance tuning", "infrastructure scaling", "monitoring setup"],
-      "tools": ["Write", "Read", "MultiEdit", "WebSearch", "Grep", "Bash"],
-      "expertise": ["system optimization", "performance tuning", "infrastructure management", "disaster recovery"]
+      "keywords": [
+        "infrastructure",
+        "performance",
+        "scalability",
+        "monitoring",
+        "optimization",
+        "reliability"
+      ],
+      "recommended_for": [
+        "system optimization",
+        "performance tuning",
+        "infrastructure scaling",
+        "monitoring setup"
+      ],
+      "tools": [
+        "Write",
+        "Read",
+        "MultiEdit",
+        "WebSearch",
+        "Grep",
+        "Bash"
+      ],
+      "expertise": [
+        "system optimization",
+        "performance tuning",
+        "infrastructure management",
+        "disaster recovery"
+      ],
+      "install_command": "cp ~/.superagent-zero-2/agents/studio-operations/infrastructure-maintainer.md .claude/agents/"
     },
     "studio-operations/legal-compliance-checker": {
       "name": "legal-compliance-checker",
       "category": "studio-operations",
       "description": "Ensures regulatory compliance through privacy policy management, legal requirement assessment, and risk mitigation strategies",
-      "keywords": ["compliance", "legal", "privacy", "regulations", "policies", "risk management"],
-      "recommended_for": ["legal compliance", "privacy policies", "regulatory audits", "risk assessment"],
-      "tools": ["Write", "Read", "MultiEdit", "WebSearch", "Grep"],
-      "expertise": ["regulatory compliance", "privacy law", "risk assessment", "policy development"]
+      "keywords": [
+        "compliance",
+        "legal",
+        "privacy",
+        "regulations",
+        "policies",
+        "risk management"
+      ],
+      "recommended_for": [
+        "legal compliance",
+        "privacy policies",
+        "regulatory audits",
+        "risk assessment"
+      ],
+      "tools": [
+        "Write",
+        "Read",
+        "MultiEdit",
+        "WebSearch",
+        "Grep"
+      ],
+      "expertise": [
+        "regulatory compliance",
+        "privacy law",
+        "risk assessment",
+        "policy development"
+      ],
+      "install_command": "cp ~/.superagent-zero-2/agents/studio-operations/legal-compliance-checker.md .claude/agents/"
     },
     "studio-operations/support-responder": {
       "name": "support-responder",
       "category": "studio-operations",
       "description": "Maintains exceptional customer support through inquiry management, documentation creation, and user experience optimization",
-      "keywords": ["support", "customer service", "user experience", "documentation", "automation", "satisfaction"],
-      "recommended_for": ["customer support", "user documentation", "support automation", "user satisfaction"],
-      "tools": ["Write", "Read", "MultiEdit", "WebSearch", "Grep"],
-      "expertise": ["support optimization", "documentation creation", "user communication", "satisfaction improvement"]
+      "keywords": [
+        "support",
+        "customer service",
+        "user experience",
+        "documentation",
+        "automation",
+        "satisfaction"
+      ],
+      "recommended_for": [
+        "customer support",
+        "user documentation",
+        "support automation",
+        "user satisfaction"
+      ],
+      "tools": [
+        "Write",
+        "Read",
+        "MultiEdit",
+        "WebSearch",
+        "Grep"
+      ],
+      "expertise": [
+        "support optimization",
+        "documentation creation",
+        "user communication",
+        "satisfaction improvement"
+      ],
+      "install_command": "cp ~/.superagent-zero-2/agents/studio-operations/support-responder.md .claude/agents/"
     }
   },
   "categories": {
     "starter": {
       "name": "Starter Agents",
       "description": "Essential agents for project initialization and coordination",
-      "icon": "🚀",
+      "icon": "\ud83d\ude80",
       "count": 5
     },
     "engineering": {
       "name": "Engineering",
       "description": "Development, architecture, and technical implementation",
-      "icon": "⚙️",
-      "count": 12
+      "icon": "\u2699\ufe0f",
+      "count": 13
     },
     "design": {
       "name": "Design",
       "description": "UI/UX, visual design, and user experience",
-      "icon": "🎨",
+      "icon": "\ud83c\udfa8",
       "count": 6
     },
     "marketing": {
       "name": "Marketing",
       "description": "Growth, content, and user acquisition",
-      "icon": "📈",
+      "icon": "\ud83d\udcc8",
       "count": 9
     },
     "product": {
       "name": "Product",
       "description": "Product management, strategy, research, and competitive intelligence",
-      "icon": "🎯",
+      "icon": "\ud83c\udfaf",
       "count": 5
     },
     "testing": {
       "name": "Testing",
       "description": "Quality assurance, testing, and performance",
-      "icon": "🧪",
+      "icon": "\ud83e\uddea",
       "count": 5
     },
     "project-management": {
       "name": "Project Management",
       "description": "Coordination, shipping, and cross-functional orchestration",
-      "icon": "📋",
+      "icon": "\ud83d\udccb",
       "count": 3
     },
     "bonus": {
       "name": "Bonus",
       "description": "Special purpose agents for team dynamics and creativity",
-      "icon": "🎁",
+      "icon": "\ud83c\udf81",
       "count": 2
     },
     "studio-operations": {
       "name": "Studio Operations",
       "description": "Operational excellence and business management specialists",
-      "icon": "🏢",
+      "icon": "\ud83c\udfe2",
       "count": 6
     },
     "custom": {
       "name": "Custom",
       "description": "Project-specific custom agents",
-      "icon": "🛠️",
+      "icon": "\ud83d\udee0\ufe0f",
       "count": 0
     }
   },
   "search_tags": {
-    "ai_ml": ["ai-engineer"],
-    "backend": ["backend-architect", "devops-automator"],
-    "frontend": ["frontend-developer", "ui-designer"],
-    "mobile": ["mobile-app-builder"],
-    "testing": ["test-writer-fixer", "api-tester", "performance-benchmarker", "test-results-analyzer"],
-    "design": ["ui-designer", "ux-researcher", "visual-storyteller", "brand-guardian", "whimsy-injector"],
-    "marketing": ["content-creator", "growth-hacker", "app-store-optimizer", "instagram-curator", "reddit-community-builder", "tiktok-strategist", "twitter-engager"],
-    "product": ["trend-researcher", "feedback-synthesizer", "sprint-prioritizer", "competitive-intelligence-researcher", "product-clone-architect"],
-    "optimization": ["performance-benchmarker", "workflow-optimizer", "tool-evaluator"],
-    "rapid_development": ["rapid-prototyper", "project-planner"],
-    "team_dynamics": ["studio-coach", "joker"],
-    "creativity": ["joker", "whimsy-injector", "visual-storyteller"],
-    "motivation": ["studio-coach", "joker"],
-    "operations": ["analytics-reporter", "finance-tracker", "infrastructure-maintainer", "legal-compliance-checker", "support-responder"],
-    "analytics": ["analytics-reporter", "performance-benchmarker"],
-    "finance": ["finance-tracker"],
-    "infrastructure": ["infrastructure-maintainer", "devops-automator"],
-    "compliance": ["legal-compliance-checker"],
-    "support": ["support-responder"],
-    "project_management": ["experiment-tracker", "project-shipper", "studio-producer"],
-    "launch": ["project-shipper"],
-    "experiments": ["experiment-tracker"],
-    "coordination": ["studio-producer", "project-coordinator"],
-    "competitive_analysis": ["competitive-intelligence-researcher", "trend-researcher"],
-    "product_cloning": ["competitive-intelligence-researcher", "product-clone-architect"],
-    "market_research": ["competitive-intelligence-researcher", "trend-researcher", "feedback-synthesizer"],
-    "architecture_planning": ["product-clone-architect", "backend-architect"],
-    "security": ["security-auditor", "backend-architect"],
-    "data_engineering": ["data-engineer", "analytics-reporter"],
-    "documentation": ["documentation-architect", "support-responder"],
-    "accessibility": ["accessibility-specialist", "ui-designer"],
-    "seo": ["seo-optimizer", "content-creator"],
-    "email_marketing": ["email-marketing-specialist", "content-creator"],
-    "blockchain": ["blockchain-developer"],
-    "gaming": ["game-developer", "whimsy-injector"],
-    "customer_success": ["customer-success-manager", "support-responder"],
-    "web3": ["blockchain-developer"],
-    "defi": ["blockchain-developer"],
-    "vulnerability_assessment": ["security-auditor"],
-    "threat_modeling": ["security-auditor"],
-    "data_pipelines": ["data-engineer"],
-    "etl": ["data-engineer"],
-    "technical_writing": ["documentation-architect"],
-    "wcag": ["accessibility-specialist"],
-    "inclusive_design": ["accessibility-specialist"],
-    "search_optimization": ["seo-optimizer"],
-    "organic_traffic": ["seo-optimizer"],
-    "automation_sequences": ["email-marketing-specialist"],
-    "smart_contracts": ["blockchain-developer"],
-    "game_mechanics": ["game-developer"],
-    "user_onboarding": ["customer-success-manager"],
-    "retention_strategy": ["customer-success-manager", "email-marketing-specialist"],
-    "custom_agents": ["custom-agent-builder"],
-    "agent_creation": ["custom-agent-builder"],
-    "bespoke_solutions": ["custom-agent-builder"]
+    "ai_ml": [
+      "ai-engineer"
+    ],
+    "backend": [
+      "backend-architect",
+      "devops-automator",
+      "build-and-lint-fixer"
+    ],
+    "frontend": [
+      "frontend-developer",
+      "ui-designer"
+    ],
+    "mobile": [
+      "mobile-app-builder"
+    ],
+    "testing": [
+      "test-writer-fixer",
+      "api-tester",
+      "performance-benchmarker",
+      "test-results-analyzer"
+    ],
+    "build": [
+      "build-and-lint-fixer",
+      "devops-automator"
+    ],
+    "lint": [
+      "build-and-lint-fixer"
+    ],
+    "automation": [
+      "build-and-lint-fixer",
+      "devops-automator"
+    ],
+    "design": [
+      "ui-designer",
+      "ux-researcher",
+      "visual-storyteller",
+      "brand-guardian",
+      "whimsy-injector"
+    ],
+    "marketing": [
+      "content-creator",
+      "growth-hacker",
+      "app-store-optimizer",
+      "instagram-curator",
+      "reddit-community-builder",
+      "tiktok-strategist",
+      "twitter-engager"
+    ],
+    "product": [
+      "trend-researcher",
+      "feedback-synthesizer",
+      "sprint-prioritizer",
+      "competitive-intelligence-researcher",
+      "product-clone-architect"
+    ],
+    "optimization": [
+      "performance-benchmarker",
+      "workflow-optimizer",
+      "tool-evaluator"
+    ],
+    "rapid_development": [
+      "rapid-prototyper",
+      "project-planner"
+    ],
+    "team_dynamics": [
+      "studio-coach",
+      "joker"
+    ],
+    "creativity": [
+      "joker",
+      "whimsy-injector",
+      "visual-storyteller"
+    ],
+    "motivation": [
+      "studio-coach",
+      "joker"
+    ],
+    "operations": [
+      "analytics-reporter",
+      "finance-tracker",
+      "infrastructure-maintainer",
+      "legal-compliance-checker",
+      "support-responder"
+    ],
+    "analytics": [
+      "analytics-reporter",
+      "performance-benchmarker"
+    ],
+    "finance": [
+      "finance-tracker"
+    ],
+    "infrastructure": [
+      "infrastructure-maintainer",
+      "devops-automator"
+    ],
+    "compliance": [
+      "legal-compliance-checker"
+    ],
+    "support": [
+      "support-responder"
+    ],
+    "project_management": [
+      "experiment-tracker",
+      "project-shipper",
+      "studio-producer"
+    ],
+    "launch": [
+      "project-shipper"
+    ],
+    "experiments": [
+      "experiment-tracker"
+    ],
+    "coordination": [
+      "studio-producer",
+      "project-coordinator"
+    ],
+    "competitive_analysis": [
+      "competitive-intelligence-researcher",
+      "trend-researcher"
+    ],
+    "product_cloning": [
+      "competitive-intelligence-researcher",
+      "product-clone-architect"
+    ],
+    "market_research": [
+      "competitive-intelligence-researcher",
+      "trend-researcher",
+      "feedback-synthesizer"
+    ],
+    "architecture_planning": [
+      "product-clone-architect",
+      "backend-architect"
+    ],
+    "security": [
+      "security-auditor",
+      "backend-architect"
+    ],
+    "data_engineering": [
+      "data-engineer",
+      "analytics-reporter"
+    ],
+    "documentation": [
+      "documentation-architect",
+      "support-responder"
+    ],
+    "accessibility": [
+      "accessibility-specialist",
+      "ui-designer"
+    ],
+    "seo": [
+      "seo-optimizer",
+      "content-creator"
+    ],
+    "email_marketing": [
+      "email-marketing-specialist",
+      "content-creator"
+    ],
+    "blockchain": [
+      "blockchain-developer"
+    ],
+    "gaming": [
+      "game-developer",
+      "whimsy-injector"
+    ],
+    "customer_success": [
+      "customer-success-manager",
+      "support-responder"
+    ],
+    "web3": [
+      "blockchain-developer"
+    ],
+    "defi": [
+      "blockchain-developer"
+    ],
+    "vulnerability_assessment": [
+      "security-auditor"
+    ],
+    "threat_modeling": [
+      "security-auditor"
+    ],
+    "data_pipelines": [
+      "data-engineer"
+    ],
+    "etl": [
+      "data-engineer"
+    ],
+    "technical_writing": [
+      "documentation-architect"
+    ],
+    "wcag": [
+      "accessibility-specialist"
+    ],
+    "inclusive_design": [
+      "accessibility-specialist"
+    ],
+    "search_optimization": [
+      "seo-optimizer"
+    ],
+    "organic_traffic": [
+      "seo-optimizer"
+    ],
+    "automation_sequences": [
+      "email-marketing-specialist"
+    ],
+    "smart_contracts": [
+      "blockchain-developer"
+    ],
+    "game_mechanics": [
+      "game-developer"
+    ],
+    "user_onboarding": [
+      "customer-success-manager"
+    ],
+    "retention_strategy": [
+      "customer-success-manager",
+      "email-marketing-specialist"
+    ],
+    "custom_agents": [
+      "custom-agent-builder"
+    ],
+    "agent_creation": [
+      "custom-agent-builder"
+    ],
+    "bespoke_solutions": [
+      "custom-agent-builder"
+    ]
   }
 }

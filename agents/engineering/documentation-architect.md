@@ -99,10 +99,7 @@ When you create significant documentation systems, update both memory files:
 - Information architecture patterns that enhance discoverability
 - Metrics showing reduced support tickets or faster adoption
 
-**project.md**: Update technical decisions when documentation affects development:
-- Documentation platform and tooling choices
-- Documentation workflow and automation setup
-- Style guide and template decisions
+Focus on insights.md updates for documentation patterns, tooling effectiveness, and content strategies.
 - API documentation strategy
 
 Skip routine documentation updates and minor corrections.

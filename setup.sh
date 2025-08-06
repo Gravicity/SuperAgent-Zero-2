@@ -671,13 +671,13 @@ main() {
     if [ "$PROJECT_TYPE" = "empty" ] && [ $complexity_score -lt 3 ]; then
         # Simple new project
         STARTER_AGENT="project-planner"
-        AGENTS_TO_INSTALL="project-planner memory-manager"
-        print_status "Simple new project - installing project-planner"
+        AGENTS_TO_INSTALL="project-planner custom-agent-builder memory-manager"
+        print_status "Simple new project - installing project-planner + custom-agent-builder"
     elif [ "$PROJECT_TYPE" = "existing" ] && [ $complexity_score -lt 5 ]; then
         # Simple existing project
         STARTER_AGENT="project-analyzer"
-        AGENTS_TO_INSTALL="project-analyzer memory-manager"
-        print_status "Simple existing project - installing project-analyzer"
+        AGENTS_TO_INSTALL="project-analyzer custom-agent-builder memory-manager"
+        print_status "Simple existing project - installing project-analyzer + custom-agent-builder"
     elif [ "$PROJECT_TYPE" = "empty" ] && [ $complexity_score -ge 3 ]; then
         # Complex new project - might need both planning and custom solutions
         STARTER_AGENT="project-planner"
@@ -686,13 +686,13 @@ main() {
     elif [ "$PROJECT_TYPE" = "existing" ] && [ $complexity_score -ge 5 ]; then
         # Complex existing project - needs coordination
         STARTER_AGENT="project-coordinator"
-        AGENTS_TO_INSTALL="project-coordinator project-analyzer memory-manager"
-        print_status "Complex existing project - installing coordination suite"
+        AGENTS_TO_INSTALL="project-coordinator project-analyzer custom-agent-builder memory-manager"
+        print_status "Complex existing project - installing coordination suite + custom-agent-builder"
     else
         # Partial/mixed projects or moderate complexity - full coordination
         STARTER_AGENT="project-coordinator"
-        AGENTS_TO_INSTALL="project-coordinator project-analyzer project-planner memory-manager"
-        print_status "Mixed/partial project - installing full coordination suite"
+        AGENTS_TO_INSTALL="project-coordinator project-analyzer project-planner custom-agent-builder memory-manager"
+        print_status "Mixed/partial project - installing full coordination suite + custom-agent-builder"
     fi
     
     # Add custom-agent-builder for high complexity scenarios
@@ -732,11 +732,22 @@ main() {
     init_memory "$PROJECT_TYPE"
     print_success "Memory system initialized"
     
+    # Update project.md with installed agents list for SuperAgent Zero awareness
+    if [ -f ".superagent/memory/project.md" ] && [ -n "$installed_agents" ]; then
+        # Update the installed agents section in project.md
+        sed -i '' "s/\*\*Starter Agents\*\*: \[To be populated during setup\]/\*\*Starter Agents\*\*:$installed_agents/g" .superagent/memory/project.md
+        print_status "Updated project.md with installed starter agents list"
+        
+        # Also update the Session Discoveries section with setup timestamp
+        sed -i '' "s/\*\*Date\*\*: \[Session date\/time\]/\*\*Date\*\*: $(date -u +"%Y-%m-%dT%H:%M:%SZ") - Initial Setup/g" .superagent/memory/project.md
+        sed -i '' "s/\*\*Context\*\*: \[What the session focused on\]/\*\*Context\*\*: SuperAgent Zero initial setup for $PROJECT_TYPE project/g" .superagent/memory/project.md
+    fi
+    
     # Copy agent catalog and version info to project
     print_status "Installing agent catalog..."
     if [ -f "$INSTALL_DIR/agent-catalog.json" ]; then
         cp "$INSTALL_DIR/agent-catalog.json" ".superagent/"
-        print_success "Agent catalog installed (50 agents available)"
+        print_success "Agent catalog installed (51 agents available)"
     else
         print_warning "Agent catalog not found - agent discovery may be limited"
     fi

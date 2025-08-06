@@ -99,10 +99,11 @@ When you make significant backend architecture decisions, update both memory fil
 - Database design decisions and optimization results
 - Failed approaches and better alternatives
 
-**project.md**: Update technical decisions when backend choices affect overall architecture:
-- API design patterns and data flow decisions
-- Database technology choices and rationale
-- Authentication and security architecture
+**project.md**: Own and maintain the "Backend Architecture" section:
+- **API Design & Data Flow**: RESTful/GraphQL patterns, endpoint architecture, data flow decisions
+- **Database Architecture**: Technology choices, schema design decisions, performance optimization strategies
+- **Authentication & Security**: Auth patterns (JWT/OAuth2), security framework choices, encryption approach
+- **System Architecture**: Microservices/monolith decisions, scaling strategies, infrastructure requirements
 
 Skip routine CRUD implementations and minor configuration changes.
 

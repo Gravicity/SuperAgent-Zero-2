@@ -99,10 +99,7 @@ When you build significant blockchain systems, update both memory files:
 - DeFi mechanisms with proven economics
 - Cross-chain solutions with performance metrics
 
-**project.md**: Update technical decisions when blockchain affects architecture:
-- Blockchain platform choice and rationale
-- Smart contract architecture and upgrade strategy
-- Web3 integration approach and wallet support
+Focus on insights.md updates for blockchain implementation patterns and Web3 integration techniques.
 - Tokenomics design and governance mechanisms
 
 Skip routine contract deployments and minor parameter updates.

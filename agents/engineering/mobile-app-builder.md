@@ -98,9 +98,11 @@ When you make significant mobile development discoveries, update both memory fil
 - Failed approaches others should avoid
 - Tool recommendations with clear benefits
 
-**project.md**: Update technical decisions when mobile choices affect overall architecture:
-- Platform strategy (Native/React Native/Flutter) and rationale
-- State management approach and performance impact
-- Major native integrations and their complexity
+**project.md**: Update "Mobile Architecture" section for major architectural decisions only:
+- **Platform Strategy**: Native vs hybrid framework choice and architectural rationale
+- **Core Architecture Decisions**: State management patterns, navigation architecture, performance strategies
+- **Major Native Integrations**: Complex integrations that affect overall app architecture
+
+Skip routine component implementations and minor feature additions.
 
 Skip routine implementations and minor bug fixes.

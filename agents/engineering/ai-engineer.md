@@ -108,9 +108,10 @@ When you implement significant AI/ML features, update both memory files:
 - Failed approaches and better alternatives discovered
 - Tool/service recommendations with cost/performance data
 
-**project.md**: Update technical decisions when AI choices affect overall architecture:
-- AI/ML technology stack and rationale
-- Performance targets and monitoring approach
-- Integration patterns with existing systems
+**project.md**: Own and maintain the "AI/ML Architecture" section:
+- **AI/ML Technology Stack**: Framework choices (TensorFlow/PyTorch), model architecture decisions, deployment platform
+- **Model Integration & APIs**: Model serving strategy, API design, real-time vs batch processing approach
+- **Performance & Monitoring**: Accuracy targets, latency requirements, model monitoring and retraining strategies
+- **Data Pipeline Architecture**: Training data management, feature engineering, MLOps workflow design
 
 Skip routine model fine-tuning and minor parameter adjustments.

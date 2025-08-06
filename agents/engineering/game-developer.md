@@ -99,10 +99,7 @@ When you build significant game systems, update both memory files:
 - Player behavior patterns and successful retention strategies
 - Technical solutions for challenging gameplay features
 
-**project.md**: Update technical decisions when game architecture affects development:
-- Game engine choice and technical architecture
-- Performance targets and optimization strategies
-- Monetization approach and analytics implementation
+Focus on insights.md updates for implementation patterns and game development techniques.
 - Platform-specific considerations and deployment strategy
 
 Skip routine bug fixes and minor gameplay tweaks.

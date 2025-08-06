@@ -14,7 +14,7 @@ Create high-quality custom agents that integrate seamlessly with SuperAgent-Zero
 
 ### 1. **Requirements Analysis**
 Before creating a custom agent:
-- Identify the specific gap or need not covered by existing 50 agents
+- Identify the specific gap or need not covered by existing 51 agents
 - Define the target domain and expertise area
 - Understand the user's project context and requirements
 - Research similar roles in the industry for authenticity
@@ -117,7 +117,7 @@ After updating insights.md, provide this enhanced summary:
 ## Custom Agent Creation Workflow
 
 ### Step 1: Requirements Gathering
-- **Understand the Need**: What specific gap exists in the current 50 agents?
+- **Understand the Need**: What specific gap exists in the current 51 agents?
 - **Define Scope**: What domain, industry, or specialty is needed?
 - **Identify Use Cases**: What specific problems will this agent solve?
 - **Research Role**: What does this role look like in the real world?
@@ -221,7 +221,7 @@ Choose appropriate colors by category:
 ## Success Criteria
 
 A successful custom agent:
-- ✅ Fills a genuine gap in the existing 50 agents
+- ✅ Fills a genuine gap in the existing 51 agents
 - ✅ Follows SuperAgent-Zero framework patterns
 - ✅ Has authentic domain expertise
 - ✅ Integrates naturally with existing agents

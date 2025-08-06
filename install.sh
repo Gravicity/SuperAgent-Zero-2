@@ -257,7 +257,7 @@ download_from_github() {
     
     # Copy agents and catalog
     if [ -d "$temp_dir/agents" ]; then
-        print_status "Installing all 50 agents..."
+        print_status "Installing all 51 agents..."
         cp -r "$temp_dir/agents/"* "$INSTALL_DIR/agents/"
     fi
     
@@ -357,7 +357,7 @@ main() {
         printf "%s\n" "📋 Installation Summary:"
         printf "%s\n" "   📂 Location: $INSTALL_DIR"
         printf "%s\n" "   📦 Version: $VERSION"
-        printf "%s\n" "   🤖 Agents: All 50 agents across 9 categories"
+        printf "%s\n" "   🤖 Agents: All 51 agents across 9 categories"
         printf "%s\n" "   🔧 Scripts: setup.sh, update.sh"
         printf "\n"
         printf "%s\n" "🚀 Quick Start:"

@@ -209,7 +209,7 @@ your-project/
 - **project-analyzer** (Elite Project Intelligence Specialist): Deep codebase analysis, architecture assessment, tech debt identification
 - **project-planner** (Elite Strategic Project Architect): Vision-to-roadmap transformation, scalable architecture design
 - **project-coordinator** (Elite Strategic Orchestration Specialist): Complex scenario management, multi-agent conflict resolution
-- **custom-agent-builder**: Create bespoke agents for unique requirements beyond the 50-agent catalog
+- **custom-agent-builder**: Create bespoke agents for unique requirements beyond the 51-agent catalog
 - **memory-manager**: RAG-like search, pattern analysis, complex handoffs, and knowledge synthesis
 
 ### Engineering Agents (12)
@@ -280,16 +280,41 @@ your-project/
 
 ## 🧬 Memory System
 
-SuperAgent Zero maintains a sophisticated memory system across sessions:
+SuperAgent Zero maintains a sophisticated memory system with **section-based ownership** for efficient collaboration:
 
+### Section-Based Memory Management
+- **project.md**: Living architectural document with agent-owned sections
+  - **Starter agents**: Project overview, analysis, planning, coordination strategies
+  - **Architecture agents**: Backend, security, infrastructure, AI/ML decisions  
+  - **Implementation agents**: Major architectural decisions (not routine implementations)
+- **insights.md**: Technical discoveries and patterns maintained by all agents
+- **workflows.md**: Proven agent coordination patterns validated over time
+- **superagent.md**: User preferences and adaptive learning patterns
+
+### Key Capabilities
+- **Reduced SuperAgent Overhead**: Agents maintain their own sections vs constant synthesis
+- **Real-time Documentation**: Architectural decisions captured when made
+- **Clear Ownership Boundaries**: Each agent knows exactly what they're responsible for
 - **Adaptive Learning**: Evolves based on user feedback and preferences
-- **Workflow Intelligence**: Starter agents document coordination patterns; SuperAgent validates and refines them
-- **Project Evolution**: Tracks architectural decisions and milestones
-- **Knowledge Retrieval**: RAG-like search across all project memory
+- **Knowledge Retrieval**: RAG-like search across all project memory via memory-manager
 - **Context Preservation**: Maintains session continuity and handoffs
 - **Self-Improving Coordination**: Learns optimal agent deployment patterns over time
 
-SuperAgent Zero manages memory directly for efficiency, while the memory-manager agent provides specialized knowledge retrieval and synthesis capabilities.
+### Memory Architecture Example
+```markdown
+project.md:
+├── Project Overview (project-planner)
+├── Current State Analysis (project-analyzer) 
+├── Backend Architecture (backend-architect)
+├── Security & Compliance (security-auditor)
+└── Session Discoveries (SuperAgent Zero)
+
+insights.md:
+├── Backend Architecture (technical patterns)
+├── Frontend Development (implementation techniques)
+├── Security Practices (vulnerability patterns)
+└── Performance Optimizations (metrics & improvements)
+```
 
 ## 🧠 Advanced Capabilities
 
@@ -495,7 +520,14 @@ A: Run `~/.superagent-zero-2/update.sh` or re-run the installer. Smart updates p
 - Verify SuperAgent Zero can write to memory files
 - Ensure agent-catalog.json exists in `.superagent/` 
 - Look for file permission issues or corrupted memory file format
+- **New**: Agents now update their own sections in project.md - no more SuperAgent synthesis overhead
 - Memory-manager agent should be available for knowledge retrieval operations
+
+### Recent Improvements (v2.0+)
+- **Fixed agent self-modification**: Clear boundaries between agent files and memory updates
+- **Section-based memory**: Agents own specific project.md sections, reducing conflicts
+- **Enhanced testing fixes**: 8 of 10 critical testing issues resolved including build automation
+- **Improved starter agents**: Better memory integration and coordination protocols
 
 ## 🤝 Contributing
 

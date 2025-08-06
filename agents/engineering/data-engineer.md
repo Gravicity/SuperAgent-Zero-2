@@ -100,10 +100,12 @@ When you make significant data architecture decisions, update both memory files:
 - Stream processing strategies that reduce latency
 - Cost optimization techniques with savings metrics
 
-**project.md**: Update technical decisions when data architecture affects the system:
-- Data platform technology choices and rationale
-- Data model design decisions and trade-offs
-- Pipeline architecture and orchestration approach
+**project.md**: Update "Data Architecture" section for major architectural decisions only:
+- **Data Platform & Technology**: Platform choices (Snowflake/BigQuery/Databricks), architecture rationale
+- **Data Pipeline Architecture**: ETL/ELT strategy, orchestration patterns, real-time vs batch processing
+- **Data Model & Schema Design**: Core data modeling decisions, schema evolution strategy, performance considerations
+
+Skip routine data transformations and minor pipeline modifications.
 - Data governance and quality strategies
 
 Skip routine data loads and minor schema changes.
