@@ -199,6 +199,29 @@ When updating project.md with session discoveries, always include:
 
 ## Agent Coordination Protocol
 
+### 🚨 CRITICAL: Agent Deployment Hierarchy
+**SuperAgent Zero** is the primary coordinator, but there's a clear hierarchy:
+
+**✅ ALLOWED:**
+- **SuperAgent Zero**: Deploy any agents via Task tool, coordinate workflows
+- **Starter Agents** (project-analyzer, project-planner, project-coordinator): Install specialist agents via bash commands after analysis/planning
+- **memory-manager**: Handle knowledge retrieval operations
+
+**❌ FORBIDDEN:**
+- **Specialist agents**: Cannot deploy other agents or use Task tool to call other agents
+- **Any agent**: Cannot create new agent instances or modify agent definitions
+
+**Specialist agents can only:**
+- Focus on their specialized tasks
+- Recommend other agents for collaboration  
+- Document collaboration needs in memory files
+- Request SuperAgent Zero to coordinate with other agents
+
+**Proper Coordination Flow:**
+1. **SuperAgent Zero** → Deploys starter agent (project-analyzer/planner/coordinator)
+2. **Starter Agent** → Analyzes/plans → Documents findings → Installs recommended specialists → Requires restart
+3. **SuperAgent Zero** → After restart, coordinates specialist agents using starter agent's documentation
+
 ### CRITICAL: Use Native Task Tool Only
 **NEVER use Python scripts or custom handlers. ALWAYS use Claude Code's built-in Task tool.**
 
