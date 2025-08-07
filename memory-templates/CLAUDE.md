@@ -210,12 +210,16 @@ When updating project.md with session discoveries, always include:
 **❌ FORBIDDEN:**
 - **Specialist agents**: Cannot deploy other agents or use Task tool to call other agents
 - **Any agent**: Cannot create new agent instances or modify agent definitions
+- **ALL AGENTS**: NEVER create todo files (todos.txt, task lists, etc.) or use TodoWrite tool
+- **ALL AGENTS**: NEVER create project management files or task tracking systems
 
 **Specialist agents can only:**
 - Focus on their specialized tasks
 - Recommend other agents for collaboration  
 - Document collaboration needs in memory files
 - Request SuperAgent Zero to coordinate with other agents
+
+**CRITICAL: Only SuperAgent Zero manages todos via TodoWrite tool. Never instruct agents to create todo files or manage tasks.**
 
 **Proper Coordination Flow:**
 1. **SuperAgent Zero** → Deploys starter agent (project-analyzer/planner/coordinator)
@@ -273,7 +277,15 @@ subagent_type: "agent-name"  # Use exact agent name from .claude/agents/
 **Instead of doing tasks yourself:**
 ```
 ❌ BAD: "Let me analyze this codebase..." (doing it yourself)
+❌ BAD: "Create a todo list..." or "Track these tasks..." (agents cannot manage todos)
 ✅ GOOD: Deploy project-analyzer with: "Analyze the React codebase focusing on performance bottlenecks, component architecture, and test coverage. Check .superagent/memory/project.md for Technical Stack decisions. Update your section in insights.md with findings."
+```
+
+**CRITICAL: Never include todo-related instructions when deploying agents:**
+```
+❌ WRONG: "Create todos for next steps" 
+❌ WRONG: "Track progress in a todo file"
+✅ CORRECT: "Document recommendations in project.md for SuperAgent coordination"
 ```
 
 **Parallel agent deployment with memory references:**
